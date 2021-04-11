@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sifre_Tutma_Programi", "Sifre_Tutma_Programi.csproj", "{0E105868-F290-44AC-8B12-B3B92299C689}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Şifre Tutma Programı", "..\Şifre Tutma Programı\Şifre Tutma Programı.vdproj", "{4FF81BF1-8E3E-4003-8C9F-7D49082E45AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E105868-F290-44AC-8B12-B3B92299C689}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E105868-F290-44AC-8B12-B3B92299C689}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E105868-F290-44AC-8B12-B3B92299C689}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E105868-F290-44AC-8B12-B3B92299C689}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FF81BF1-8E3E-4003-8C9F-7D49082E45AD}.Debug|Any CPU.ActiveCfg = Debug
+		{4FF81BF1-8E3E-4003-8C9F-7D49082E45AD}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B2CAD0D9-FABB-4263-BD6C-20562C805993}
+	EndGlobalSection
+EndGlobal

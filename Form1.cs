@@ -70,7 +70,7 @@ namespace Sifre_Tutma_Programi
                 sifreEntites.Sifrelers.Add(sifreler);
                 sifreEntites.SaveChanges();
                 Listele();
-                MessageBox.Show("Şifre Kaydedildi", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Şifre Kaydedildi", "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 EkleTextBoxlariTemizle();
             }
         }
@@ -118,7 +118,7 @@ namespace Sifre_Tutma_Programi
                     sifreEntites.Sifrelers.Remove(sifreEntites.Sifrelers.Find(id));
                     sifreEntites.SaveChanges();
                     Listele();
-                    MessageBox.Show("Silme işlemi başarılı", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Silme işlemi başarılı", "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
@@ -168,7 +168,7 @@ namespace Sifre_Tutma_Programi
                     guncelle.Degistirme_Zamani = DateTime.Now;
                     db.SaveChanges();
                     Listele();
-                    MessageBox.Show("İşlem Başarılı " + guncelle.Ad + " Adlı şifre güncellendi", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("İşlem Başarılı " + guncelle.Ad + " Adlı şifre güncellendi", "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     GuncelleTextBoxlariTemizle();
                 }
                 else
@@ -244,11 +244,11 @@ namespace Sifre_Tutma_Programi
             {
                 Clipboard.SetText(dgvDegerler.CurrentRow.Cells[3].Value.ToString());
                 string cikti = string.Format("{0} Adlı Şifre Panoya Kopyalandı",dgvDegerler.CurrentRow.Cells[1].Value.ToString());
-                MessageBox.Show(cikti);
+                MessageBox.Show(cikti, "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Lütfen Kopyalanacak Şifreyi Seçiniz");
+                MessageBox.Show("Lütfen Kopyalanacak Şifreyi Seçiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -256,7 +256,7 @@ namespace Sifre_Tutma_Programi
         private void btnPanoTemizle_Click(object sender, EventArgs e)
         {
             Clipboard.Clear();
-            MessageBox.Show("Kopyalama Panosu Temizlendi");
+            MessageBox.Show("Kopyalama Panosu Temizlendi", "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

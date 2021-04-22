@@ -70,7 +70,7 @@ namespace Sifre_Tutma_Programi
                 sifreEntites.Sifrelers.Add(sifreler);
                 sifreEntites.SaveChanges();
                 Listele();
-                MessageBox.Show("Şifre Kaydedildi");
+                MessageBox.Show("Şifre Kaydedildi", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 EkleTextBoxlariTemizle();
             }
         }
@@ -82,15 +82,15 @@ namespace Sifre_Tutma_Programi
             }
             else if (txtAd.Text == "")
             {
-                MessageBox.Show("Lütfen Sitenin Adını Boş Bırakmayınız");
+                MessageBox.Show("Lütfen Sitenin Adını Boş Bırakmayınız","Hata",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else if (txtSifre.Text == "")
             {
-                MessageBox.Show("Lütfen Şifreyi Boş Bırakmayınız");
+                MessageBox.Show("Lütfen Şifreyi Boş Bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (txtKullaniciAdi.Text=="")
             {
-                MessageBox.Show("Lütfen Kullanıcı adı veya E-postayı boş bırakmayınız");
+                MessageBox.Show("Lütfen Kullanıcı adı veya E-postayı boş bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -118,12 +118,12 @@ namespace Sifre_Tutma_Programi
                     sifreEntites.Sifrelers.Remove(sifreEntites.Sifrelers.Find(id));
                     sifreEntites.SaveChanges();
                     Listele();
-                    MessageBox.Show("Silme işlemi başarılı");
+                    MessageBox.Show("Silme işlemi başarılı", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
             {
-                MessageBox.Show("İşlem Yapılamadı, Lütfen Kayıt Seçiniz");
+                MessageBox.Show("İşlem Yapılamadı, Lütfen Kayıt Seçiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -136,7 +136,7 @@ namespace Sifre_Tutma_Programi
             }
             else
             {
-                MessageBox.Show("İşlem Yapılmadı");
+                MessageBox.Show("İşlem Yapılmadı", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }
@@ -168,12 +168,12 @@ namespace Sifre_Tutma_Programi
                     guncelle.Degistirme_Zamani = DateTime.Now;
                     db.SaveChanges();
                     Listele();
-                    MessageBox.Show("İşlem Başarılı " + guncelle.Ad + " Adlı şifre güncellendi");
+                    MessageBox.Show("İşlem Başarılı " + guncelle.Ad + " Adlı şifre güncellendi", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     GuncelleTextBoxlariTemizle();
                 }
                 else
                 {
-                    MessageBox.Show("Lütfen Şifre Seçiniz");
+                    MessageBox.Show("Lütfen Şifre Seçiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -186,15 +186,15 @@ namespace Sifre_Tutma_Programi
             }
             else if(txtGuncelleAdi.Text == "")
             {
-                MessageBox.Show("Lütfen Güncellenen Kaydın Adını Boş Bırakmayınız");
+                MessageBox.Show("Lütfen Güncellenen Kaydın Adını Boş Bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (txtGuncelleKullaniciAdi.Text == "")
             {
-                MessageBox.Show("Lütfen Güncellenen Kaydın Kullanıcı Adını veya E-Postasını boş bırakmayınız");
+                MessageBox.Show("Lütfen Güncellenen Kaydın Kullanıcı Adını veya E-Postasını boş bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (txtSifre.Text == "")
             {
-                MessageBox.Show("Lütfen Güncellenen Kaydın Şifresini boş bırakmayınız");
+                MessageBox.Show("Lütfen Güncellenen Kaydın Şifresini boş bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

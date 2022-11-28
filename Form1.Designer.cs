@@ -41,6 +41,8 @@ namespace Sifre_Tutma_Programi
             this.btnSifreEkle = new System.Windows.Forms.Button();
             this.cbSifreGoster = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnKullaniciAdiniKopyala = new System.Windows.Forms.Button();
+            this.btnKopyala = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtGuncelleKullaniciAdi = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -53,12 +55,10 @@ namespace Sifre_Tutma_Programi
             this.txtGuncelleSifre = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dgvDegerler = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtAra = new System.Windows.Forms.TextBox();
             this.btnSil = new System.Windows.Forms.Button();
-            this.btnKopyala = new System.Windows.Forms.Button();
-            this.btnPanoTemizle = new System.Windows.Forms.Button();
+            this.txtAra = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dgvDegerler = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -187,7 +187,7 @@ namespace Sifre_Tutma_Programi
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Gray;
-            this.groupBox2.Controls.Add(this.btnPanoTemizle);
+            this.groupBox2.Controls.Add(this.btnKullaniciAdiniKopyala);
             this.groupBox2.Controls.Add(this.btnKopyala);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.groupBox1);
@@ -201,6 +201,30 @@ namespace Sifre_Tutma_Programi
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Şifreleri Görüntüle";
+            // 
+            // btnKullaniciAdiniKopyala
+            // 
+            this.btnKullaniciAdiniKopyala.BackColor = System.Drawing.Color.Silver;
+            this.btnKullaniciAdiniKopyala.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btnKullaniciAdiniKopyala.Location = new System.Drawing.Point(505, 267);
+            this.btnKullaniciAdiniKopyala.Name = "btnKullaniciAdiniKopyala";
+            this.btnKullaniciAdiniKopyala.Size = new System.Drawing.Size(270, 44);
+            this.btnKullaniciAdiniKopyala.TabIndex = 2;
+            this.btnKullaniciAdiniKopyala.Text = "Kullanıcı Adı / E Postayı Kopyala";
+            this.btnKullaniciAdiniKopyala.UseVisualStyleBackColor = false;
+            this.btnKullaniciAdiniKopyala.Click += new System.EventHandler(this.btnKullaniciAdiniKopyala_Click);
+            // 
+            // btnKopyala
+            // 
+            this.btnKopyala.BackColor = System.Drawing.Color.Silver;
+            this.btnKopyala.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btnKopyala.Location = new System.Drawing.Point(234, 267);
+            this.btnKopyala.Name = "btnKopyala";
+            this.btnKopyala.Size = new System.Drawing.Size(247, 44);
+            this.btnKopyala.TabIndex = 1;
+            this.btnKopyala.Text = "Seçilen Parolayı Panoya Kopyala";
+            this.btnKopyala.UseVisualStyleBackColor = false;
+            this.btnKopyala.Click += new System.EventHandler(this.btnKopyala_Click);
             // 
             // groupBox3
             // 
@@ -344,6 +368,40 @@ namespace Sifre_Tutma_Programi
             this.label5.TabIndex = 2;
             this.label5.Text = "Şifre";
             // 
+            // btnSil
+            // 
+            this.btnSil.BackColor = System.Drawing.Color.Silver;
+            this.btnSil.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btnSil.Location = new System.Drawing.Point(795, 267);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(174, 44);
+            this.btnSil.TabIndex = 3;
+            this.btnSil.Text = "Seçilen Parolayı Sİl";
+            this.btnSil.UseVisualStyleBackColor = false;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
+            // 
+            // txtAra
+            // 
+            this.txtAra.BackColor = System.Drawing.Color.Silver;
+            this.txtAra.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtAra.Location = new System.Drawing.Point(50, 287);
+            this.txtAra.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtAra.Name = "txtAra";
+            this.txtAra.Size = new System.Drawing.Size(155, 26);
+            this.txtAra.TabIndex = 3;
+            this.txtAra.TextChanged += new System.EventHandler(this.txtAra_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label3.Location = new System.Drawing.Point(55, 258);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(156, 20);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Ada Göre Parola Ara";
+            // 
             // dgvDegerler
             // 
             this.dgvDegerler.AllowUserToAddRows = false;
@@ -359,64 +417,6 @@ namespace Sifre_Tutma_Programi
             this.dgvDegerler.TabIndex = 0;
             this.dgvDegerler.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDegerler_CellDoubleClick);
             this.dgvDegerler.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDegerler_CellFormatting);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label3.Location = new System.Drawing.Point(55, 258);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(156, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Ada Göre Parola Ara";
-            // 
-            // txtAra
-            // 
-            this.txtAra.BackColor = System.Drawing.Color.Silver;
-            this.txtAra.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtAra.Location = new System.Drawing.Point(50, 287);
-            this.txtAra.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtAra.Name = "txtAra";
-            this.txtAra.Size = new System.Drawing.Size(155, 26);
-            this.txtAra.TabIndex = 3;
-            this.txtAra.TextChanged += new System.EventHandler(this.txtAra_TextChanged);
-            // 
-            // btnSil
-            // 
-            this.btnSil.BackColor = System.Drawing.Color.Silver;
-            this.btnSil.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btnSil.Location = new System.Drawing.Point(795, 267);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(174, 44);
-            this.btnSil.TabIndex = 3;
-            this.btnSil.Text = "Seçilen Parolayı Sİl";
-            this.btnSil.UseVisualStyleBackColor = false;
-            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
-            // 
-            // btnKopyala
-            // 
-            this.btnKopyala.BackColor = System.Drawing.Color.Silver;
-            this.btnKopyala.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btnKopyala.Location = new System.Drawing.Point(234, 267);
-            this.btnKopyala.Name = "btnKopyala";
-            this.btnKopyala.Size = new System.Drawing.Size(247, 44);
-            this.btnKopyala.TabIndex = 1;
-            this.btnKopyala.Text = "Seçilen Parolayı Panoya Kopyala";
-            this.btnKopyala.UseVisualStyleBackColor = false;
-            this.btnKopyala.Click += new System.EventHandler(this.btnKopyala_Click);
-            // 
-            // btnPanoTemizle
-            // 
-            this.btnPanoTemizle.BackColor = System.Drawing.Color.Silver;
-            this.btnPanoTemizle.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btnPanoTemizle.Location = new System.Drawing.Point(519, 267);
-            this.btnPanoTemizle.Name = "btnPanoTemizle";
-            this.btnPanoTemizle.Size = new System.Drawing.Size(234, 44);
-            this.btnPanoTemizle.TabIndex = 2;
-            this.btnPanoTemizle.Text = "Kopyalama Panosunu Temizle";
-            this.btnPanoTemizle.UseVisualStyleBackColor = false;
-            this.btnPanoTemizle.Click += new System.EventHandler(this.btnPanoTemizle_Click);
             // 
             // Form1
             // 
@@ -469,7 +469,7 @@ namespace Sifre_Tutma_Programi
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtGuncelleKullaniciAdi;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnPanoTemizle;
+        private System.Windows.Forms.Button btnKullaniciAdiniKopyala;
         private System.Windows.Forms.Button btnKopyala;
         private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.TextBox txtAra;

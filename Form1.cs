@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,11 +19,11 @@ namespace Sifre_Tutma_Programi
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private async void Form1_Load(object sender, EventArgs e)
         {
             txtSifre.UseSystemPasswordChar = true;
             txtGuncelleSifre.UseSystemPasswordChar = true;
-            Listele();
+            await Listele();
         }
 
         private void cbSifreGoster_CheckedChanged(object sender, EventArgs e)
@@ -39,24 +40,24 @@ namespace Sifre_Tutma_Programi
             }
         }
 
-        private void Listele()
+        private async Task Listele()
         {
             using (SifreEntities sifre = new SifreEntities())
             {
-                var liste = sifre.Sifrelers.ToList();
+                var liste = await sifre.Sifrelers.ToListAsync();
                 dgvDegerler.DataSource = liste;
             }
         }
 
-        private void Ara(string deger)
+        private async Task Ara(string deger)
         {
             using (SifreEntities sifreEntites = new SifreEntities())
             {
-                var sifre = sifreEntites.Sifrelers.AsNoTracking().Where(t => t.Ad.Contains(deger)).ToList();
+                var sifre = await sifreEntites.Sifrelers.AsNoTracking().Where(t => t.Ad.Contains(deger)).ToListAsync();
                 dgvDegerler.DataSource = sifre;
             }
         }
-        private void Ekle(string ad, string sifre, string kullaniciAdi)
+        private async Task Ekle(string ad, string sifre, string kullaniciAdi)
         {
             using (SifreEntities sifreEntites = new SifreEntities())
             {
@@ -68,27 +69,27 @@ namespace Sifre_Tutma_Programi
                     Olusturulma_Zamani = DateTime.Now,
                 };
                 sifreEntites.Sifrelers.Add(sifreler);
-                sifreEntites.SaveChanges();
-                Listele();
+                await sifreEntites.SaveChangesAsync();
+                await Listele();
                 MessageBox.Show("Şifre Kaydedildi", "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 EkleTextBoxlariTemizle();
             }
         }
-        private void btnSifreEkle_Click(object sender, EventArgs e)
+        private async void btnSifreEkle_Click(object sender, EventArgs e)
         {
-            if (txtAd.Text != "" && txtSifre.Text != "" && txtKullaniciAdi.Text!="")
+            if (txtAd.Text != "" && txtSifre.Text != "" && txtKullaniciAdi.Text != "")
             {
-                Ekle(txtAd.Text, txtSifre.Text , txtKullaniciAdi.Text);
+                await Ekle(txtAd.Text, txtSifre.Text, txtKullaniciAdi.Text);
             }
             else if (txtAd.Text == "")
             {
-                MessageBox.Show("Lütfen Sitenin Adını Boş Bırakmayınız","Hata",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Lütfen Sitenin Adını Boş Bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (txtSifre.Text == "")
             {
                 MessageBox.Show("Lütfen Şifreyi Boş Bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (txtKullaniciAdi.Text=="")
+            else if (txtKullaniciAdi.Text == "")
             {
                 MessageBox.Show("Lütfen Kullanıcı adı veya E-postayı boş bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -104,20 +105,20 @@ namespace Sifre_Tutma_Programi
             return id;
         }
 
-        private void txtAra_TextChanged(object sender, EventArgs e)
+        private async void txtAra_TextChanged(object sender, EventArgs e)
         {
-            Ara(txtAra.Text);
+            await Ara(txtAra.Text);
         }
-        private void Sil()
+        private async Task Sil()
         {
             int id = dgItemBul();
             if (id != 0)
             {
                 using (SifreEntities sifreEntites = new SifreEntities())
                 {
-                    sifreEntites.Sifrelers.Remove(sifreEntites.Sifrelers.Find(id));
-                    sifreEntites.SaveChanges();
-                    Listele();
+                    sifreEntites.Sifrelers.Remove(await sifreEntites.Sifrelers.FindAsync(id));
+                    await sifreEntites.SaveChangesAsync();
+                    await Listele();
                     MessageBox.Show("Silme işlemi başarılı", "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -127,16 +128,12 @@ namespace Sifre_Tutma_Programi
             }
 
         }
-        private void btnSil_Click(object sender, EventArgs e)
+        private async void btnSil_Click(object sender, EventArgs e)
         {
             DialogResult sonuc = MessageBox.Show("Seçilen Şifrenin Kaydını Silmek istediğinize Emin misiniz", "Şifre Kaydı Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (sonuc == DialogResult.Yes)
             {
-                Sil();
-            }
-            else
-            {
-                MessageBox.Show("İşlem Yapılmadı", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                await Sil();
             }
 
         }
@@ -154,7 +151,7 @@ namespace Sifre_Tutma_Programi
                 cbGoster.Text = "Göster";
             }
         }
-        private void Guncelle(string ad, string KullaniciAdi, string sifre)
+        private async Task Guncelle(string ad, string KullaniciAdi, string sifre)
         {
             using (SifreEntities db = new SifreEntities())
             {
@@ -166,8 +163,8 @@ namespace Sifre_Tutma_Programi
                     guncelle.Sifre = sifre;
                     guncelle.Kullanici_Adi_E_Posta = KullaniciAdi;
                     guncelle.Degistirme_Zamani = DateTime.Now;
-                    db.SaveChanges();
-                    Listele();
+                    await db.SaveChangesAsync();
+                    await Listele();
                     MessageBox.Show("İşlem Başarılı " + guncelle.Ad + " Adlı şifre güncellendi", "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     GuncelleTextBoxlariTemizle();
                 }
@@ -178,13 +175,13 @@ namespace Sifre_Tutma_Programi
             }
         }
 
-        private void btnSifreGuncelle_Click(object sender, EventArgs e)
+        private async void btnSifreGuncelle_Click(object sender, EventArgs e)
         {
-            if (txtGuncelleAdi.Text!="" && txtGuncelleKullaniciAdi.Text!="" && txtGuncelleSifre.Text!="")
+            if (txtGuncelleAdi.Text != "" && txtGuncelleKullaniciAdi.Text != "" && txtGuncelleSifre.Text != "")
             {
-                Guncelle(txtGuncelleAdi.Text, txtGuncelleKullaniciAdi.Text, txtGuncelleSifre.Text);
+                await Guncelle(txtGuncelleAdi.Text, txtGuncelleKullaniciAdi.Text, txtGuncelleSifre.Text);
             }
-            else if(txtGuncelleAdi.Text == "")
+            else if (txtGuncelleAdi.Text == "")
             {
                 MessageBox.Show("Lütfen Güncellenen Kaydın Adını Boş Bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -202,7 +199,7 @@ namespace Sifre_Tutma_Programi
         {
             txtGuncelleAdi.Text = dgvDegerler.CurrentRow.Cells[1].Value.ToString();
             txtGuncelleKullaniciAdi.Text = dgvDegerler.CurrentRow.Cells[2].Value.ToString();
-            txtGuncelleSifre.Text = dgvDegerler.CurrentRow.Cells[3].Value.ToString();            
+            txtGuncelleSifre.Text = dgvDegerler.CurrentRow.Cells[3].Value.ToString();
             txtZaman.Text = dgvDegerler.CurrentRow.Cells[4].Value.ToString();
         }
 
@@ -243,20 +240,28 @@ namespace Sifre_Tutma_Programi
             if (dgvDegerler.SelectedRows.Count > 0)
             {
                 Clipboard.SetText(dgvDegerler.CurrentRow.Cells[3].Value.ToString());
-                string cikti = string.Format("{0} Adlı Şifre Panoya Kopyalandı",dgvDegerler.CurrentRow.Cells[1].Value.ToString());
+                string cikti = string.Format("{0} Adlı Şifre Panoya Kopyalandı", dgvDegerler.CurrentRow.Cells[1].Value.ToString());
                 MessageBox.Show(cikti, "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Lütfen Kopyalanacak Şifreyi Seçiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lütfen Kopyalanacak Parolayı Seçiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
 
-        private void btnPanoTemizle_Click(object sender, EventArgs e)
+        private void btnKullaniciAdiniKopyala_Click(object sender, EventArgs e)
         {
-            Clipboard.Clear();
-            MessageBox.Show("Kopyalama Panosu Temizlendi", "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (dgvDegerler.SelectedRows.Count > 0)
+            {
+                Clipboard.SetText(dgvDegerler.CurrentRow.Cells[2].Value.ToString());
+                string cikti = string.Format("{0} Adlı Şifre Panoya Kopyalandı", dgvDegerler.CurrentRow.Cells[1].Value.ToString());
+                MessageBox.Show(cikti, "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Lütfen Kopyalanacak Parolayı Seçiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

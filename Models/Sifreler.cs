@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Sifre_Tutma_Programi.Models
+namespace Parola_Yoneticisi.Models
 {
     using System;
     using System.Collections.Generic;

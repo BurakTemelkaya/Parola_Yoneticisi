@@ -31,18 +31,18 @@ namespace Sifre_Tutma_Programi
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
-            this.txtAd = new System.Windows.Forms.TextBox();
-            this.txtSifre = new System.Windows.Forms.TextBox();
+            this.TxtAd = new System.Windows.Forms.TextBox();
+            this.TxtSifre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtKullaniciAdi = new System.Windows.Forms.TextBox();
+            this.TxtKullaniciAdi = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnEkleTemizle = new System.Windows.Forms.Button();
-            this.btnSifreEkle = new System.Windows.Forms.Button();
+            this.BtnEkleTemizle = new System.Windows.Forms.Button();
+            this.BtnSifreEkle = new System.Windows.Forms.Button();
             this.cbSifreGoster = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnKullaniciAdiniKopyala = new System.Windows.Forms.Button();
-            this.btnKopyala = new System.Windows.Forms.Button();
+            this.BtnKullaniciAdiniKopyala = new System.Windows.Forms.Button();
+            this.BtnKopyala = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtGuncelleKullaniciAdi = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -50,19 +50,19 @@ namespace Sifre_Tutma_Programi
             this.txtZaman = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnSifreGuncelle = new System.Windows.Forms.Button();
-            this.cbGoster = new System.Windows.Forms.CheckBox();
+            this.CbGoster = new System.Windows.Forms.CheckBox();
             this.txtGuncelleAdi = new System.Windows.Forms.TextBox();
             this.txtGuncelleSifre = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnSil = new System.Windows.Forms.Button();
+            this.BtnSil = new System.Windows.Forms.Button();
             this.txtAra = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dgvDegerler = new System.Windows.Forms.DataGridView();
+            this.DgvDegerler = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDegerler)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvDegerler)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -76,25 +76,25 @@ namespace Sifre_Tutma_Programi
             this.label1.TabIndex = 0;
             this.label1.Text = "Şifrenin Adı";
             // 
-            // txtAd
+            // TxtAd
             // 
-            this.txtAd.BackColor = System.Drawing.Color.Silver;
-            this.txtAd.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtAd.Location = new System.Drawing.Point(45, 61);
-            this.txtAd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtAd.Name = "txtAd";
-            this.txtAd.Size = new System.Drawing.Size(203, 26);
-            this.txtAd.TabIndex = 1;
+            this.TxtAd.BackColor = System.Drawing.Color.Silver;
+            this.TxtAd.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.TxtAd.Location = new System.Drawing.Point(45, 61);
+            this.TxtAd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtAd.Name = "TxtAd";
+            this.TxtAd.Size = new System.Drawing.Size(203, 26);
+            this.TxtAd.TabIndex = 1;
             // 
-            // txtSifre
+            // TxtSifre
             // 
-            this.txtSifre.BackColor = System.Drawing.Color.Silver;
-            this.txtSifre.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtSifre.Location = new System.Drawing.Point(45, 221);
-            this.txtSifre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtSifre.Name = "txtSifre";
-            this.txtSifre.Size = new System.Drawing.Size(203, 26);
-            this.txtSifre.TabIndex = 3;
+            this.TxtSifre.BackColor = System.Drawing.Color.Silver;
+            this.TxtSifre.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.TxtSifre.Location = new System.Drawing.Point(45, 221);
+            this.TxtSifre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtSifre.Name = "TxtSifre";
+            this.TxtSifre.Size = new System.Drawing.Size(203, 26);
+            this.TxtSifre.TabIndex = 3;
             // 
             // label2
             // 
@@ -110,13 +110,13 @@ namespace Sifre_Tutma_Programi
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.DimGray;
-            this.groupBox1.Controls.Add(this.txtKullaniciAdi);
+            this.groupBox1.Controls.Add(this.TxtKullaniciAdi);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.btnEkleTemizle);
-            this.groupBox1.Controls.Add(this.btnSifreEkle);
+            this.groupBox1.Controls.Add(this.BtnEkleTemizle);
+            this.groupBox1.Controls.Add(this.BtnSifreEkle);
             this.groupBox1.Controls.Add(this.cbSifreGoster);
-            this.groupBox1.Controls.Add(this.txtAd);
-            this.groupBox1.Controls.Add(this.txtSifre);
+            this.groupBox1.Controls.Add(this.TxtAd);
+            this.groupBox1.Controls.Add(this.TxtSifre);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -127,15 +127,15 @@ namespace Sifre_Tutma_Programi
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Şifre Ekleme";
             // 
-            // txtKullaniciAdi
+            // TxtKullaniciAdi
             // 
-            this.txtKullaniciAdi.BackColor = System.Drawing.Color.Silver;
-            this.txtKullaniciAdi.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtKullaniciAdi.Location = new System.Drawing.Point(45, 147);
-            this.txtKullaniciAdi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtKullaniciAdi.Name = "txtKullaniciAdi";
-            this.txtKullaniciAdi.Size = new System.Drawing.Size(203, 26);
-            this.txtKullaniciAdi.TabIndex = 2;
+            this.TxtKullaniciAdi.BackColor = System.Drawing.Color.Silver;
+            this.TxtKullaniciAdi.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.TxtKullaniciAdi.Location = new System.Drawing.Point(45, 147);
+            this.TxtKullaniciAdi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtKullaniciAdi.Name = "TxtKullaniciAdi";
+            this.TxtKullaniciAdi.Size = new System.Drawing.Size(203, 26);
+            this.TxtKullaniciAdi.TabIndex = 2;
             // 
             // label7
             // 
@@ -148,29 +148,29 @@ namespace Sifre_Tutma_Programi
             this.label7.TabIndex = 7;
             this.label7.Text = "Kullanıcı Adı / E-Posta";
             // 
-            // btnEkleTemizle
+            // BtnEkleTemizle
             // 
-            this.btnEkleTemizle.BackColor = System.Drawing.Color.Silver;
-            this.btnEkleTemizle.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btnEkleTemizle.Location = new System.Drawing.Point(205, 275);
-            this.btnEkleTemizle.Name = "btnEkleTemizle";
-            this.btnEkleTemizle.Size = new System.Drawing.Size(115, 31);
-            this.btnEkleTemizle.TabIndex = 5;
-            this.btnEkleTemizle.Text = "Temizle";
-            this.btnEkleTemizle.UseVisualStyleBackColor = false;
-            this.btnEkleTemizle.Click += new System.EventHandler(this.btnEkleTemizle_Click);
+            this.BtnEkleTemizle.BackColor = System.Drawing.Color.Silver;
+            this.BtnEkleTemizle.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.BtnEkleTemizle.Location = new System.Drawing.Point(205, 275);
+            this.BtnEkleTemizle.Name = "BtnEkleTemizle";
+            this.BtnEkleTemizle.Size = new System.Drawing.Size(115, 31);
+            this.BtnEkleTemizle.TabIndex = 5;
+            this.BtnEkleTemizle.Text = "Temizle";
+            this.BtnEkleTemizle.UseVisualStyleBackColor = false;
+            this.BtnEkleTemizle.Click += new System.EventHandler(this.BtnEkleTemizle_Click);
             // 
-            // btnSifreEkle
+            // BtnSifreEkle
             // 
-            this.btnSifreEkle.BackColor = System.Drawing.Color.Silver;
-            this.btnSifreEkle.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btnSifreEkle.Location = new System.Drawing.Point(45, 275);
-            this.btnSifreEkle.Name = "btnSifreEkle";
-            this.btnSifreEkle.Size = new System.Drawing.Size(115, 31);
-            this.btnSifreEkle.TabIndex = 4;
-            this.btnSifreEkle.Text = "Parola Ekle";
-            this.btnSifreEkle.UseVisualStyleBackColor = false;
-            this.btnSifreEkle.Click += new System.EventHandler(this.btnSifreEkle_Click);
+            this.BtnSifreEkle.BackColor = System.Drawing.Color.Silver;
+            this.BtnSifreEkle.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.BtnSifreEkle.Location = new System.Drawing.Point(45, 275);
+            this.BtnSifreEkle.Name = "BtnSifreEkle";
+            this.BtnSifreEkle.Size = new System.Drawing.Size(115, 31);
+            this.BtnSifreEkle.TabIndex = 4;
+            this.BtnSifreEkle.Text = "Parola Ekle";
+            this.BtnSifreEkle.UseVisualStyleBackColor = false;
+            this.BtnSifreEkle.Click += new System.EventHandler(this.BtnSifreEkle_Click);
             // 
             // cbSifreGoster
             // 
@@ -182,19 +182,19 @@ namespace Sifre_Tutma_Programi
             this.cbSifreGoster.TabIndex = 4;
             this.cbSifreGoster.Text = "Göster";
             this.cbSifreGoster.UseVisualStyleBackColor = true;
-            this.cbSifreGoster.CheckedChanged += new System.EventHandler(this.cbSifreGoster_CheckedChanged);
+            this.cbSifreGoster.CheckedChanged += new System.EventHandler(this.CbSifreGoster_CheckedChanged);
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Gray;
-            this.groupBox2.Controls.Add(this.btnKullaniciAdiniKopyala);
-            this.groupBox2.Controls.Add(this.btnKopyala);
+            this.groupBox2.Controls.Add(this.BtnKullaniciAdiniKopyala);
+            this.groupBox2.Controls.Add(this.BtnKopyala);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.groupBox1);
-            this.groupBox2.Controls.Add(this.btnSil);
+            this.groupBox2.Controls.Add(this.BtnSil);
             this.groupBox2.Controls.Add(this.txtAra);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.dgvDegerler);
+            this.groupBox2.Controls.Add(this.DgvDegerler);
             this.groupBox2.Location = new System.Drawing.Point(77, 6);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1038, 685);
@@ -202,29 +202,29 @@ namespace Sifre_Tutma_Programi
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Şifreleri Görüntüle";
             // 
-            // btnKullaniciAdiniKopyala
+            // BtnKullaniciAdiniKopyala
             // 
-            this.btnKullaniciAdiniKopyala.BackColor = System.Drawing.Color.Silver;
-            this.btnKullaniciAdiniKopyala.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btnKullaniciAdiniKopyala.Location = new System.Drawing.Point(505, 267);
-            this.btnKullaniciAdiniKopyala.Name = "btnKullaniciAdiniKopyala";
-            this.btnKullaniciAdiniKopyala.Size = new System.Drawing.Size(270, 44);
-            this.btnKullaniciAdiniKopyala.TabIndex = 2;
-            this.btnKullaniciAdiniKopyala.Text = "Kullanıcı Adı / E Postayı Kopyala";
-            this.btnKullaniciAdiniKopyala.UseVisualStyleBackColor = false;
-            this.btnKullaniciAdiniKopyala.Click += new System.EventHandler(this.btnKullaniciAdiniKopyala_Click);
+            this.BtnKullaniciAdiniKopyala.BackColor = System.Drawing.Color.Silver;
+            this.BtnKullaniciAdiniKopyala.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.BtnKullaniciAdiniKopyala.Location = new System.Drawing.Point(505, 267);
+            this.BtnKullaniciAdiniKopyala.Name = "BtnKullaniciAdiniKopyala";
+            this.BtnKullaniciAdiniKopyala.Size = new System.Drawing.Size(270, 44);
+            this.BtnKullaniciAdiniKopyala.TabIndex = 2;
+            this.BtnKullaniciAdiniKopyala.Text = "Kullanıcı Adı / E Postayı Kopyala";
+            this.BtnKullaniciAdiniKopyala.UseVisualStyleBackColor = false;
+            this.BtnKullaniciAdiniKopyala.Click += new System.EventHandler(this.btnKullaniciAdiniKopyala_Click);
             // 
-            // btnKopyala
+            // BtnKopyala
             // 
-            this.btnKopyala.BackColor = System.Drawing.Color.Silver;
-            this.btnKopyala.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btnKopyala.Location = new System.Drawing.Point(234, 267);
-            this.btnKopyala.Name = "btnKopyala";
-            this.btnKopyala.Size = new System.Drawing.Size(247, 44);
-            this.btnKopyala.TabIndex = 1;
-            this.btnKopyala.Text = "Seçilen Parolayı Panoya Kopyala";
-            this.btnKopyala.UseVisualStyleBackColor = false;
-            this.btnKopyala.Click += new System.EventHandler(this.btnKopyala_Click);
+            this.BtnKopyala.BackColor = System.Drawing.Color.Silver;
+            this.BtnKopyala.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.BtnKopyala.Location = new System.Drawing.Point(234, 267);
+            this.BtnKopyala.Name = "BtnKopyala";
+            this.BtnKopyala.Size = new System.Drawing.Size(247, 44);
+            this.BtnKopyala.TabIndex = 1;
+            this.BtnKopyala.Text = "Seçilen Parolayı Panoya Kopyala";
+            this.BtnKopyala.UseVisualStyleBackColor = false;
+            this.BtnKopyala.Click += new System.EventHandler(this.BtnKopyala_Click);
             // 
             // groupBox3
             // 
@@ -235,7 +235,7 @@ namespace Sifre_Tutma_Programi
             this.groupBox3.Controls.Add(this.txtZaman);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.btnSifreGuncelle);
-            this.groupBox3.Controls.Add(this.cbGoster);
+            this.groupBox3.Controls.Add(this.CbGoster);
             this.groupBox3.Controls.Add(this.txtGuncelleAdi);
             this.groupBox3.Controls.Add(this.txtGuncelleSifre);
             this.groupBox3.Controls.Add(this.label4);
@@ -279,7 +279,7 @@ namespace Sifre_Tutma_Programi
             this.btnGuncelleTemizle.TabIndex = 6;
             this.btnGuncelleTemizle.Text = "Temizle";
             this.btnGuncelleTemizle.UseVisualStyleBackColor = false;
-            this.btnGuncelleTemizle.Click += new System.EventHandler(this.btnGuncelleTemizle_Click);
+            this.btnGuncelleTemizle.Click += new System.EventHandler(this.BtnGuncelleTemizle_Click);
             // 
             // txtZaman
             // 
@@ -312,19 +312,19 @@ namespace Sifre_Tutma_Programi
             this.btnSifreGuncelle.TabIndex = 5;
             this.btnSifreGuncelle.Text = "Parolayı Güncelle";
             this.btnSifreGuncelle.UseVisualStyleBackColor = false;
-            this.btnSifreGuncelle.Click += new System.EventHandler(this.btnSifreGuncelle_Click);
+            this.btnSifreGuncelle.Click += new System.EventHandler(this.BtnSifreGuncelle_Click);
             // 
-            // cbGoster
+            // CbGoster
             // 
-            this.cbGoster.AutoSize = true;
-            this.cbGoster.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.cbGoster.Location = new System.Drawing.Point(97, 221);
-            this.cbGoster.Name = "cbGoster";
-            this.cbGoster.Size = new System.Drawing.Size(77, 24);
-            this.cbGoster.TabIndex = 4;
-            this.cbGoster.Text = "Göster";
-            this.cbGoster.UseVisualStyleBackColor = true;
-            this.cbGoster.CheckedChanged += new System.EventHandler(this.cbGoster_CheckedChanged);
+            this.CbGoster.AutoSize = true;
+            this.CbGoster.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.CbGoster.Location = new System.Drawing.Point(97, 221);
+            this.CbGoster.Name = "CbGoster";
+            this.CbGoster.Size = new System.Drawing.Size(77, 24);
+            this.CbGoster.TabIndex = 4;
+            this.CbGoster.Text = "Göster";
+            this.CbGoster.UseVisualStyleBackColor = true;
+            this.CbGoster.CheckedChanged += new System.EventHandler(this.CbGoster_CheckedChanged);
             // 
             // txtGuncelleAdi
             // 
@@ -368,17 +368,17 @@ namespace Sifre_Tutma_Programi
             this.label5.TabIndex = 2;
             this.label5.Text = "Şifre";
             // 
-            // btnSil
+            // BtnSil
             // 
-            this.btnSil.BackColor = System.Drawing.Color.Silver;
-            this.btnSil.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btnSil.Location = new System.Drawing.Point(795, 267);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(174, 44);
-            this.btnSil.TabIndex = 3;
-            this.btnSil.Text = "Seçilen Parolayı Sİl";
-            this.btnSil.UseVisualStyleBackColor = false;
-            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
+            this.BtnSil.BackColor = System.Drawing.Color.Silver;
+            this.BtnSil.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.BtnSil.Location = new System.Drawing.Point(795, 267);
+            this.BtnSil.Name = "BtnSil";
+            this.BtnSil.Size = new System.Drawing.Size(174, 44);
+            this.BtnSil.TabIndex = 3;
+            this.BtnSil.Text = "Seçilen Parolayı Sİl";
+            this.BtnSil.UseVisualStyleBackColor = false;
+            this.BtnSil.Click += new System.EventHandler(this.BtnSil_Click);
             // 
             // txtAra
             // 
@@ -389,7 +389,7 @@ namespace Sifre_Tutma_Programi
             this.txtAra.Name = "txtAra";
             this.txtAra.Size = new System.Drawing.Size(155, 26);
             this.txtAra.TabIndex = 3;
-            this.txtAra.TextChanged += new System.EventHandler(this.txtAra_TextChanged);
+            this.txtAra.TextChanged += new System.EventHandler(this.TxtAra_TextChanged);
             // 
             // label3
             // 
@@ -402,21 +402,21 @@ namespace Sifre_Tutma_Programi
             this.label3.TabIndex = 2;
             this.label3.Text = "Ada Göre Parola Ara";
             // 
-            // dgvDegerler
+            // DgvDegerler
             // 
-            this.dgvDegerler.AllowUserToAddRows = false;
-            this.dgvDegerler.AllowUserToDeleteRows = false;
-            this.dgvDegerler.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvDegerler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDegerler.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dgvDegerler.Location = new System.Drawing.Point(39, 25);
-            this.dgvDegerler.MultiSelect = false;
-            this.dgvDegerler.Name = "dgvDegerler";
-            this.dgvDegerler.ReadOnly = true;
-            this.dgvDegerler.Size = new System.Drawing.Size(930, 221);
-            this.dgvDegerler.TabIndex = 0;
-            this.dgvDegerler.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDegerler_CellDoubleClick);
-            this.dgvDegerler.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDegerler_CellFormatting);
+            this.DgvDegerler.AllowUserToAddRows = false;
+            this.DgvDegerler.AllowUserToDeleteRows = false;
+            this.DgvDegerler.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DgvDegerler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvDegerler.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.DgvDegerler.Location = new System.Drawing.Point(39, 25);
+            this.DgvDegerler.MultiSelect = false;
+            this.DgvDegerler.Name = "DgvDegerler";
+            this.DgvDegerler.ReadOnly = true;
+            this.DgvDegerler.Size = new System.Drawing.Size(930, 221);
+            this.DgvDegerler.TabIndex = 0;
+            this.DgvDegerler.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDegerler_CellClick);
+            this.DgvDegerler.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DgvDegerler_CellFormatting);
             // 
             // Form1
             // 
@@ -439,7 +439,7 @@ namespace Sifre_Tutma_Programi
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDegerler)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvDegerler)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -447,34 +447,34 @@ namespace Sifre_Tutma_Programi
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtAd;
-        private System.Windows.Forms.TextBox txtSifre;
+        private System.Windows.Forms.TextBox TxtAd;
+        private System.Windows.Forms.TextBox TxtSifre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox cbSifreGoster;
-        private System.Windows.Forms.Button btnSifreEkle;
+        private System.Windows.Forms.Button BtnSifreEkle;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnSifreGuncelle;
-        private System.Windows.Forms.CheckBox cbGoster;
+        private System.Windows.Forms.CheckBox CbGoster;
         private System.Windows.Forms.TextBox txtGuncelleAdi;
         private System.Windows.Forms.TextBox txtGuncelleSifre;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtZaman;
-        private System.Windows.Forms.Button btnEkleTemizle;
+        private System.Windows.Forms.Button BtnEkleTemizle;
         private System.Windows.Forms.Button btnGuncelleTemizle;
-        private System.Windows.Forms.TextBox txtKullaniciAdi;
+        private System.Windows.Forms.TextBox TxtKullaniciAdi;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtGuncelleKullaniciAdi;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnKullaniciAdiniKopyala;
-        private System.Windows.Forms.Button btnKopyala;
-        private System.Windows.Forms.Button btnSil;
+        private System.Windows.Forms.Button BtnKullaniciAdiniKopyala;
+        private System.Windows.Forms.Button BtnKopyala;
+        private System.Windows.Forms.Button BtnSil;
         private System.Windows.Forms.TextBox txtAra;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dgvDegerler;
+        private System.Windows.Forms.DataGridView DgvDegerler;
     }
 }
 

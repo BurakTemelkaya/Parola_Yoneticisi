@@ -26,5 +26,6 @@ namespace Parola_Yoneticisi.Models
         }
     
         public virtual DbSet<Sifreler> Sifrelers { get; set; }
+        public virtual DbSet<Table> Tables { get; set; }
     }
 }

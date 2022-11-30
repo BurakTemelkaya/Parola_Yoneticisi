@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Parola_Yoneticisi;
 using Parola_Yoneticisi.Models;
 
 namespace Sifre_Tutma_Programi
@@ -18,7 +19,7 @@ namespace Sifre_Tutma_Programi
         {
             InitializeComponent();
         }
-
+        static string key = "123";
         private async void Form1_Load(object sender, EventArgs e)
         {
             TxtSifre.UseSystemPasswordChar = true;
@@ -64,7 +65,7 @@ namespace Sifre_Tutma_Programi
                 Sifreler sifreler = new Sifreler
                 {
                     Ad = ad,
-                    Sifre = sifre,
+                    Sifre = await PasswordCrypto.EncryptAsync(key, sifre),
                     Kullanici_Adi_E_Posta = kullaniciAdi,
                     Olusturulma_Zamani = DateTime.Now,
                 };
@@ -162,7 +163,7 @@ namespace Sifre_Tutma_Programi
                 {
                     var guncelle = db.Sifrelers.Where(w => w.SifreID == ID).FirstOrDefault();
                     guncelle.Ad = ad;
-                    guncelle.Sifre = sifre;
+                    guncelle.Sifre = await PasswordCrypto.EncryptAsync(key, sifre);
                     guncelle.Kullanici_Adi_E_Posta = KullaniciAdi;
                     guncelle.Degistirme_Zamani = DateTime.Now;
                     await db.SaveChangesAsync();
@@ -223,11 +224,11 @@ namespace Sifre_Tutma_Programi
 
         private void BtnGuncelleTemizle_Click(object sender, EventArgs e) => GuncelleTextBoxlariTemizle();
 
-        private void BtnKopyala_Click(object sender, EventArgs e)
+        private async void BtnKopyala_Click(object sender, EventArgs e)
         {
             try
             {
-                Clipboard.SetText(DgvDegerler.CurrentRow.Cells[3].Value.ToString());
+                Clipboard.SetText(await PasswordCrypto.DecryptAsync(key, DgvDegerler.CurrentRow.Cells[3].Value.ToString()));
             }
             catch
             {
@@ -254,11 +255,11 @@ namespace Sifre_Tutma_Programi
             MessageBox.Show(cikti, "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void DgvDegerler_CellClick(object sender, DataGridViewCellEventArgs e)
+        private async void DgvDegerler_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtGuncelleAdi.Text = DgvDegerler.CurrentRow.Cells[1].Value.ToString();
             txtGuncelleKullaniciAdi.Text = DgvDegerler.CurrentRow.Cells[2].Value.ToString();
-            txtGuncelleSifre.Text = DgvDegerler.CurrentRow.Cells[3].Value.ToString();
+            txtGuncelleSifre.Text = await PasswordCrypto.DecryptAsync(key, DgvDegerler.CurrentRow.Cells[3].Value.ToString());
             txtZaman.Text = DgvDegerler.CurrentRow.Cells[4].Value.ToString();
         }
     }

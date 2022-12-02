@@ -19,88 +19,93 @@ namespace Sifre_Tutma_Programi
         {
             InitializeComponent();
         }
-        static string key = "123";
+        public static string Key;
         private async void Form1_Load(object sender, EventArgs e)
         {
-            TxtSifre.UseSystemPasswordChar = true;
-            txtGuncelleSifre.UseSystemPasswordChar = true;
-            await Listele();
+            TxtPasswordForAdd.UseSystemPasswordChar = true;
+            TxtPasswordForUpdate.UseSystemPasswordChar = true;
+            await ListAsync();
         }
 
-        private void CbSifreGoster_CheckedChanged(object sender, EventArgs e)
+        private void CbShowPassword_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbSifreGoster.Checked)
+            if (cbPasswordShofForAdd.Checked)
             {
-                TxtSifre.UseSystemPasswordChar = false;
-                cbSifreGoster.Text = "Gizle";
+                TxtPasswordForAdd.UseSystemPasswordChar = false;
+                cbPasswordShofForAdd.Text = "Gizle";
             }
             else
             {
-                TxtSifre.UseSystemPasswordChar = true;
-                cbSifreGoster.Text = "Göster";
+                TxtPasswordForAdd.UseSystemPasswordChar = true;
+                cbPasswordShofForAdd.Text = "Göster";
             }
         }
 
-        private async Task Listele()
+        private async Task ListAsync()
         {
-            using (SifreEntities sifre = new SifreEntities())
+            using (SifreEntities passwordEntites = new SifreEntities())
             {
-                var liste = await sifre.Sifrelers.ToListAsync();
-                DgvDegerler.DataSource = liste;
+                var values = await passwordEntites.Passwords.ToListAsync();
+                DgvValues.DataSource = values;
             }
+            DgvValues.Columns[3].Visible = false;
+            DgvValues.Columns[1].HeaderText = "İsmi";
+            DgvValues.Columns[2].HeaderText = "Kullanıcı Adı";
+            DgvValues.Columns[4].HeaderText = "Oluşturulma Zamanı";
+            DgvValues.Columns[5].HeaderText = "Güncelleme Zamanı";
         }
 
-        private async Task Ara(string deger)
+        private async Task SearchAsync(string deger)
         {
-            using (SifreEntities sifreEntites = new SifreEntities())
+            using (SifreEntities passwordEntites = new SifreEntities())
             {
-                var sifre = await sifreEntites.Sifrelers.AsNoTracking().Where(t => t.Ad.Contains(deger)).ToListAsync();
-                DgvDegerler.DataSource = sifre;
+                var password = await passwordEntites.Passwords.AsNoTracking().Where(t => t.Name.ToLower().Contains(deger.ToLower())).ToListAsync();
+                DgvValues.DataSource = password;
             }
         }
-        private async Task Ekle(string ad, string sifre, string kullaniciAdi)
+        private async Task AddAsync(string name, string password, string userName)
         {
-            using (SifreEntities sifreEntites = new SifreEntities())
+            using (SifreEntities passwordEntites = new SifreEntities())
             {
-                Sifreler sifreler = new Sifreler
+                Passwords value = new Passwords
                 {
-                    Ad = ad,
-                    Sifre = await PasswordCrypto.EncryptAsync(key, sifre),
-                    Kullanici_Adi_E_Posta = kullaniciAdi,
-                    Olusturulma_Zamani = DateTime.Now,
+                    Name = name,
+                    Password = await PasswordCrypto.EncryptAsync(Key, password),
+                    UserName = userName,
+                    CreateDate = DateTime.Now,
                 };
-                sifreEntites.Sifrelers.Add(sifreler);
-                await sifreEntites.SaveChangesAsync();
-                await Listele();
+                passwordEntites.Passwords.Add(value);
+                await passwordEntites.SaveChangesAsync();
+                await ListAsync();
                 MessageBox.Show("Şifre Kaydedildi", "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                EkleTextBoxlariTemizle();
+                TextBoxClearForAdd();
             }
         }
-        private async void BtnSifreEkle_Click(object sender, EventArgs e)
+        private async void BtnPasswordAdd_Click(object sender, EventArgs e)
         {
-            if (TxtAd.Text != "" && TxtSifre.Text != "" && TxtKullaniciAdi.Text != "")
+            if (TxtPasswordNameForAdd.Text != "" && TxtPasswordForAdd.Text != "" && TxtUserNameForAdd.Text != "")
             {
-                await Ekle(TxtAd.Text, TxtSifre.Text, TxtKullaniciAdi.Text);
+                await AddAsync(TxtPasswordNameForAdd.Text, TxtPasswordForAdd.Text, TxtUserNameForAdd.Text);
             }
-            else if (TxtAd.Text == "")
+            else if (TxtPasswordNameForAdd.Text == "")
             {
                 MessageBox.Show("Lütfen Sitenin Adını Boş Bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (TxtSifre.Text == "")
+            else if (TxtPasswordForAdd.Text == "")
             {
                 MessageBox.Show("Lütfen Şifreyi Boş Bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (TxtKullaniciAdi.Text == "")
+            else if (TxtUserNameForAdd.Text == "")
             {
                 MessageBox.Show("Lütfen Kullanıcı adı veya E-postayı boş bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private int DgItemBul()
+        private int DgFindItem()
         {
             try
             {
-                return Convert.ToInt32(DgvDegerler.SelectedRows[0].Cells[0].Value);
+                return Convert.ToInt32(DgvValues.SelectedRows[0].Cells[0].Value);
             }
             catch
             {
@@ -108,20 +113,20 @@ namespace Sifre_Tutma_Programi
             }
         }
 
-        private async void TxtAra_TextChanged(object sender, EventArgs e)
+        private async void TxtSearch_TextChanged(object sender, EventArgs e)
         {
-            await Ara(txtAra.Text);
+            await SearchAsync(txtSearch.Text);
         }
-        private async Task Sil()
+        private async Task DeleteAsync()
         {
-            int id = DgItemBul();
+            int id = DgFindItem();
             if (id != 0)
             {
-                using (SifreEntities sifreEntites = new SifreEntities())
+                using (SifreEntities passwordEntites = new SifreEntities())
                 {
-                    sifreEntites.Sifrelers.Remove(await sifreEntites.Sifrelers.FindAsync(id));
-                    await sifreEntites.SaveChangesAsync();
-                    await Listele();
+                    passwordEntites.Passwords.Remove(await passwordEntites.Passwords.FindAsync(id));
+                    await passwordEntites.SaveChangesAsync();
+                    await ListAsync();
                     MessageBox.Show("Silme işlemi başarılı", "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -131,45 +136,45 @@ namespace Sifre_Tutma_Programi
             }
 
         }
-        private async void BtnSil_Click(object sender, EventArgs e)
+        private async void BtnDelete_Click(object sender, EventArgs e)
         {
             DialogResult sonuc = MessageBox.Show("Seçilen Şifrenin Kaydını Silmek istediğinize Emin misiniz", "Şifre Kaydı Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (sonuc == DialogResult.Yes)
             {
-                await Sil();
+                await DeleteAsync();
             }
 
         }
 
-        private void CbGoster_CheckedChanged(object sender, EventArgs e)
+        private void CbShow_CheckedChanged(object sender, EventArgs e)
         {
-            if (CbGoster.Checked)
+            if (CbShowForUpdate.Checked)
             {
-                txtGuncelleSifre.UseSystemPasswordChar = false;
-                CbGoster.Text = "Gizle";
+                TxtPasswordForUpdate.UseSystemPasswordChar = false;
+                CbShowForUpdate.Text = "Gizle";
             }
             else
             {
-                txtGuncelleSifre.UseSystemPasswordChar = true;
-                CbGoster.Text = "Göster";
+                TxtPasswordForUpdate.UseSystemPasswordChar = true;
+                CbShowForUpdate.Text = "Göster";
             }
         }
-        private async Task Guncelle(string ad, string KullaniciAdi, string sifre)
+        private async Task UpdateAsync(string name, string userName, string password)
         {
-            using (SifreEntities db = new SifreEntities())
+            using (SifreEntities passwordEntites = new SifreEntities())
             {
-                int ID = DgItemBul();
+                int ID = DgFindItem();
                 if (ID > 0)
                 {
-                    var guncelle = db.Sifrelers.Where(w => w.SifreID == ID).FirstOrDefault();
-                    guncelle.Ad = ad;
-                    guncelle.Sifre = await PasswordCrypto.EncryptAsync(key, sifre);
-                    guncelle.Kullanici_Adi_E_Posta = KullaniciAdi;
-                    guncelle.Degistirme_Zamani = DateTime.Now;
-                    await db.SaveChangesAsync();
-                    await Listele();
-                    MessageBox.Show("İşlem Başarılı " + guncelle.Ad + " Adlı şifre güncellendi", "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    GuncelleTextBoxlariTemizle();
+                    var value = await passwordEntites.Passwords.Where(w => w.Id == ID).FirstOrDefaultAsync();
+                    value.Name = name;
+                    value.Password = await PasswordCrypto.EncryptAsync(Key, password);
+                    value.UserName = userName;
+                    value.UpdateDate = DateTime.Now;
+                    await passwordEntites.SaveChangesAsync();
+                    await ListAsync();
+                    MessageBox.Show("İşlem Başarılı " + value.Name + " Adlı şifre güncellendi", "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    TextBoxClearForUpdate();
                 }
                 else
                 {
@@ -180,36 +185,36 @@ namespace Sifre_Tutma_Programi
 
         private async void BtnSifreGuncelle_Click(object sender, EventArgs e)
         {
-            if (txtGuncelleAdi.Text != "" && txtGuncelleKullaniciAdi.Text != "" && txtGuncelleSifre.Text != "")
+            if (TxtNameForUpdate.Text != "" && txtUserNameForUpdate.Text != "" && TxtPasswordForUpdate.Text != "")
             {
-                await Guncelle(txtGuncelleAdi.Text, txtGuncelleKullaniciAdi.Text, txtGuncelleSifre.Text);
+                await UpdateAsync(TxtNameForUpdate.Text, txtUserNameForUpdate.Text, TxtPasswordForUpdate.Text);
             }
-            else if (txtGuncelleAdi.Text == "")
+            else if (TxtNameForUpdate.Text == "")
             {
                 MessageBox.Show("Lütfen Güncellenen Kaydın Adını Boş Bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (txtGuncelleKullaniciAdi.Text == "")
+            else if (txtUserNameForUpdate.Text == "")
             {
                 MessageBox.Show("Lütfen Güncellenen Kaydın Kullanıcı Adını veya E-Postasını boş bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (TxtSifre.Text == "")
+            else if (TxtPasswordForAdd.Text == "")
             {
                 MessageBox.Show("Lütfen Güncellenen Kaydın Şifresini boş bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void EkleTextBoxlariTemizle()
+        private void TextBoxClearForAdd()
         {
-            TxtAd.Clear();
-            TxtSifre.Clear();
-            TxtKullaniciAdi.Clear();
+            TxtPasswordNameForAdd.Clear();
+            TxtPasswordForAdd.Clear();
+            TxtUserNameForAdd.Clear();
         }
-        private void GuncelleTextBoxlariTemizle()
+        private void TextBoxClearForUpdate()
         {
-            txtGuncelleAdi.Clear();
-            txtGuncelleSifre.Clear();
-            txtGuncelleKullaniciAdi.Clear();
-            txtZaman.Clear();
+            TxtNameForUpdate.Clear();
+            TxtPasswordForUpdate.Clear();
+            txtUserNameForUpdate.Clear();
+            TxtCreateDateForUpdate.Clear();
         }
 
         private void DgvDegerler_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -220,47 +225,52 @@ namespace Sifre_Tutma_Programi
             }
         }
 
-        private void BtnEkleTemizle_Click(object sender, EventArgs e) => EkleTextBoxlariTemizle();
+        private void BtnClearForAdd_Click(object sender, EventArgs e) => TextBoxClearForAdd();
 
-        private void BtnGuncelleTemizle_Click(object sender, EventArgs e) => GuncelleTextBoxlariTemizle();
+        private void BtnClearForUpdate_Click(object sender, EventArgs e) => TextBoxClearForUpdate();
 
-        private async void BtnKopyala_Click(object sender, EventArgs e)
+        private async void BtnCopy_Click(object sender, EventArgs e)
         {
             try
             {
-                Clipboard.SetText(await PasswordCrypto.DecryptAsync(key, DgvDegerler.CurrentRow.Cells[3].Value.ToString()));
+                Clipboard.SetText(await PasswordCrypto.DecryptAsync(Key, DgvValues.CurrentRow.Cells[3].Value.ToString()));
             }
             catch
             {
                 MessageBox.Show("Lütfen Kopyalanacak Parolayı Seçiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            string cikti = string.Format("{0} Adlı Şifre Panoya Kopyalandı", DgvDegerler.CurrentRow.Cells[1].Value.ToString());
-            MessageBox.Show(cikti, "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string output = string.Format("{0} Adlı Şifre Panoya Kopyalandı", DgvValues.CurrentRow.Cells[1].Value.ToString());
+            MessageBox.Show(output, "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
-        private void btnKullaniciAdiniKopyala_Click(object sender, EventArgs e)
+        private void btnCopyUserName_Click(object sender, EventArgs e)
         {
             try
             {
-                Clipboard.SetText(DgvDegerler.CurrentRow.Cells[2].Value.ToString());
+                Clipboard.SetText(DgvValues.CurrentRow.Cells[2].Value.ToString());
             }
             catch
             {
                 MessageBox.Show("Lütfen Kopyalanacak Parolayı Seçiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            string cikti = string.Format("{0} Adlı Kullanıcı Adı Panoya Kopyalandı", DgvDegerler.CurrentRow.Cells[1].Value.ToString());
-            MessageBox.Show(cikti, "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string output = string.Format("{0} Adlı Kullanıcı Adı Panoya Kopyalandı", DgvValues.CurrentRow.Cells[1].Value.ToString());
+            MessageBox.Show(output, "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private async void DgvDegerler_CellClick(object sender, DataGridViewCellEventArgs e)
+        private async void DgvValues_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtGuncelleAdi.Text = DgvDegerler.CurrentRow.Cells[1].Value.ToString();
-            txtGuncelleKullaniciAdi.Text = DgvDegerler.CurrentRow.Cells[2].Value.ToString();
-            txtGuncelleSifre.Text = await PasswordCrypto.DecryptAsync(key, DgvDegerler.CurrentRow.Cells[3].Value.ToString());
-            txtZaman.Text = DgvDegerler.CurrentRow.Cells[4].Value.ToString();
+            TxtNameForUpdate.Text = DgvValues.CurrentRow.Cells[1].Value.ToString();
+            txtUserNameForUpdate.Text = DgvValues.CurrentRow.Cells[2].Value.ToString();
+            TxtPasswordForUpdate.Text = await PasswordCrypto.DecryptAsync(Key, DgvValues.CurrentRow.Cells[3].Value.ToString());
+            TxtCreateDateForUpdate.Text = DgvValues.CurrentRow.Cells[4].Value.ToString();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

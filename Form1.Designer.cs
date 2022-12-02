@@ -31,70 +31,70 @@ namespace Sifre_Tutma_Programi
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
-            this.TxtAd = new System.Windows.Forms.TextBox();
-            this.TxtSifre = new System.Windows.Forms.TextBox();
+            this.TxtPasswordNameForAdd = new System.Windows.Forms.TextBox();
+            this.TxtPasswordForAdd = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.TxtKullaniciAdi = new System.Windows.Forms.TextBox();
+            this.TxtUserNameForAdd = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.BtnEkleTemizle = new System.Windows.Forms.Button();
-            this.BtnSifreEkle = new System.Windows.Forms.Button();
-            this.cbSifreGoster = new System.Windows.Forms.CheckBox();
+            this.BtnClearForAdd = new System.Windows.Forms.Button();
+            this.BtnPasswordAdd = new System.Windows.Forms.Button();
+            this.cbPasswordShofForAdd = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.BtnKullaniciAdiniKopyala = new System.Windows.Forms.Button();
-            this.BtnKopyala = new System.Windows.Forms.Button();
+            this.BtnCopyUserName = new System.Windows.Forms.Button();
+            this.BtnCopyPassword = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txtGuncelleKullaniciAdi = new System.Windows.Forms.TextBox();
+            this.txtUserNameForUpdate = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnGuncelleTemizle = new System.Windows.Forms.Button();
-            this.txtZaman = new System.Windows.Forms.TextBox();
+            this.BtnClearForUpdate = new System.Windows.Forms.Button();
+            this.TxtCreateDateForUpdate = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnSifreGuncelle = new System.Windows.Forms.Button();
-            this.CbGoster = new System.Windows.Forms.CheckBox();
-            this.txtGuncelleAdi = new System.Windows.Forms.TextBox();
-            this.txtGuncelleSifre = new System.Windows.Forms.TextBox();
+            this.BtnUpdate = new System.Windows.Forms.Button();
+            this.CbShowForUpdate = new System.Windows.Forms.CheckBox();
+            this.TxtNameForUpdate = new System.Windows.Forms.TextBox();
+            this.TxtPasswordForUpdate = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.BtnSil = new System.Windows.Forms.Button();
-            this.txtAra = new System.Windows.Forms.TextBox();
+            this.BtnDelete = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.DgvDegerler = new System.Windows.Forms.DataGridView();
+            this.DgvValues = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvDegerler)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvValues)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label1.Location = new System.Drawing.Point(102, 27);
+            this.label1.Location = new System.Drawing.Point(93, 22);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 20);
+            this.label1.Size = new System.Drawing.Size(102, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Şifrenin Adı";
+            this.label1.Text = "Parolanın Adı";
             // 
-            // TxtAd
+            // TxtPasswordNameForAdd
             // 
-            this.TxtAd.BackColor = System.Drawing.Color.Silver;
-            this.TxtAd.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.TxtAd.Location = new System.Drawing.Point(45, 61);
-            this.TxtAd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.TxtAd.Name = "TxtAd";
-            this.TxtAd.Size = new System.Drawing.Size(203, 26);
-            this.TxtAd.TabIndex = 1;
+            this.TxtPasswordNameForAdd.BackColor = System.Drawing.Color.Silver;
+            this.TxtPasswordNameForAdd.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.TxtPasswordNameForAdd.Location = new System.Drawing.Point(45, 61);
+            this.TxtPasswordNameForAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtPasswordNameForAdd.Name = "TxtPasswordNameForAdd";
+            this.TxtPasswordNameForAdd.Size = new System.Drawing.Size(203, 26);
+            this.TxtPasswordNameForAdd.TabIndex = 1;
             // 
-            // TxtSifre
+            // TxtPasswordForAdd
             // 
-            this.TxtSifre.BackColor = System.Drawing.Color.Silver;
-            this.TxtSifre.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.TxtSifre.Location = new System.Drawing.Point(45, 221);
-            this.TxtSifre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.TxtSifre.Name = "TxtSifre";
-            this.TxtSifre.Size = new System.Drawing.Size(203, 26);
-            this.TxtSifre.TabIndex = 3;
+            this.TxtPasswordForAdd.BackColor = System.Drawing.Color.Silver;
+            this.TxtPasswordForAdd.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.TxtPasswordForAdd.Location = new System.Drawing.Point(45, 221);
+            this.TxtPasswordForAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtPasswordForAdd.Name = "TxtPasswordForAdd";
+            this.TxtPasswordForAdd.Size = new System.Drawing.Size(203, 26);
+            this.TxtPasswordForAdd.TabIndex = 3;
             // 
             // label2
             // 
@@ -110,13 +110,13 @@ namespace Sifre_Tutma_Programi
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.DimGray;
-            this.groupBox1.Controls.Add(this.TxtKullaniciAdi);
+            this.groupBox1.Controls.Add(this.TxtUserNameForAdd);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.BtnEkleTemizle);
-            this.groupBox1.Controls.Add(this.BtnSifreEkle);
-            this.groupBox1.Controls.Add(this.cbSifreGoster);
-            this.groupBox1.Controls.Add(this.TxtAd);
-            this.groupBox1.Controls.Add(this.TxtSifre);
+            this.groupBox1.Controls.Add(this.BtnClearForAdd);
+            this.groupBox1.Controls.Add(this.BtnPasswordAdd);
+            this.groupBox1.Controls.Add(this.cbPasswordShofForAdd);
+            this.groupBox1.Controls.Add(this.TxtPasswordNameForAdd);
+            this.groupBox1.Controls.Add(this.TxtPasswordForAdd);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -125,17 +125,17 @@ namespace Sifre_Tutma_Programi
             this.groupBox1.Size = new System.Drawing.Size(371, 330);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Şifre Ekleme";
+            this.groupBox1.Text = "Parola Ekleme";
             // 
-            // TxtKullaniciAdi
+            // TxtUserNameForAdd
             // 
-            this.TxtKullaniciAdi.BackColor = System.Drawing.Color.Silver;
-            this.TxtKullaniciAdi.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.TxtKullaniciAdi.Location = new System.Drawing.Point(45, 147);
-            this.TxtKullaniciAdi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.TxtKullaniciAdi.Name = "TxtKullaniciAdi";
-            this.TxtKullaniciAdi.Size = new System.Drawing.Size(203, 26);
-            this.TxtKullaniciAdi.TabIndex = 2;
+            this.TxtUserNameForAdd.BackColor = System.Drawing.Color.Silver;
+            this.TxtUserNameForAdd.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.TxtUserNameForAdd.Location = new System.Drawing.Point(45, 147);
+            this.TxtUserNameForAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtUserNameForAdd.Name = "TxtUserNameForAdd";
+            this.TxtUserNameForAdd.Size = new System.Drawing.Size(203, 26);
+            this.TxtUserNameForAdd.TabIndex = 2;
             // 
             // label7
             // 
@@ -148,53 +148,53 @@ namespace Sifre_Tutma_Programi
             this.label7.TabIndex = 7;
             this.label7.Text = "Kullanıcı Adı / E-Posta";
             // 
-            // BtnEkleTemizle
+            // BtnClearForAdd
             // 
-            this.BtnEkleTemizle.BackColor = System.Drawing.Color.Silver;
-            this.BtnEkleTemizle.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.BtnEkleTemizle.Location = new System.Drawing.Point(205, 275);
-            this.BtnEkleTemizle.Name = "BtnEkleTemizle";
-            this.BtnEkleTemizle.Size = new System.Drawing.Size(115, 31);
-            this.BtnEkleTemizle.TabIndex = 5;
-            this.BtnEkleTemizle.Text = "Temizle";
-            this.BtnEkleTemizle.UseVisualStyleBackColor = false;
-            this.BtnEkleTemizle.Click += new System.EventHandler(this.BtnEkleTemizle_Click);
+            this.BtnClearForAdd.BackColor = System.Drawing.Color.Silver;
+            this.BtnClearForAdd.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.BtnClearForAdd.Location = new System.Drawing.Point(205, 275);
+            this.BtnClearForAdd.Name = "BtnClearForAdd";
+            this.BtnClearForAdd.Size = new System.Drawing.Size(115, 31);
+            this.BtnClearForAdd.TabIndex = 5;
+            this.BtnClearForAdd.Text = "Temizle";
+            this.BtnClearForAdd.UseVisualStyleBackColor = false;
+            this.BtnClearForAdd.Click += new System.EventHandler(this.BtnClearForAdd_Click);
             // 
-            // BtnSifreEkle
+            // BtnPasswordAdd
             // 
-            this.BtnSifreEkle.BackColor = System.Drawing.Color.Silver;
-            this.BtnSifreEkle.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.BtnSifreEkle.Location = new System.Drawing.Point(45, 275);
-            this.BtnSifreEkle.Name = "BtnSifreEkle";
-            this.BtnSifreEkle.Size = new System.Drawing.Size(115, 31);
-            this.BtnSifreEkle.TabIndex = 4;
-            this.BtnSifreEkle.Text = "Parola Ekle";
-            this.BtnSifreEkle.UseVisualStyleBackColor = false;
-            this.BtnSifreEkle.Click += new System.EventHandler(this.BtnSifreEkle_Click);
+            this.BtnPasswordAdd.BackColor = System.Drawing.Color.Silver;
+            this.BtnPasswordAdd.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.BtnPasswordAdd.Location = new System.Drawing.Point(45, 275);
+            this.BtnPasswordAdd.Name = "BtnPasswordAdd";
+            this.BtnPasswordAdd.Size = new System.Drawing.Size(115, 31);
+            this.BtnPasswordAdd.TabIndex = 4;
+            this.BtnPasswordAdd.Text = "Parola Ekle";
+            this.BtnPasswordAdd.UseVisualStyleBackColor = false;
+            this.BtnPasswordAdd.Click += new System.EventHandler(this.BtnPasswordAdd_Click);
             // 
-            // cbSifreGoster
+            // cbPasswordShofForAdd
             // 
-            this.cbSifreGoster.AutoSize = true;
-            this.cbSifreGoster.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.cbSifreGoster.Location = new System.Drawing.Point(273, 221);
-            this.cbSifreGoster.Name = "cbSifreGoster";
-            this.cbSifreGoster.Size = new System.Drawing.Size(77, 24);
-            this.cbSifreGoster.TabIndex = 4;
-            this.cbSifreGoster.Text = "Göster";
-            this.cbSifreGoster.UseVisualStyleBackColor = true;
-            this.cbSifreGoster.CheckedChanged += new System.EventHandler(this.CbSifreGoster_CheckedChanged);
+            this.cbPasswordShofForAdd.AutoSize = true;
+            this.cbPasswordShofForAdd.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.cbPasswordShofForAdd.Location = new System.Drawing.Point(273, 221);
+            this.cbPasswordShofForAdd.Name = "cbPasswordShofForAdd";
+            this.cbPasswordShofForAdd.Size = new System.Drawing.Size(77, 24);
+            this.cbPasswordShofForAdd.TabIndex = 4;
+            this.cbPasswordShofForAdd.Text = "Göster";
+            this.cbPasswordShofForAdd.UseVisualStyleBackColor = true;
+            this.cbPasswordShofForAdd.CheckedChanged += new System.EventHandler(this.CbShowPassword_CheckedChanged);
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Gray;
-            this.groupBox2.Controls.Add(this.BtnKullaniciAdiniKopyala);
-            this.groupBox2.Controls.Add(this.BtnKopyala);
+            this.groupBox2.Controls.Add(this.BtnCopyUserName);
+            this.groupBox2.Controls.Add(this.BtnCopyPassword);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.groupBox1);
-            this.groupBox2.Controls.Add(this.BtnSil);
-            this.groupBox2.Controls.Add(this.txtAra);
+            this.groupBox2.Controls.Add(this.BtnDelete);
+            this.groupBox2.Controls.Add(this.txtSearch);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.DgvDegerler);
+            this.groupBox2.Controls.Add(this.DgvValues);
             this.groupBox2.Location = new System.Drawing.Point(77, 6);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1038, 685);
@@ -202,42 +202,42 @@ namespace Sifre_Tutma_Programi
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Şifreleri Görüntüle";
             // 
-            // BtnKullaniciAdiniKopyala
+            // BtnCopyUserName
             // 
-            this.BtnKullaniciAdiniKopyala.BackColor = System.Drawing.Color.Silver;
-            this.BtnKullaniciAdiniKopyala.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.BtnKullaniciAdiniKopyala.Location = new System.Drawing.Point(505, 267);
-            this.BtnKullaniciAdiniKopyala.Name = "BtnKullaniciAdiniKopyala";
-            this.BtnKullaniciAdiniKopyala.Size = new System.Drawing.Size(270, 44);
-            this.BtnKullaniciAdiniKopyala.TabIndex = 2;
-            this.BtnKullaniciAdiniKopyala.Text = "Kullanıcı Adı / E Postayı Kopyala";
-            this.BtnKullaniciAdiniKopyala.UseVisualStyleBackColor = false;
-            this.BtnKullaniciAdiniKopyala.Click += new System.EventHandler(this.btnKullaniciAdiniKopyala_Click);
+            this.BtnCopyUserName.BackColor = System.Drawing.Color.Silver;
+            this.BtnCopyUserName.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.BtnCopyUserName.Location = new System.Drawing.Point(564, 267);
+            this.BtnCopyUserName.Name = "BtnCopyUserName";
+            this.BtnCopyUserName.Size = new System.Drawing.Size(212, 44);
+            this.BtnCopyUserName.TabIndex = 2;
+            this.BtnCopyUserName.Text = "Kullanıcı Adını Kopyala";
+            this.BtnCopyUserName.UseVisualStyleBackColor = false;
+            this.BtnCopyUserName.Click += new System.EventHandler(this.btnCopyUserName_Click);
             // 
-            // BtnKopyala
+            // BtnCopyPassword
             // 
-            this.BtnKopyala.BackColor = System.Drawing.Color.Silver;
-            this.BtnKopyala.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.BtnKopyala.Location = new System.Drawing.Point(234, 267);
-            this.BtnKopyala.Name = "BtnKopyala";
-            this.BtnKopyala.Size = new System.Drawing.Size(247, 44);
-            this.BtnKopyala.TabIndex = 1;
-            this.BtnKopyala.Text = "Seçilen Parolayı Panoya Kopyala";
-            this.BtnKopyala.UseVisualStyleBackColor = false;
-            this.BtnKopyala.Click += new System.EventHandler(this.BtnKopyala_Click);
+            this.BtnCopyPassword.BackColor = System.Drawing.Color.Silver;
+            this.BtnCopyPassword.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.BtnCopyPassword.Location = new System.Drawing.Point(299, 267);
+            this.BtnCopyPassword.Name = "BtnCopyPassword";
+            this.BtnCopyPassword.Size = new System.Drawing.Size(247, 44);
+            this.BtnCopyPassword.TabIndex = 1;
+            this.BtnCopyPassword.Text = "Seçilen Parolayı Panoya Kopyala";
+            this.BtnCopyPassword.UseVisualStyleBackColor = false;
+            this.BtnCopyPassword.Click += new System.EventHandler(this.BtnCopy_Click);
             // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.DimGray;
-            this.groupBox3.Controls.Add(this.txtGuncelleKullaniciAdi);
+            this.groupBox3.Controls.Add(this.txtUserNameForUpdate);
             this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.btnGuncelleTemizle);
-            this.groupBox3.Controls.Add(this.txtZaman);
+            this.groupBox3.Controls.Add(this.BtnClearForUpdate);
+            this.groupBox3.Controls.Add(this.TxtCreateDateForUpdate);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.btnSifreGuncelle);
-            this.groupBox3.Controls.Add(this.CbGoster);
-            this.groupBox3.Controls.Add(this.txtGuncelleAdi);
-            this.groupBox3.Controls.Add(this.txtGuncelleSifre);
+            this.groupBox3.Controls.Add(this.BtnUpdate);
+            this.groupBox3.Controls.Add(this.CbShowForUpdate);
+            this.groupBox3.Controls.Add(this.TxtNameForUpdate);
+            this.groupBox3.Controls.Add(this.TxtPasswordForUpdate);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -248,15 +248,15 @@ namespace Sifre_Tutma_Programi
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Şifre Güncelleme";
             // 
-            // txtGuncelleKullaniciAdi
+            // txtUserNameForUpdate
             // 
-            this.txtGuncelleKullaniciAdi.BackColor = System.Drawing.Color.Silver;
-            this.txtGuncelleKullaniciAdi.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtGuncelleKullaniciAdi.Location = new System.Drawing.Point(328, 92);
-            this.txtGuncelleKullaniciAdi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtGuncelleKullaniciAdi.Name = "txtGuncelleKullaniciAdi";
-            this.txtGuncelleKullaniciAdi.Size = new System.Drawing.Size(155, 26);
-            this.txtGuncelleKullaniciAdi.TabIndex = 2;
+            this.txtUserNameForUpdate.BackColor = System.Drawing.Color.Silver;
+            this.txtUserNameForUpdate.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtUserNameForUpdate.Location = new System.Drawing.Point(328, 92);
+            this.txtUserNameForUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtUserNameForUpdate.Name = "txtUserNameForUpdate";
+            this.txtUserNameForUpdate.Size = new System.Drawing.Size(155, 26);
+            this.txtUserNameForUpdate.TabIndex = 2;
             // 
             // label8
             // 
@@ -269,27 +269,27 @@ namespace Sifre_Tutma_Programi
             this.label8.TabIndex = 9;
             this.label8.Text = "Kullanıcı Adı / E-Posta";
             // 
-            // btnGuncelleTemizle
+            // BtnClearForUpdate
             // 
-            this.btnGuncelleTemizle.BackColor = System.Drawing.Color.Silver;
-            this.btnGuncelleTemizle.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btnGuncelleTemizle.Location = new System.Drawing.Point(325, 275);
-            this.btnGuncelleTemizle.Name = "btnGuncelleTemizle";
-            this.btnGuncelleTemizle.Size = new System.Drawing.Size(158, 31);
-            this.btnGuncelleTemizle.TabIndex = 6;
-            this.btnGuncelleTemizle.Text = "Temizle";
-            this.btnGuncelleTemizle.UseVisualStyleBackColor = false;
-            this.btnGuncelleTemizle.Click += new System.EventHandler(this.BtnGuncelleTemizle_Click);
+            this.BtnClearForUpdate.BackColor = System.Drawing.Color.Silver;
+            this.BtnClearForUpdate.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.BtnClearForUpdate.Location = new System.Drawing.Point(325, 275);
+            this.BtnClearForUpdate.Name = "BtnClearForUpdate";
+            this.BtnClearForUpdate.Size = new System.Drawing.Size(158, 31);
+            this.BtnClearForUpdate.TabIndex = 6;
+            this.BtnClearForUpdate.Text = "Temizle";
+            this.BtnClearForUpdate.UseVisualStyleBackColor = false;
+            this.BtnClearForUpdate.Click += new System.EventHandler(this.BtnClearForUpdate_Click);
             // 
-            // txtZaman
+            // TxtCreateDateForUpdate
             // 
-            this.txtZaman.BackColor = System.Drawing.Color.Silver;
-            this.txtZaman.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtZaman.Location = new System.Drawing.Point(325, 175);
-            this.txtZaman.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtZaman.Name = "txtZaman";
-            this.txtZaman.Size = new System.Drawing.Size(155, 26);
-            this.txtZaman.TabIndex = 4;
+            this.TxtCreateDateForUpdate.BackColor = System.Drawing.Color.Silver;
+            this.TxtCreateDateForUpdate.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.TxtCreateDateForUpdate.Location = new System.Drawing.Point(325, 175);
+            this.TxtCreateDateForUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtCreateDateForUpdate.Name = "TxtCreateDateForUpdate";
+            this.TxtCreateDateForUpdate.Size = new System.Drawing.Size(155, 26);
+            this.TxtCreateDateForUpdate.TabIndex = 4;
             // 
             // label6
             // 
@@ -302,49 +302,49 @@ namespace Sifre_Tutma_Programi
             this.label6.TabIndex = 7;
             this.label6.Text = "Oluşturulma Tarihi";
             // 
-            // btnSifreGuncelle
+            // BtnUpdate
             // 
-            this.btnSifreGuncelle.BackColor = System.Drawing.Color.Silver;
-            this.btnSifreGuncelle.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btnSifreGuncelle.Location = new System.Drawing.Point(61, 275);
-            this.btnSifreGuncelle.Name = "btnSifreGuncelle";
-            this.btnSifreGuncelle.Size = new System.Drawing.Size(155, 31);
-            this.btnSifreGuncelle.TabIndex = 5;
-            this.btnSifreGuncelle.Text = "Parolayı Güncelle";
-            this.btnSifreGuncelle.UseVisualStyleBackColor = false;
-            this.btnSifreGuncelle.Click += new System.EventHandler(this.BtnSifreGuncelle_Click);
+            this.BtnUpdate.BackColor = System.Drawing.Color.Silver;
+            this.BtnUpdate.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.BtnUpdate.Location = new System.Drawing.Point(61, 275);
+            this.BtnUpdate.Name = "BtnUpdate";
+            this.BtnUpdate.Size = new System.Drawing.Size(155, 31);
+            this.BtnUpdate.TabIndex = 5;
+            this.BtnUpdate.Text = "Parolayı Güncelle";
+            this.BtnUpdate.UseVisualStyleBackColor = false;
+            this.BtnUpdate.Click += new System.EventHandler(this.BtnSifreGuncelle_Click);
             // 
-            // CbGoster
+            // CbShowForUpdate
             // 
-            this.CbGoster.AutoSize = true;
-            this.CbGoster.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.CbGoster.Location = new System.Drawing.Point(97, 221);
-            this.CbGoster.Name = "CbGoster";
-            this.CbGoster.Size = new System.Drawing.Size(77, 24);
-            this.CbGoster.TabIndex = 4;
-            this.CbGoster.Text = "Göster";
-            this.CbGoster.UseVisualStyleBackColor = true;
-            this.CbGoster.CheckedChanged += new System.EventHandler(this.CbGoster_CheckedChanged);
+            this.CbShowForUpdate.AutoSize = true;
+            this.CbShowForUpdate.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.CbShowForUpdate.Location = new System.Drawing.Point(97, 221);
+            this.CbShowForUpdate.Name = "CbShowForUpdate";
+            this.CbShowForUpdate.Size = new System.Drawing.Size(77, 24);
+            this.CbShowForUpdate.TabIndex = 4;
+            this.CbShowForUpdate.Text = "Göster";
+            this.CbShowForUpdate.UseVisualStyleBackColor = true;
+            this.CbShowForUpdate.CheckedChanged += new System.EventHandler(this.CbShow_CheckedChanged);
             // 
-            // txtGuncelleAdi
+            // TxtNameForUpdate
             // 
-            this.txtGuncelleAdi.BackColor = System.Drawing.Color.Silver;
-            this.txtGuncelleAdi.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtGuncelleAdi.Location = new System.Drawing.Point(53, 92);
-            this.txtGuncelleAdi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtGuncelleAdi.Name = "txtGuncelleAdi";
-            this.txtGuncelleAdi.Size = new System.Drawing.Size(155, 26);
-            this.txtGuncelleAdi.TabIndex = 1;
+            this.TxtNameForUpdate.BackColor = System.Drawing.Color.Silver;
+            this.TxtNameForUpdate.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.TxtNameForUpdate.Location = new System.Drawing.Point(53, 92);
+            this.TxtNameForUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtNameForUpdate.Name = "TxtNameForUpdate";
+            this.TxtNameForUpdate.Size = new System.Drawing.Size(155, 26);
+            this.TxtNameForUpdate.TabIndex = 1;
             // 
-            // txtGuncelleSifre
+            // TxtPasswordForUpdate
             // 
-            this.txtGuncelleSifre.BackColor = System.Drawing.Color.Silver;
-            this.txtGuncelleSifre.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtGuncelleSifre.Location = new System.Drawing.Point(55, 174);
-            this.txtGuncelleSifre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtGuncelleSifre.Name = "txtGuncelleSifre";
-            this.txtGuncelleSifre.Size = new System.Drawing.Size(155, 26);
-            this.txtGuncelleSifre.TabIndex = 3;
+            this.TxtPasswordForUpdate.BackColor = System.Drawing.Color.Silver;
+            this.TxtPasswordForUpdate.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.TxtPasswordForUpdate.Location = new System.Drawing.Point(55, 174);
+            this.TxtPasswordForUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtPasswordForUpdate.Name = "TxtPasswordForUpdate";
+            this.TxtPasswordForUpdate.Size = new System.Drawing.Size(155, 26);
+            this.TxtPasswordForUpdate.TabIndex = 3;
             // 
             // label4
             // 
@@ -368,55 +368,55 @@ namespace Sifre_Tutma_Programi
             this.label5.TabIndex = 2;
             this.label5.Text = "Şifre";
             // 
-            // BtnSil
+            // BtnDelete
             // 
-            this.BtnSil.BackColor = System.Drawing.Color.Silver;
-            this.BtnSil.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.BtnSil.Location = new System.Drawing.Point(795, 267);
-            this.BtnSil.Name = "BtnSil";
-            this.BtnSil.Size = new System.Drawing.Size(174, 44);
-            this.BtnSil.TabIndex = 3;
-            this.BtnSil.Text = "Seçilen Parolayı Sİl";
-            this.BtnSil.UseVisualStyleBackColor = false;
-            this.BtnSil.Click += new System.EventHandler(this.BtnSil_Click);
+            this.BtnDelete.BackColor = System.Drawing.Color.Silver;
+            this.BtnDelete.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.BtnDelete.Location = new System.Drawing.Point(795, 267);
+            this.BtnDelete.Name = "BtnDelete";
+            this.BtnDelete.Size = new System.Drawing.Size(174, 44);
+            this.BtnDelete.TabIndex = 3;
+            this.BtnDelete.Text = "Seçilen Parolayı Sİl";
+            this.BtnDelete.UseVisualStyleBackColor = false;
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
-            // txtAra
+            // txtSearch
             // 
-            this.txtAra.BackColor = System.Drawing.Color.Silver;
-            this.txtAra.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtAra.Location = new System.Drawing.Point(50, 287);
-            this.txtAra.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtAra.Name = "txtAra";
-            this.txtAra.Size = new System.Drawing.Size(155, 26);
-            this.txtAra.TabIndex = 3;
-            this.txtAra.TextChanged += new System.EventHandler(this.TxtAra_TextChanged);
+            this.txtSearch.BackColor = System.Drawing.Color.Silver;
+            this.txtSearch.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtSearch.Location = new System.Drawing.Point(50, 287);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(220, 26);
+            this.txtSearch.TabIndex = 3;
+            this.txtSearch.TextChanged += new System.EventHandler(this.TxtSearch_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label3.Location = new System.Drawing.Point(55, 258);
+            this.label3.Location = new System.Drawing.Point(78, 257);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(156, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Ada Göre Parola Ara";
             // 
-            // DgvDegerler
+            // DgvValues
             // 
-            this.DgvDegerler.AllowUserToAddRows = false;
-            this.DgvDegerler.AllowUserToDeleteRows = false;
-            this.DgvDegerler.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.DgvDegerler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvDegerler.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.DgvDegerler.Location = new System.Drawing.Point(39, 25);
-            this.DgvDegerler.MultiSelect = false;
-            this.DgvDegerler.Name = "DgvDegerler";
-            this.DgvDegerler.ReadOnly = true;
-            this.DgvDegerler.Size = new System.Drawing.Size(930, 221);
-            this.DgvDegerler.TabIndex = 0;
-            this.DgvDegerler.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDegerler_CellClick);
-            this.DgvDegerler.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DgvDegerler_CellFormatting);
+            this.DgvValues.AllowUserToAddRows = false;
+            this.DgvValues.AllowUserToDeleteRows = false;
+            this.DgvValues.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DgvValues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvValues.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.DgvValues.Location = new System.Drawing.Point(39, 25);
+            this.DgvValues.MultiSelect = false;
+            this.DgvValues.Name = "DgvValues";
+            this.DgvValues.ReadOnly = true;
+            this.DgvValues.Size = new System.Drawing.Size(930, 221);
+            this.DgvValues.TabIndex = 0;
+            this.DgvValues.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvValues_CellClick);
+            this.DgvValues.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DgvDegerler_CellFormatting);
             // 
             // Form1
             // 
@@ -432,6 +432,7 @@ namespace Sifre_Tutma_Programi
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Parola Yöneticisi";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -439,7 +440,7 @@ namespace Sifre_Tutma_Programi
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvDegerler)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvValues)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -447,34 +448,34 @@ namespace Sifre_Tutma_Programi
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox TxtAd;
-        private System.Windows.Forms.TextBox TxtSifre;
+        private System.Windows.Forms.TextBox TxtPasswordNameForAdd;
+        private System.Windows.Forms.TextBox TxtPasswordForAdd;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox cbSifreGoster;
-        private System.Windows.Forms.Button BtnSifreEkle;
+        private System.Windows.Forms.CheckBox cbPasswordShofForAdd;
+        private System.Windows.Forms.Button BtnPasswordAdd;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button btnSifreGuncelle;
-        private System.Windows.Forms.CheckBox CbGoster;
-        private System.Windows.Forms.TextBox txtGuncelleAdi;
-        private System.Windows.Forms.TextBox txtGuncelleSifre;
+        private System.Windows.Forms.Button BtnUpdate;
+        private System.Windows.Forms.CheckBox CbShowForUpdate;
+        private System.Windows.Forms.TextBox TxtNameForUpdate;
+        private System.Windows.Forms.TextBox TxtPasswordForUpdate;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtZaman;
-        private System.Windows.Forms.Button BtnEkleTemizle;
-        private System.Windows.Forms.Button btnGuncelleTemizle;
-        private System.Windows.Forms.TextBox TxtKullaniciAdi;
+        private System.Windows.Forms.TextBox TxtCreateDateForUpdate;
+        private System.Windows.Forms.Button BtnClearForAdd;
+        private System.Windows.Forms.Button BtnClearForUpdate;
+        private System.Windows.Forms.TextBox TxtUserNameForAdd;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtGuncelleKullaniciAdi;
+        private System.Windows.Forms.TextBox txtUserNameForUpdate;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button BtnKullaniciAdiniKopyala;
-        private System.Windows.Forms.Button BtnKopyala;
-        private System.Windows.Forms.Button BtnSil;
-        private System.Windows.Forms.TextBox txtAra;
+        private System.Windows.Forms.Button BtnCopyUserName;
+        private System.Windows.Forms.Button BtnCopyPassword;
+        private System.Windows.Forms.Button BtnDelete;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView DgvDegerler;
+        private System.Windows.Forms.DataGridView DgvValues;
     }
 }
 

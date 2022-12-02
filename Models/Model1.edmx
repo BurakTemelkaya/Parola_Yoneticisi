@@ -5,18 +5,7 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="SifreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Sifreler">
-          <Key>
-            <PropertyRef Name="SifreID" />
-          </Key>
-          <Property Name="SifreID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Ad" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Kullanici_Adi/E_Posta" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Sifre" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Olusturulma_Zamani" Type="datetime" />
-          <Property Name="Degistirme_Zamani" Type="datetime" />
-        </EntityType>
-        <EntityType Name="Table">
+        <EntityType Name="Keys">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -24,30 +13,30 @@
           <Property Name="Key" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="GuncellemeZamani" Type="datetime" />
         </EntityType>
+        <EntityType Name="Passwords">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
         <EntityContainer Name="SifreModelStoreContainer">
-          <EntitySet Name="Sifreler" EntityType="Self.Sifreler" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Keys" EntityType="Self.Keys" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Passwords" EntityType="Self.Passwords" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SifreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Sifreler">
-          <Key>
-            <PropertyRef Name="SifreID" />
-          </Key>
-          <Property Name="SifreID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Ad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Kullanici_Adi_E_Posta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Sifre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Olusturulma_Zamani" Type="DateTime" Precision="3" />
-          <Property Name="Degistirme_Zamani" Type="DateTime" Precision="3" />
-        </EntityType>
         <EntityContainer Name="SifreEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Sifrelers" EntityType="Self.Sifreler" />
-          <EntitySet Name="Tables" EntityType="SifreModel.Table" />
+          <EntitySet Name="Keys" EntityType="SifreModel.Keys" />
+          <EntitySet Name="Passwords" EntityType="SifreModel.Passwords" />
         </EntityContainer>
-        <EntityType Name="Table">
+        <EntityType Name="Keys">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -55,29 +44,40 @@
           <Property Name="Key" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="GuncellemeZamani" Type="DateTime" Precision="3" />
         </EntityType>
+        <EntityType Name="Passwords">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="SifreModelStoreContainer" CdmEntityContainer="SifreEntities">
-          <EntitySetMapping Name="Sifrelers">
-            <EntityTypeMapping TypeName="SifreModel.Sifreler">
-              <MappingFragment StoreEntitySet="Sifreler">
-                <ScalarProperty Name="SifreID" ColumnName="SifreID" />
-                <ScalarProperty Name="Ad" ColumnName="Ad" />
-                <ScalarProperty Name="Kullanici_Adi_E_Posta" ColumnName="Kullanici_Adi/E_Posta" />
-                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
-                <ScalarProperty Name="Olusturulma_Zamani" ColumnName="Olusturulma_Zamani" />
-                <ScalarProperty Name="Degistirme_Zamani" ColumnName="Degistirme_Zamani" />
+          <EntitySetMapping Name="Keys">
+            <EntityTypeMapping TypeName="SifreModel.Keys">
+              <MappingFragment StoreEntitySet="Keys">
+                <ScalarProperty Name="GuncellemeZamani" ColumnName="GuncellemeZamani" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Tables">
-            <EntityTypeMapping TypeName="SifreModel.Table">
-              <MappingFragment StoreEntitySet="Table">
-                <ScalarProperty Name="GuncellemeZamani" ColumnName="GuncellemeZamani" />
-                <ScalarProperty Name="Key" ColumnName="Key" />
+          <EntitySetMapping Name="Passwords">
+            <EntityTypeMapping TypeName="SifreModel.Passwords">
+              <MappingFragment StoreEntitySet="Passwords">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

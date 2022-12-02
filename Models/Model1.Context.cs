@@ -25,7 +25,7 @@ namespace Parola_Yoneticisi.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Sifreler> Sifrelers { get; set; }
-        public virtual DbSet<Table> Tables { get; set; }
+        public virtual DbSet<Keys> Keys { get; set; }
+        public virtual DbSet<Passwords> Passwords { get; set; }
     }
 }

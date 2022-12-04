@@ -24,21 +24,10 @@ namespace Sifre_Tutma_Programi
         {
             TxtPasswordForAdd.UseSystemPasswordChar = true;
             TxtPasswordForUpdate.UseSystemPasswordChar = true;
+            BtnShowPasswordForAdd.Image = Image.FromFile(Application.StartupPath + @"\Icons\Show_Password.png");
+            BtnShowPasswordForUpdate.Image = Image.FromFile(Application.StartupPath + @"\Icons\Show_Password.png");
+            BtnRandomPasswordGenerator.Image = Image.FromFile(Application.StartupPath + @"\Icons\refresh.png");
             await ListAsync();
-        }
-
-        private void CbShowPassword_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbPasswordShofForAdd.Checked)
-            {
-                TxtPasswordForAdd.UseSystemPasswordChar = false;
-                cbPasswordShofForAdd.Text = "Gizle";
-            }
-            else
-            {
-                TxtPasswordForAdd.UseSystemPasswordChar = true;
-                cbPasswordShofForAdd.Text = "Göster";
-            }
         }
 
         private async Task ListAsync()
@@ -51,8 +40,8 @@ namespace Sifre_Tutma_Programi
             DgvValues.Columns[3].Visible = false;
             DgvValues.Columns[1].HeaderText = "İsmi";
             DgvValues.Columns[2].HeaderText = "Kullanıcı Adı";
-            DgvValues.Columns[4].HeaderText = "Oluşturulma Zamanı";
-            DgvValues.Columns[5].HeaderText = "Güncelleme Zamanı";
+            DgvValues.Columns[4].HeaderText = "Oluşturulma Tarihi";
+            DgvValues.Columns[5].HeaderText = "Güncelleme Tarihi";
         }
 
         private async Task SearchAsync(string deger)
@@ -144,20 +133,6 @@ namespace Sifre_Tutma_Programi
                 await DeleteAsync();
             }
 
-        }
-
-        private void CbShow_CheckedChanged(object sender, EventArgs e)
-        {
-            if (CbShowForUpdate.Checked)
-            {
-                TxtPasswordForUpdate.UseSystemPasswordChar = false;
-                CbShowForUpdate.Text = "Gizle";
-            }
-            else
-            {
-                TxtPasswordForUpdate.UseSystemPasswordChar = true;
-                CbShowForUpdate.Text = "Göster";
-            }
         }
         private async Task UpdateAsync(string name, string userName, string password)
         {
@@ -271,6 +246,39 @@ namespace Sifre_Tutma_Programi
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+        private void BtnShowPasswordForAdd_Click(object sender, EventArgs e)
+        {
+            if (TxtPasswordForAdd.UseSystemPasswordChar)
+            {
+                TxtPasswordForAdd.UseSystemPasswordChar = false;
+                BtnShowPasswordForAdd.Image = Image.FromFile(Application.StartupPath + @"\Icons\Dont't_Show_Password.png");
+            }
+            else
+            {
+                TxtPasswordForAdd.UseSystemPasswordChar = true;
+                BtnShowPasswordForAdd.Image = Image.FromFile(Application.StartupPath + @"\Icons\Show_Password.png");
+            }
+        }
+        private void BtnShowPasswordForUpdate_Click(object sender, EventArgs e)
+        {
+            if (TxtPasswordForUpdate.UseSystemPasswordChar)
+            {
+                TxtPasswordForUpdate.UseSystemPasswordChar = false;
+                BtnShowPasswordForUpdate.Image = Image.FromFile(Application.StartupPath + @"\Icons\Dont't_Show_Password.png");
+            }
+            else
+            {
+                TxtPasswordForUpdate.UseSystemPasswordChar = true;
+                BtnShowPasswordForUpdate.Image = Image.FromFile(Application.StartupPath + @"\Icons\Show_Password.png");
+            }
+        }
+
+        private void BtnRandomPasswordGenerator_Click(object sender, EventArgs e)
+        {
+            TxtPasswordForAdd.UseSystemPasswordChar = false;
+            TxtPasswordForAdd.Text = PasswordGenerator.GetRandomPassword();
+            BtnShowPasswordForAdd.Image = Image.FromFile(Application.StartupPath + @"\Icons\Show_Password.png");
         }
     }
 }

@@ -19,11 +19,12 @@ namespace Parola_Yoneticisi
         public Login()
         {
             InitializeComponent();
+            BtnShowPassword.Image = Image.FromFile(Application.StartupPath + @"\Icons\Show_Password.png");
         }
 
         private async void BtnLogin_Click(object sender, EventArgs e)
         {
-            await CheckPasswordAsync(TxtParola.Text);
+            await CheckPasswordAsync(TxtPassword.Text);
         }
 
         private async Task CheckPasswordAsync(string password)
@@ -41,28 +42,34 @@ namespace Parola_Yoneticisi
                 }
                 else
                 {
-                    MessageBox.Show("Parolanız hatalı lütfen tekrar deneyiniz.");
+                    MessageBox.Show("Parolanız hatalı lütfen tekrar deneyiniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-        }
-
-        private void CbShow_CheckedChanged(object sender, EventArgs e)
-        {
-            if (CbShowGoster.Checked)
-            {
-                TxtParola.UseSystemPasswordChar = false;
-                CbShowGoster.Text = "Gizle";
-            }
-            else
-            {
-                TxtParola.UseSystemPasswordChar = true;
-                CbShowGoster.Text = "Göster";
             }
         }
 
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+        public void BtnShowPassword_Click(object sender, EventArgs e)
+        {
+            if (TxtPassword.UseSystemPasswordChar)
+            {
+                TxtPassword.UseSystemPasswordChar = false;
+                BtnShowPassword.Image = Image.FromFile(Application.StartupPath + @"\Icons\Dont't_Show_Password.png");
+            }
+            else
+            {
+                TxtPassword.UseSystemPasswordChar = true;
+                BtnShowPassword.Image = Image.FromFile(Application.StartupPath + @"\Icons\Show_Password.png");
+            }
+        }
+
+        private void BtnResetPassword_Click(object sender, EventArgs e)
+        {
+            ResetPassword resetPassword = new ResetPassword();
+            resetPassword.Show();
+            Hide();
         }
     }
 }

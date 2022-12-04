@@ -35,11 +35,11 @@ namespace Sifre_Tutma_Programi
             this.TxtPasswordForAdd = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BtnShowPasswordForAdd = new System.Windows.Forms.Button();
             this.TxtUserNameForAdd = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.BtnClearForAdd = new System.Windows.Forms.Button();
             this.BtnPasswordAdd = new System.Windows.Forms.Button();
-            this.cbPasswordShofForAdd = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.BtnCopyUserName = new System.Windows.Forms.Button();
             this.BtnCopyPassword = new System.Windows.Forms.Button();
@@ -50,7 +50,6 @@ namespace Sifre_Tutma_Programi
             this.TxtCreateDateForUpdate = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.BtnUpdate = new System.Windows.Forms.Button();
-            this.CbShowForUpdate = new System.Windows.Forms.CheckBox();
             this.TxtNameForUpdate = new System.Windows.Forms.TextBox();
             this.TxtPasswordForUpdate = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -59,6 +58,8 @@ namespace Sifre_Tutma_Programi
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.DgvValues = new System.Windows.Forms.DataGridView();
+            this.BtnShowPasswordForUpdate = new System.Windows.Forms.Button();
+            this.BtnRandomPasswordGenerator = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -110,11 +111,12 @@ namespace Sifre_Tutma_Programi
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.DimGray;
+            this.groupBox1.Controls.Add(this.BtnRandomPasswordGenerator);
+            this.groupBox1.Controls.Add(this.BtnShowPasswordForAdd);
             this.groupBox1.Controls.Add(this.TxtUserNameForAdd);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.BtnClearForAdd);
             this.groupBox1.Controls.Add(this.BtnPasswordAdd);
-            this.groupBox1.Controls.Add(this.cbPasswordShofForAdd);
             this.groupBox1.Controls.Add(this.TxtPasswordNameForAdd);
             this.groupBox1.Controls.Add(this.TxtPasswordForAdd);
             this.groupBox1.Controls.Add(this.label1);
@@ -126,6 +128,18 @@ namespace Sifre_Tutma_Programi
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Parola Ekleme";
+            // 
+            // BtnShowPasswordForAdd
+            // 
+            this.BtnShowPasswordForAdd.BackColor = System.Drawing.Color.Silver;
+            this.BtnShowPasswordForAdd.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.BtnShowPasswordForAdd.Location = new System.Drawing.Point(256, 217);
+            this.BtnShowPasswordForAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnShowPasswordForAdd.Name = "BtnShowPasswordForAdd";
+            this.BtnShowPasswordForAdd.Size = new System.Drawing.Size(45, 35);
+            this.BtnShowPasswordForAdd.TabIndex = 8;
+            this.BtnShowPasswordForAdd.UseVisualStyleBackColor = false;
+            this.BtnShowPasswordForAdd.Click += new System.EventHandler(this.BtnShowPasswordForAdd_Click);
             // 
             // TxtUserNameForAdd
             // 
@@ -172,18 +186,6 @@ namespace Sifre_Tutma_Programi
             this.BtnPasswordAdd.UseVisualStyleBackColor = false;
             this.BtnPasswordAdd.Click += new System.EventHandler(this.BtnPasswordAdd_Click);
             // 
-            // cbPasswordShofForAdd
-            // 
-            this.cbPasswordShofForAdd.AutoSize = true;
-            this.cbPasswordShofForAdd.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.cbPasswordShofForAdd.Location = new System.Drawing.Point(273, 221);
-            this.cbPasswordShofForAdd.Name = "cbPasswordShofForAdd";
-            this.cbPasswordShofForAdd.Size = new System.Drawing.Size(77, 24);
-            this.cbPasswordShofForAdd.TabIndex = 4;
-            this.cbPasswordShofForAdd.Text = "Göster";
-            this.cbPasswordShofForAdd.UseVisualStyleBackColor = true;
-            this.cbPasswordShofForAdd.CheckedChanged += new System.EventHandler(this.CbShowPassword_CheckedChanged);
-            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Gray;
@@ -229,13 +231,13 @@ namespace Sifre_Tutma_Programi
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.DimGray;
+            this.groupBox3.Controls.Add(this.BtnShowPasswordForUpdate);
             this.groupBox3.Controls.Add(this.txtUserNameForUpdate);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.BtnClearForUpdate);
             this.groupBox3.Controls.Add(this.TxtCreateDateForUpdate);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.BtnUpdate);
-            this.groupBox3.Controls.Add(this.CbShowForUpdate);
             this.groupBox3.Controls.Add(this.TxtNameForUpdate);
             this.groupBox3.Controls.Add(this.TxtPasswordForUpdate);
             this.groupBox3.Controls.Add(this.label4);
@@ -252,10 +254,10 @@ namespace Sifre_Tutma_Programi
             // 
             this.txtUserNameForUpdate.BackColor = System.Drawing.Color.Silver;
             this.txtUserNameForUpdate.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtUserNameForUpdate.Location = new System.Drawing.Point(328, 92);
+            this.txtUserNameForUpdate.Location = new System.Drawing.Point(301, 92);
             this.txtUserNameForUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtUserNameForUpdate.Name = "txtUserNameForUpdate";
-            this.txtUserNameForUpdate.Size = new System.Drawing.Size(155, 26);
+            this.txtUserNameForUpdate.Size = new System.Drawing.Size(216, 26);
             this.txtUserNameForUpdate.TabIndex = 2;
             // 
             // label8
@@ -285,17 +287,17 @@ namespace Sifre_Tutma_Programi
             // 
             this.TxtCreateDateForUpdate.BackColor = System.Drawing.Color.Silver;
             this.TxtCreateDateForUpdate.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.TxtCreateDateForUpdate.Location = new System.Drawing.Point(325, 175);
+            this.TxtCreateDateForUpdate.Location = new System.Drawing.Point(301, 174);
             this.TxtCreateDateForUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtCreateDateForUpdate.Name = "TxtCreateDateForUpdate";
-            this.TxtCreateDateForUpdate.Size = new System.Drawing.Size(155, 26);
+            this.TxtCreateDateForUpdate.Size = new System.Drawing.Size(216, 26);
             this.TxtCreateDateForUpdate.TabIndex = 4;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label6.Location = new System.Drawing.Point(335, 140);
+            this.label6.Location = new System.Drawing.Point(338, 140);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(136, 20);
@@ -306,25 +308,13 @@ namespace Sifre_Tutma_Programi
             // 
             this.BtnUpdate.BackColor = System.Drawing.Color.Silver;
             this.BtnUpdate.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.BtnUpdate.Location = new System.Drawing.Point(61, 275);
+            this.BtnUpdate.Location = new System.Drawing.Point(88, 275);
             this.BtnUpdate.Name = "BtnUpdate";
             this.BtnUpdate.Size = new System.Drawing.Size(155, 31);
             this.BtnUpdate.TabIndex = 5;
             this.BtnUpdate.Text = "Parolayı Güncelle";
             this.BtnUpdate.UseVisualStyleBackColor = false;
             this.BtnUpdate.Click += new System.EventHandler(this.BtnSifreGuncelle_Click);
-            // 
-            // CbShowForUpdate
-            // 
-            this.CbShowForUpdate.AutoSize = true;
-            this.CbShowForUpdate.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.CbShowForUpdate.Location = new System.Drawing.Point(97, 221);
-            this.CbShowForUpdate.Name = "CbShowForUpdate";
-            this.CbShowForUpdate.Size = new System.Drawing.Size(77, 24);
-            this.CbShowForUpdate.TabIndex = 4;
-            this.CbShowForUpdate.Text = "Göster";
-            this.CbShowForUpdate.UseVisualStyleBackColor = true;
-            this.CbShowForUpdate.CheckedChanged += new System.EventHandler(this.CbShow_CheckedChanged);
             // 
             // TxtNameForUpdate
             // 
@@ -333,7 +323,7 @@ namespace Sifre_Tutma_Programi
             this.TxtNameForUpdate.Location = new System.Drawing.Point(53, 92);
             this.TxtNameForUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtNameForUpdate.Name = "TxtNameForUpdate";
-            this.TxtNameForUpdate.Size = new System.Drawing.Size(155, 26);
+            this.TxtNameForUpdate.Size = new System.Drawing.Size(216, 26);
             this.TxtNameForUpdate.TabIndex = 1;
             // 
             // TxtPasswordForUpdate
@@ -343,30 +333,30 @@ namespace Sifre_Tutma_Programi
             this.TxtPasswordForUpdate.Location = new System.Drawing.Point(55, 174);
             this.TxtPasswordForUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtPasswordForUpdate.Name = "TxtPasswordForUpdate";
-            this.TxtPasswordForUpdate.Size = new System.Drawing.Size(155, 26);
+            this.TxtPasswordForUpdate.Size = new System.Drawing.Size(214, 26);
             this.TxtPasswordForUpdate.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label4.Location = new System.Drawing.Point(84, 56);
+            this.label4.Location = new System.Drawing.Point(109, 56);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 20);
+            this.label4.Size = new System.Drawing.Size(102, 20);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Şifrenin Adı";
+            this.label4.Text = "Parolanın Adı";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label5.Location = new System.Drawing.Point(109, 140);
+            this.label5.Location = new System.Drawing.Point(139, 140);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 20);
+            this.label5.Size = new System.Drawing.Size(54, 20);
             this.label5.TabIndex = 2;
-            this.label5.Text = "Şifre";
+            this.label5.Text = "Parola";
             // 
             // BtnDelete
             // 
@@ -418,6 +408,30 @@ namespace Sifre_Tutma_Programi
             this.DgvValues.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvValues_CellClick);
             this.DgvValues.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DgvDegerler_CellFormatting);
             // 
+            // BtnShowPasswordForUpdate
+            // 
+            this.BtnShowPasswordForUpdate.BackColor = System.Drawing.Color.Silver;
+            this.BtnShowPasswordForUpdate.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.BtnShowPasswordForUpdate.Location = new System.Drawing.Point(143, 217);
+            this.BtnShowPasswordForUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnShowPasswordForUpdate.Name = "BtnShowPasswordForUpdate";
+            this.BtnShowPasswordForUpdate.Size = new System.Drawing.Size(45, 35);
+            this.BtnShowPasswordForUpdate.TabIndex = 9;
+            this.BtnShowPasswordForUpdate.UseVisualStyleBackColor = false;
+            this.BtnShowPasswordForUpdate.Click += new System.EventHandler(this.BtnShowPasswordForUpdate_Click);
+            // 
+            // BtnRandomPasswordGenerator
+            // 
+            this.BtnRandomPasswordGenerator.BackColor = System.Drawing.Color.Silver;
+            this.BtnRandomPasswordGenerator.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.BtnRandomPasswordGenerator.Location = new System.Drawing.Point(309, 217);
+            this.BtnRandomPasswordGenerator.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnRandomPasswordGenerator.Name = "BtnRandomPasswordGenerator";
+            this.BtnRandomPasswordGenerator.Size = new System.Drawing.Size(45, 35);
+            this.BtnRandomPasswordGenerator.TabIndex = 9;
+            this.BtnRandomPasswordGenerator.UseVisualStyleBackColor = false;
+            this.BtnRandomPasswordGenerator.Click += new System.EventHandler(this.BtnRandomPasswordGenerator_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -452,12 +466,10 @@ namespace Sifre_Tutma_Programi
         private System.Windows.Forms.TextBox TxtPasswordForAdd;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox cbPasswordShofForAdd;
         private System.Windows.Forms.Button BtnPasswordAdd;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button BtnUpdate;
-        private System.Windows.Forms.CheckBox CbShowForUpdate;
         private System.Windows.Forms.TextBox TxtNameForUpdate;
         private System.Windows.Forms.TextBox TxtPasswordForUpdate;
         private System.Windows.Forms.Label label4;
@@ -476,6 +488,9 @@ namespace Sifre_Tutma_Programi
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView DgvValues;
+        private System.Windows.Forms.Button BtnShowPasswordForAdd;
+        private System.Windows.Forms.Button BtnShowPasswordForUpdate;
+        private System.Windows.Forms.Button BtnRandomPasswordGenerator;
     }
 }
 

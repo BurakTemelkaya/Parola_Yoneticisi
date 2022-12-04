@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BtnResetPassword = new System.Windows.Forms.Button();
+            this.BtnShowPassword = new System.Windows.Forms.Button();
             this.BtnLogin = new System.Windows.Forms.Button();
-            this.CbShowGoster = new System.Windows.Forms.CheckBox();
-            this.TxtParola = new System.Windows.Forms.TextBox();
+            this.TxtPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -39,25 +40,51 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.DimGray;
+            this.groupBox1.Controls.Add(this.BtnResetPassword);
+            this.groupBox1.Controls.Add(this.BtnShowPassword);
             this.groupBox1.Controls.Add(this.BtnLogin);
-            this.groupBox1.Controls.Add(this.CbShowGoster);
-            this.groupBox1.Controls.Add(this.TxtParola);
+            this.groupBox1.Controls.Add(this.TxtPassword);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox1.Location = new System.Drawing.Point(31, 13);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(436, 259);
+            this.groupBox1.Size = new System.Drawing.Size(436, 236);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Şifre Ekleme";
+            // 
+            // BtnResetPassword
+            // 
+            this.BtnResetPassword.BackColor = System.Drawing.Color.Silver;
+            this.BtnResetPassword.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.BtnResetPassword.Location = new System.Drawing.Point(54, 181);
+            this.BtnResetPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnResetPassword.Name = "BtnResetPassword";
+            this.BtnResetPassword.Size = new System.Drawing.Size(304, 47);
+            this.BtnResetPassword.TabIndex = 6;
+            this.BtnResetPassword.Text = "Parola Yenile";
+            this.BtnResetPassword.UseVisualStyleBackColor = false;
+            this.BtnResetPassword.Click += new System.EventHandler(this.BtnResetPassword_Click);
+            // 
+            // BtnShowPassword
+            // 
+            this.BtnShowPassword.BackColor = System.Drawing.Color.Silver;
+            this.BtnShowPassword.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.BtnShowPassword.Location = new System.Drawing.Point(368, 86);
+            this.BtnShowPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnShowPassword.Name = "BtnShowPassword";
+            this.BtnShowPassword.Size = new System.Drawing.Size(45, 35);
+            this.BtnShowPassword.TabIndex = 5;
+            this.BtnShowPassword.UseVisualStyleBackColor = false;
+            this.BtnShowPassword.Click += new System.EventHandler(this.BtnShowPassword_Click);
             // 
             // BtnLogin
             // 
             this.BtnLogin.BackColor = System.Drawing.Color.Silver;
             this.BtnLogin.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.BtnLogin.Location = new System.Drawing.Point(54, 177);
+            this.BtnLogin.Location = new System.Drawing.Point(54, 126);
             this.BtnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.BtnLogin.Name = "BtnLogin";
             this.BtnLogin.Size = new System.Drawing.Size(304, 47);
@@ -66,28 +93,16 @@
             this.BtnLogin.UseVisualStyleBackColor = false;
             this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
-            // CbShowGoster
+            // TxtPassword
             // 
-            this.CbShowGoster.AutoSize = true;
-            this.CbShowGoster.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.CbShowGoster.Location = new System.Drawing.Point(163, 135);
-            this.CbShowGoster.Margin = new System.Windows.Forms.Padding(4);
-            this.CbShowGoster.Name = "CbShowGoster";
-            this.CbShowGoster.Size = new System.Drawing.Size(77, 24);
-            this.CbShowGoster.TabIndex = 4;
-            this.CbShowGoster.Text = "Göster";
-            this.CbShowGoster.UseVisualStyleBackColor = true;
-            this.CbShowGoster.CheckedChanged += new System.EventHandler(this.CbShow_CheckedChanged);
-            // 
-            // TxtParola
-            // 
-            this.TxtParola.BackColor = System.Drawing.Color.Silver;
-            this.TxtParola.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.TxtParola.Location = new System.Drawing.Point(54, 89);
-            this.TxtParola.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.TxtParola.Name = "TxtParola";
-            this.TxtParola.Size = new System.Drawing.Size(304, 26);
-            this.TxtParola.TabIndex = 3;
+            this.TxtPassword.BackColor = System.Drawing.Color.Silver;
+            this.TxtPassword.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.TxtPassword.Location = new System.Drawing.Point(54, 89);
+            this.TxtPassword.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.TxtPassword.Name = "TxtPassword";
+            this.TxtPassword.Size = new System.Drawing.Size(304, 26);
+            this.TxtPassword.TabIndex = 3;
+            this.TxtPassword.UseSystemPasswordChar = true;
             // 
             // label2
             // 
@@ -105,11 +120,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(501, 295);
+            this.ClientSize = new System.Drawing.Size(501, 277);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
             this.groupBox1.ResumeLayout(false);
@@ -122,8 +138,9 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button BtnLogin;
-        private System.Windows.Forms.CheckBox CbShowGoster;
-        private System.Windows.Forms.TextBox TxtParola;
+        private System.Windows.Forms.TextBox TxtPassword;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button BtnShowPassword;
+        private System.Windows.Forms.Button BtnResetPassword;
     }
 }

@@ -48,8 +48,16 @@ namespace Sifre_Tutma_Programi
         {
             using (SifreEntities passwordEntites = new SifreEntities())
             {
-                var password = await passwordEntites.Passwords.AsNoTracking().Where(t => t.Name.ToLower().Contains(deger.ToLower())).ToListAsync();
-                DgvValues.DataSource = password;
+                if (deger != string.Empty)
+                {
+                    var password = await passwordEntites.Passwords.AsNoTracking().Where(t => t.Name.ToLower().Contains(deger.ToLower())).ToListAsync();
+                    DgvValues.DataSource = password;
+                }
+                else
+                {
+                    await ListAsync();
+                }
+
             }
         }
         private async Task AddAsync(string name, string password, string userName)
@@ -131,6 +139,7 @@ namespace Sifre_Tutma_Programi
             if (sonuc == DialogResult.Yes)
             {
                 await DeleteAsync();
+                TextBoxClearForUpdate();
             }
 
         }
@@ -278,7 +287,7 @@ namespace Sifre_Tutma_Programi
         {
             TxtPasswordForAdd.UseSystemPasswordChar = false;
             TxtPasswordForAdd.Text = PasswordGenerator.GetRandomPassword();
-            BtnShowPasswordForAdd.Image = Image.FromFile(Application.StartupPath + @"\Icons\Show_Password.png");
+            BtnShowPasswordForAdd.Image = Image.FromFile(Application.StartupPath + @"\Icons\Dont't_Show_Password.png");
         }
     }
 }

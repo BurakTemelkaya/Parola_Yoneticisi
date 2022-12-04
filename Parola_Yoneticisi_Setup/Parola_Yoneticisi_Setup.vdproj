@@ -4,9 +4,9 @@
 "ProjectType" = "8:{978C614F-708E-4E1A-B201-565925725DBA}"
 "IsWebType" = "8:FALSE"
 "ProjectName" = "8:Parola_Yoneticisi_Setup"
-"LanguageId" = "3:1033"
-"CodePage" = "3:1252"
-"UILanguageId" = "3:1033"
+"LanguageId" = "3:1055"
+"CodePage" = "3:1254"
+"UILanguageId" = "3:1055"
 "SccProjectName" = "8:"
 "SccLocalPath" = "8:"
 "SccAuxPath" = "8:"
@@ -15,32 +15,44 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_05E38F03C0AB2326CD362B48162FBECF"
+        "MsmKey" = "8:_077160A922BF42197A805EDF5C114987"
         "OwnerKey" = "8:_BFA3EBFBE35945E69B17DE4A81294BA6"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_05E38F03C0AB2326CD362B48162FBECF"
-        "OwnerKey" = "8:_CE2482975C7CCB38FBC50DFAE5251EA4"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_13B31CEDE9584D378B279B499B6F8A6C"
+        "MsmKey" = "8:_1604A8DB58DA41A7A60464035B811963"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_5BA30CBEF8634C5493F6FB3945AB7244"
+        "MsmKey" = "8:_19C52C079676410CB00986062062C5FB"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_7698831A70DA1EFE2C6AFF98520503E8"
+        "MsmKey" = "8:_323F2482A66F4D21B7A2EA36D96B7604"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_469D6887EE654FD4841230589C44A2EB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_6A26A20957F48D4DB2771EFAA731B5C0"
         "OwnerKey" = "8:_BFA3EBFBE35945E69B17DE4A81294BA6"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_89E50069D0924578A10CF039A487E9A6"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -51,38 +63,44 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_CE2482975C7CCB38FBC50DFAE5251EA4"
+        "MsmKey" = "8:_D4039DA02627063A7BDC339F8966ECF8"
         "OwnerKey" = "8:_BFA3EBFBE35945E69B17DE4A81294BA6"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_E16100E8411F474D8BDE4062AD301D35"
+        "MsmKey" = "8:_D4039DA02627063A7BDC339F8966ECF8"
+        "OwnerKey" = "8:_077160A922BF42197A805EDF5C114987"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_ECBA7A1EFA2E4BC78094BFEB8623A517"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_7698831A70DA1EFE2C6AFF98520503E8"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_BFA3EBFBE35945E69B17DE4A81294BA6"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_CE2482975C7CCB38FBC50DFAE5251EA4"
+        "OwnerKey" = "8:_077160A922BF42197A805EDF5C114987"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_05E38F03C0AB2326CD362B48162FBECF"
+        "OwnerKey" = "8:_D4039DA02627063A7BDC339F8966ECF8"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_6A26A20957F48D4DB2771EFAA731B5C0"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -134,12 +152,28 @@
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
-        "Compression" = "3:2"
+        "Compression" = "3:3"
         "SignOutput" = "11:FALSE"
         "CertificateFile" = "8:"
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -169,116 +203,14 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_05E38F03C0AB2326CD362B48162FBECF"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_05E38F03C0AB2326CD362B48162FBECF"
-                    {
-                    "Name" = "8:EntityFramework.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:EntityFramework.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_9876BD78F8964F46807967655DDF405A"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_13B31CEDE9584D378B279B499B6F8A6C"
-            {
-            "SourcePath" = "8:..\\Parola_Yoneticisi\\Icons8-Windows-8-Security-Password-2.ico"
-            "TargetName" = "8:Icons8-Windows-8-Security-Password-2.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_9876BD78F8964F46807967655DDF405A"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5BA30CBEF8634C5493F6FB3945AB7244"
-            {
-            "SourcePath" = "8:..\\Parola_Yoneticisi\\Sifre.mdf"
-            "TargetName" = "8:Sifre.mdf"
-            "Tag" = "8:"
-            "Folder" = "8:_9876BD78F8964F46807967655DDF405A"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7698831A70DA1EFE2C6AFF98520503E8"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-                "ScatterAssemblies"
-                {
-                    "_7698831A70DA1EFE2C6AFF98520503E8"
-                    {
-                    "Name" = "8:System.Net.Http.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Net.Http.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_9876BD78F8964F46807967655DDF405A"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CE2482975C7CCB38FBC50DFAE5251EA4"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_077160A922BF42197A805EDF5C114987"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_CE2482975C7CCB38FBC50DFAE5251EA4"
+                    "_077160A922BF42197A805EDF5C114987"
                     {
                     "Name" = "8:EntityFramework.SqlServer.dll"
                     "Attributes" = "3:512"
@@ -302,10 +234,172 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E16100E8411F474D8BDE4062AD301D35"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1604A8DB58DA41A7A60464035B811963"
             {
-            "SourcePath" = "8:..\\Parola_Yoneticisi\\Sifre_log.ldf"
+            "SourcePath" = "8:..\\bin\\Debug\\Icons\\refresh.png"
+            "TargetName" = "8:refresh.png"
+            "Tag" = "8:"
+            "Folder" = "8:_00E5BB6A7AD440849BC7587FF8D2C520"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_19C52C079676410CB00986062062C5FB"
+            {
+            "SourcePath" = "8:..\\bin\\Debug\\Icons\\Show_Password.png"
+            "TargetName" = "8:Show_Password.png"
+            "Tag" = "8:"
+            "Folder" = "8:_00E5BB6A7AD440849BC7587FF8D2C520"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_323F2482A66F4D21B7A2EA36D96B7604"
+            {
+            "SourcePath" = "8:..\\bin\\Debug\\Sifre_log.ldf"
             "TargetName" = "8:Sifre_log.ldf"
+            "Tag" = "8:"
+            "Folder" = "8:_9876BD78F8964F46807967655DDF405A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_469D6887EE654FD4841230589C44A2EB"
+            {
+            "SourcePath" = "8:..\\Icons8-Windows-8-Security-Password-2.ico"
+            "TargetName" = "8:Icons8-Windows-8-Security-Password-2.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_00E5BB6A7AD440849BC7587FF8D2C520"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_6A26A20957F48D4DB2771EFAA731B5C0"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+                "ScatterAssemblies"
+                {
+                    "_6A26A20957F48D4DB2771EFAA731B5C0"
+                    {
+                    "Name" = "8:System.Net.Http.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:System.Net.Http.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_9876BD78F8964F46807967655DDF405A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_89E50069D0924578A10CF039A487E9A6"
+            {
+            "SourcePath" = "8:..\\bin\\Debug\\Icons\\Dont't_Show_Password.png"
+            "TargetName" = "8:Dont't_Show_Password.png"
+            "Tag" = "8:"
+            "Folder" = "8:_00E5BB6A7AD440849BC7587FF8D2C520"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D4039DA02627063A7BDC339F8966ECF8"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_D4039DA02627063A7BDC339F8966ECF8"
+                    {
+                    "Name" = "8:EntityFramework.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:EntityFramework.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_9876BD78F8964F46807967655DDF405A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_ECBA7A1EFA2E4BC78094BFEB8623A517"
+            {
+            "SourcePath" = "8:..\\bin\\Debug\\Sifre.mdf"
+            "TargetName" = "8:Sifre.mdf"
             "Tag" = "8:"
             "Folder" = "8:_9876BD78F8964F46807967655DDF405A"
             "Condition" = "8:"
@@ -360,6 +454,17 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_00E5BB6A7AD440849BC7587FF8D2C520"
+                    {
+                    "Name" = "8:Icons"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_5BD94A915D064DA89207566ABDF9EB10"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
         }
@@ -371,7 +476,7 @@
         }
         "MsiBootstrapper"
         {
-        "LangId" = "3:1033"
+        "LangId" = "3:1055"
         "RequiresElevation" = "11:FALSE"
         }
         "Product"
@@ -392,7 +497,7 @@
         "ARPHELPLINK" = "8:"
         "Title" = "8:Parola Yöneticisi"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Burak A.S"
+        "ARPCONTACT" = "8:Parola yönetim programı"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
@@ -510,7 +615,7 @@
             "Target" = "8:_BFA3EBFBE35945E69B17DE4A81294BA6"
             "Folder" = "8:_7A37C9E7B8684A82B9D9E3D2BCF6CF52"
             "WorkingFolder" = "8:_9876BD78F8964F46807967655DDF405A"
-            "Icon" = "8:_13B31CEDE9584D378B279B499B6F8A6C"
+            "Icon" = "8:_469D6887EE654FD4841230589C44A2EB"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_9DEC6B0D16C94D089922CCDB09C04040"
@@ -524,7 +629,7 @@
             "Target" = "8:_BFA3EBFBE35945E69B17DE4A81294BA6"
             "Folder" = "8:_7CC86E1B367F44E9BEA4D30F6E80D78B"
             "WorkingFolder" = "8:_9876BD78F8964F46807967655DDF405A"
-            "Icon" = "8:_13B31CEDE9584D378B279B499B6F8A6C"
+            "Icon" = "8:_469D6887EE654FD4841230589C44A2EB"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_BC1E15DB1B9E467482D71F22B2C90D56"
@@ -538,7 +643,7 @@
             "Target" = "8:_BFA3EBFBE35945E69B17DE4A81294BA6"
             "Folder" = "8:_9876BD78F8964F46807967655DDF405A"
             "WorkingFolder" = "8:_9876BD78F8964F46807967655DDF405A"
-            "Icon" = "8:_13B31CEDE9584D378B279B499B6F8A6C"
+            "Icon" = "8:_469D6887EE654FD4841230589C44A2EB"
             "Feature" = "8:"
             }
         }
@@ -942,7 +1047,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_BFA3EBFBE35945E69B17DE4A81294BA6"
             {
-            "SourcePath" = "8:..\\Parola_Yoneticisi\\obj\\Debug\\Sifre_Tutma_Programi.exe"
+            "SourcePath" = "8:..\\obj\\Release\\Parola_Yoneticisi.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_9876BD78F8964F46807967655DDF405A"

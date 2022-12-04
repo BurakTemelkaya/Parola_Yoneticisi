@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31129.286
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parola_Yoneticisi", "Parola_Yoneticisi.csproj", "{0E105868-F290-44AC-8B12-B3B92299C689}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Parola_Yoneticisi_Setup", "..\Parola_Yoneticisi_Setup\Parola_Yoneticisi_Setup.vdproj", "{AABB35EB-6947-4593-9137-B623D31BC1DC}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Parola_Yoneticisi_Setup", "Parola_Yoneticisi_Setup\Parola_Yoneticisi_Setup.vdproj", "{A0592403-2018-49BC-86AF-14D6D35922C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,10 @@ Global
 		{0E105868-F290-44AC-8B12-B3B92299C689}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E105868-F290-44AC-8B12-B3B92299C689}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E105868-F290-44AC-8B12-B3B92299C689}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AABB35EB-6947-4593-9137-B623D31BC1DC}.Debug|Any CPU.ActiveCfg = Debug
-		{AABB35EB-6947-4593-9137-B623D31BC1DC}.Release|Any CPU.ActiveCfg = Release
+		{A0592403-2018-49BC-86AF-14D6D35922C0}.Debug|Any CPU.ActiveCfg = Debug
+		{A0592403-2018-49BC-86AF-14D6D35922C0}.Debug|Any CPU.Build.0 = Debug
+		{A0592403-2018-49BC-86AF-14D6D35922C0}.Release|Any CPU.ActiveCfg = Release
+		{A0592403-2018-49BC-86AF-14D6D35922C0}.Release|Any CPU.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

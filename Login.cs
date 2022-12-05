@@ -1,5 +1,5 @@
 ﻿using Parola_Yoneticisi.Models;
-using Sifre_Tutma_Programi;
+using Parola_Yoneticisi;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

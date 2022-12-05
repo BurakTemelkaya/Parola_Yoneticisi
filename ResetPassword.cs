@@ -1,4 +1,5 @@
 ﻿using Parola_Yoneticisi.Models;
+using Parola_Yoneticisi;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,6 +58,10 @@ namespace Parola_Yoneticisi
                     }
                     await sifreEntities.SaveChangesAsync();
                     MessageBox.Show("Parolanız güncellenmiştir.", "İşlem başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Form1.Key = newPassword;
+                    Form1 form1 = new Form1();
+                    form1.ShowDialog();
+                    Hide();
                 }
                 else
                 {

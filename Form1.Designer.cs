@@ -1,5 +1,5 @@
 ﻿
-namespace Sifre_Tutma_Programi
+namespace Parola_Yoneticisi
 {
     partial class Form1
     {
@@ -35,6 +35,7 @@ namespace Sifre_Tutma_Programi
             this.TxtPasswordForAdd = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BtnRandomPasswordGenerator = new System.Windows.Forms.Button();
             this.BtnShowPasswordForAdd = new System.Windows.Forms.Button();
             this.TxtUserNameForAdd = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -44,6 +45,7 @@ namespace Sifre_Tutma_Programi
             this.BtnCopyUserName = new System.Windows.Forms.Button();
             this.BtnCopyPassword = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.BtnShowPasswordForUpdate = new System.Windows.Forms.Button();
             this.txtUserNameForUpdate = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.BtnClearForUpdate = new System.Windows.Forms.Button();
@@ -58,8 +60,6 @@ namespace Sifre_Tutma_Programi
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.DgvValues = new System.Windows.Forms.DataGridView();
-            this.BtnShowPasswordForUpdate = new System.Windows.Forms.Button();
-            this.BtnRandomPasswordGenerator = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -128,6 +128,18 @@ namespace Sifre_Tutma_Programi
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Parola Ekleme";
+            // 
+            // BtnRandomPasswordGenerator
+            // 
+            this.BtnRandomPasswordGenerator.BackColor = System.Drawing.Color.Silver;
+            this.BtnRandomPasswordGenerator.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.BtnRandomPasswordGenerator.Location = new System.Drawing.Point(309, 217);
+            this.BtnRandomPasswordGenerator.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnRandomPasswordGenerator.Name = "BtnRandomPasswordGenerator";
+            this.BtnRandomPasswordGenerator.Size = new System.Drawing.Size(45, 35);
+            this.BtnRandomPasswordGenerator.TabIndex = 9;
+            this.BtnRandomPasswordGenerator.UseVisualStyleBackColor = false;
+            this.BtnRandomPasswordGenerator.Click += new System.EventHandler(this.BtnRandomPasswordGenerator_Click);
             // 
             // BtnShowPasswordForAdd
             // 
@@ -214,7 +226,7 @@ namespace Sifre_Tutma_Programi
             this.BtnCopyUserName.TabIndex = 2;
             this.BtnCopyUserName.Text = "Kullanıcı Adını Kopyala";
             this.BtnCopyUserName.UseVisualStyleBackColor = false;
-            this.BtnCopyUserName.Click += new System.EventHandler(this.btnCopyUserName_Click);
+            this.BtnCopyUserName.Click += new System.EventHandler(this.BtnCopyUserName_Click);
             // 
             // BtnCopyPassword
             // 
@@ -249,6 +261,18 @@ namespace Sifre_Tutma_Programi
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Şifre Güncelleme";
+            // 
+            // BtnShowPasswordForUpdate
+            // 
+            this.BtnShowPasswordForUpdate.BackColor = System.Drawing.Color.Silver;
+            this.BtnShowPasswordForUpdate.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.BtnShowPasswordForUpdate.Location = new System.Drawing.Point(143, 217);
+            this.BtnShowPasswordForUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnShowPasswordForUpdate.Name = "BtnShowPasswordForUpdate";
+            this.BtnShowPasswordForUpdate.Size = new System.Drawing.Size(45, 35);
+            this.BtnShowPasswordForUpdate.TabIndex = 9;
+            this.BtnShowPasswordForUpdate.UseVisualStyleBackColor = false;
+            this.BtnShowPasswordForUpdate.Click += new System.EventHandler(this.BtnShowPasswordForUpdate_Click);
             // 
             // txtUserNameForUpdate
             // 
@@ -406,31 +430,6 @@ namespace Sifre_Tutma_Programi
             this.DgvValues.Size = new System.Drawing.Size(930, 221);
             this.DgvValues.TabIndex = 0;
             this.DgvValues.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvValues_CellClick);
-            this.DgvValues.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DgvDegerler_CellFormatting);
-            // 
-            // BtnShowPasswordForUpdate
-            // 
-            this.BtnShowPasswordForUpdate.BackColor = System.Drawing.Color.Silver;
-            this.BtnShowPasswordForUpdate.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.BtnShowPasswordForUpdate.Location = new System.Drawing.Point(143, 217);
-            this.BtnShowPasswordForUpdate.Margin = new System.Windows.Forms.Padding(4);
-            this.BtnShowPasswordForUpdate.Name = "BtnShowPasswordForUpdate";
-            this.BtnShowPasswordForUpdate.Size = new System.Drawing.Size(45, 35);
-            this.BtnShowPasswordForUpdate.TabIndex = 9;
-            this.BtnShowPasswordForUpdate.UseVisualStyleBackColor = false;
-            this.BtnShowPasswordForUpdate.Click += new System.EventHandler(this.BtnShowPasswordForUpdate_Click);
-            // 
-            // BtnRandomPasswordGenerator
-            // 
-            this.BtnRandomPasswordGenerator.BackColor = System.Drawing.Color.Silver;
-            this.BtnRandomPasswordGenerator.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.BtnRandomPasswordGenerator.Location = new System.Drawing.Point(309, 217);
-            this.BtnRandomPasswordGenerator.Margin = new System.Windows.Forms.Padding(4);
-            this.BtnRandomPasswordGenerator.Name = "BtnRandomPasswordGenerator";
-            this.BtnRandomPasswordGenerator.Size = new System.Drawing.Size(45, 35);
-            this.BtnRandomPasswordGenerator.TabIndex = 9;
-            this.BtnRandomPasswordGenerator.UseVisualStyleBackColor = false;
-            this.BtnRandomPasswordGenerator.Click += new System.EventHandler(this.BtnRandomPasswordGenerator_Click);
             // 
             // Form1
             // 

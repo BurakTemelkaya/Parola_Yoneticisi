@@ -215,13 +215,6 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Veritabani\Sifre.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Veritabani\Sifre_log.ldf">
-      <DependentUpon>Sifre.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="İcons\Dont%27t_ShowPassword %28Özel%29.png" />
     <Content Include="İcons\Dont%27t_ShowPassword.jpg" />
     <Content Include="İcons\Show_password.png" />

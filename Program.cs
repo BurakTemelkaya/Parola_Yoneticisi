@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Sifre_Tutma_Programi
+namespace Parola_Yoneticisi
 {
     static class Program
     {

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using Parola_Yoneticisi;
 using Parola_Yoneticisi.Models;
 
-namespace Sifre_Tutma_Programi
+namespace Parola_Yoneticisi
 {
     public partial class Form1 : Form
     {
@@ -20,6 +20,7 @@ namespace Sifre_Tutma_Programi
             InitializeComponent();
         }
         public static string Key;
+        private static int Id;
         private async void Form1_Load(object sender, EventArgs e)
         {
             TxtPasswordForAdd.UseSystemPasswordChar = true;
@@ -98,30 +99,17 @@ namespace Sifre_Tutma_Programi
             }
         }
 
-        private int DgFindItem()
-        {
-            try
-            {
-                return Convert.ToInt32(DgvValues.SelectedRows[0].Cells[0].Value);
-            }
-            catch
-            {
-                return 0;
-            }
-        }
-
         private async void TxtSearch_TextChanged(object sender, EventArgs e)
         {
             await SearchAsync(txtSearch.Text);
         }
         private async Task DeleteAsync()
         {
-            int id = DgFindItem();
-            if (id != 0)
+            if (Id != 0)
             {
                 using (SifreEntities passwordEntites = new SifreEntities())
                 {
-                    passwordEntites.Passwords.Remove(await passwordEntites.Passwords.FindAsync(id));
+                    passwordEntites.Passwords.Remove(await passwordEntites.Passwords.FindAsync(Id));
                     await passwordEntites.SaveChangesAsync();
                     await ListAsync();
                     MessageBox.Show("Silme işlemi başarılı", "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -147,10 +135,9 @@ namespace Sifre_Tutma_Programi
         {
             using (SifreEntities passwordEntites = new SifreEntities())
             {
-                int ID = DgFindItem();
-                if (ID > 0)
+                if (Id > 0)
                 {
-                    var value = await passwordEntites.Passwords.Where(w => w.Id == ID).FirstOrDefaultAsync();
+                    var value = await passwordEntites.Passwords.Where(w => w.Id == Id).FirstOrDefaultAsync();
                     value.Name = name;
                     value.Password = await PasswordCrypto.EncryptAsync(Key, password);
                     value.UserName = userName;
@@ -201,14 +188,6 @@ namespace Sifre_Tutma_Programi
             TxtCreateDateForUpdate.Clear();
         }
 
-        private void DgvDegerler_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (e.ColumnIndex == 3 && e.Value != null)
-            {
-                e.Value = new string('*', e.Value.ToString().Length);
-            }
-        }
-
         private void BtnClearForAdd_Click(object sender, EventArgs e) => TextBoxClearForAdd();
 
         private void BtnClearForUpdate_Click(object sender, EventArgs e) => TextBoxClearForUpdate();
@@ -229,7 +208,7 @@ namespace Sifre_Tutma_Programi
 
         }
 
-        private void btnCopyUserName_Click(object sender, EventArgs e)
+        private void BtnCopyUserName_Click(object sender, EventArgs e)
         {
             try
             {
@@ -246,6 +225,7 @@ namespace Sifre_Tutma_Programi
 
         private async void DgvValues_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            Id = Convert.ToInt32(DgvValues.CurrentRow.Cells[0].Value);
             TxtNameForUpdate.Text = DgvValues.CurrentRow.Cells[1].Value.ToString();
             txtUserNameForUpdate.Text = DgvValues.CurrentRow.Cells[2].Value.ToString();
             TxtPasswordForUpdate.Text = await PasswordCrypto.DecryptAsync(Key, DgvValues.CurrentRow.Cells[3].Value.ToString());

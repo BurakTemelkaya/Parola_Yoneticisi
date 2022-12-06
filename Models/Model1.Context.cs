@@ -24,7 +24,8 @@ namespace Parola_Yoneticisi.Models
         {
             throw new UnintentionalCodeFirstException();
         }
-    
+
+
         public virtual DbSet<Keys> Keys { get; set; }
         public virtual DbSet<Passwords> Passwords { get; set; }
     }

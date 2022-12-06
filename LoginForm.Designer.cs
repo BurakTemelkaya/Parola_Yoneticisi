@@ -1,6 +1,6 @@
 ﻿namespace Parola_Yoneticisi
 {
-    partial class Login
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.BtnResetPassword = new System.Windows.Forms.Button();
             this.BtnShowPassword = new System.Windows.Forms.Button();
@@ -123,6 +124,7 @@
             this.ClientSize = new System.Drawing.Size(501, 277);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

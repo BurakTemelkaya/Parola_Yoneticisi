@@ -14,9 +14,9 @@ using Keys = Parola_Yoneticisi.Models.Keys;
 
 namespace Parola_Yoneticisi
 {
-    public partial class Login : Form
+    public partial class LoginForm : Form
     {
-        public Login()
+        public LoginForm()
         {
             InitializeComponent();
             BtnShowPassword.Image = Image.FromFile(Application.StartupPath + @"\Icons\Show_Password.png");
@@ -29,16 +29,20 @@ namespace Parola_Yoneticisi
 
         private async Task CheckPasswordAsync(string password)
         {
+            if (TxtPassword.Text == string.Empty)
+            {
+                MessageBox.Show("Parola alanını boş bırakmayınız.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             using (SifreEntities sifre = new SifreEntities())
             {
                 string crytoPassword = PasswordCrypto.ComputeSha256Hash(password);
-                var isTrueKey = await sifre.Keys.Where(x => x.Key == crytoPassword).AnyAsync();
+                var isTrueKey = await sifre.Keys.AsNoTracking().AnyAsync(x => x.Key == crytoPassword);
                 if (isTrueKey)
                 {
                     Hide();
-                    Form1 form1 = new Form1();
+                    MainForm form1 = new MainForm();
                     form1.Show();
-                    Form1.Key = password;
+                    MainForm.Key = password;
                 }
                 else
                 {
@@ -67,7 +71,7 @@ namespace Parola_Yoneticisi
 
         private void BtnResetPassword_Click(object sender, EventArgs e)
         {
-            ResetPassword resetPassword = new ResetPassword();
+            ResetPasswordForm resetPassword = new ResetPasswordForm();
             resetPassword.Show();
             Hide();
         }

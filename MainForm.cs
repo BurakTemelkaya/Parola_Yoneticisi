@@ -13,9 +13,9 @@ using Parola_Yoneticisi.Models;
 
 namespace Parola_Yoneticisi
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -131,7 +131,7 @@ namespace Parola_Yoneticisi
             }
 
         }
-        private async Task UpdateAsync(string name, string userName, string password)
+        private async Task UpdateAsync(string name, string userName, string password, DateTime createDate)
         {
             using (SifreEntities passwordEntites = new SifreEntities())
             {
@@ -141,6 +141,7 @@ namespace Parola_Yoneticisi
                     value.Name = name;
                     value.Password = await PasswordCrypto.EncryptAsync(Key, password);
                     value.UserName = userName;
+                    value.CreateDate = createDate;
                     value.UpdateDate = DateTime.Now;
                     await passwordEntites.SaveChangesAsync();
                     await ListAsync();
@@ -158,7 +159,7 @@ namespace Parola_Yoneticisi
         {
             if (TxtNameForUpdate.Text != "" && txtUserNameForUpdate.Text != "" && TxtPasswordForUpdate.Text != "")
             {
-                await UpdateAsync(TxtNameForUpdate.Text, txtUserNameForUpdate.Text, TxtPasswordForUpdate.Text);
+                await UpdateAsync(TxtNameForUpdate.Text, txtUserNameForUpdate.Text, TxtPasswordForUpdate.Text, DtpCreateDate.Value);
             }
             else if (TxtNameForUpdate.Text == "")
             {
@@ -185,7 +186,7 @@ namespace Parola_Yoneticisi
             TxtNameForUpdate.Clear();
             TxtPasswordForUpdate.Clear();
             txtUserNameForUpdate.Clear();
-            TxtCreateDateForUpdate.Clear();
+            DtpCreateDate.Value = DateTime.Now;
         }
 
         private void BtnClearForAdd_Click(object sender, EventArgs e) => TextBoxClearForAdd();
@@ -229,7 +230,7 @@ namespace Parola_Yoneticisi
             TxtNameForUpdate.Text = DgvValues.CurrentRow.Cells[1].Value.ToString();
             txtUserNameForUpdate.Text = DgvValues.CurrentRow.Cells[2].Value.ToString();
             TxtPasswordForUpdate.Text = await PasswordCrypto.DecryptAsync(Key, DgvValues.CurrentRow.Cells[3].Value.ToString());
-            TxtCreateDateForUpdate.Text = DgvValues.CurrentRow.Cells[4].Value.ToString();
+            DtpCreateDate.Text = DgvValues.CurrentRow.Cells[4].Value.ToString();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)

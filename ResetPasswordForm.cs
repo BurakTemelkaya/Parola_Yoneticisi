@@ -14,9 +14,9 @@ using System.Windows.Forms;
 
 namespace Parola_Yoneticisi
 {
-    public partial class ResetPassword : Form
+    public partial class ResetPasswordForm : Form
     {
-        public ResetPassword()
+        public ResetPasswordForm()
         {
             InitializeComponent();
             BtnShowPasswordForOldPassword.Image = Image.FromFile(Application.StartupPath + @"\Icons\Show_Password.png");
@@ -58,8 +58,8 @@ namespace Parola_Yoneticisi
                     }
                     await sifreEntities.SaveChangesAsync();
                     MessageBox.Show("Parolanız güncellenmiştir.", "İşlem başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Form1.Key = newPassword;
-                    Form1 form1 = new Form1();
+                    MainForm.Key = newPassword;
+                    MainForm form1 = new MainForm();
                     form1.ShowDialog();
                     Hide();
                 }

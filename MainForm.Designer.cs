@@ -45,6 +45,7 @@ namespace Parola_Yoneticisi
             this.BtnCopyUserName = new System.Windows.Forms.Button();
             this.BtnCopyPassword = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.DtpCreateDate = new System.Windows.Forms.DateTimePicker();
             this.BtnShowPasswordForUpdate = new System.Windows.Forms.Button();
             this.txtUserNameForUpdate = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -59,7 +60,6 @@ namespace Parola_Yoneticisi
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.DgvValues = new System.Windows.Forms.DataGridView();
-            this.DtpCreateDate = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -262,6 +262,14 @@ namespace Parola_Yoneticisi
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Şifre Güncelleme";
             // 
+            // DtpCreateDate
+            // 
+            this.DtpCreateDate.Location = new System.Drawing.Point(301, 174);
+            this.DtpCreateDate.MinDate = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
+            this.DtpCreateDate.Name = "DtpCreateDate";
+            this.DtpCreateDate.Size = new System.Drawing.Size(230, 26);
+            this.DtpCreateDate.TabIndex = 10;
+            // 
             // BtnShowPasswordForUpdate
             // 
             this.BtnShowPasswordForUpdate.BackColor = System.Drawing.Color.Silver;
@@ -278,7 +286,7 @@ namespace Parola_Yoneticisi
             // 
             this.txtUserNameForUpdate.BackColor = System.Drawing.Color.Silver;
             this.txtUserNameForUpdate.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtUserNameForUpdate.Location = new System.Drawing.Point(39, 92);
+            this.txtUserNameForUpdate.Location = new System.Drawing.Point(301, 92);
             this.txtUserNameForUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtUserNameForUpdate.Name = "txtUserNameForUpdate";
             this.txtUserNameForUpdate.Size = new System.Drawing.Size(230, 26);
@@ -334,7 +342,7 @@ namespace Parola_Yoneticisi
             // 
             this.TxtNameForUpdate.BackColor = System.Drawing.Color.Silver;
             this.TxtNameForUpdate.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.TxtNameForUpdate.Location = new System.Drawing.Point(301, 92);
+            this.TxtNameForUpdate.Location = new System.Drawing.Point(39, 92);
             this.TxtNameForUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtNameForUpdate.Name = "TxtNameForUpdate";
             this.TxtNameForUpdate.Size = new System.Drawing.Size(230, 26);
@@ -420,14 +428,6 @@ namespace Parola_Yoneticisi
             this.DgvValues.Size = new System.Drawing.Size(957, 221);
             this.DgvValues.TabIndex = 0;
             this.DgvValues.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvValues_CellClick);
-            // 
-            // DtpCreateDate
-            // 
-            this.DtpCreateDate.Location = new System.Drawing.Point(301, 174);
-            this.DtpCreateDate.MinDate = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
-            this.DtpCreateDate.Name = "DtpCreateDate";
-            this.DtpCreateDate.Size = new System.Drawing.Size(230, 26);
-            this.DtpCreateDate.TabIndex = 10;
             // 
             // MainForm
             // 

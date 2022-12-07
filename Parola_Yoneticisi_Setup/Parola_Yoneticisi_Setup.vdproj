@@ -40,13 +40,13 @@
         "Entry"
         {
         "MsmKey" = "8:_85FCA2EA21537694247692CE686E945B"
-        "OwnerKey" = "8:_A2EFD7FDE9FD42FD9549FE3001DA0184"
+        "OwnerKey" = "8:_79DEF943CDA44B2981596251D6AB182C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_85FCA2EA21537694247692CE686E945B"
-        "OwnerKey" = "8:_79DEF943CDA44B2981596251D6AB182C"
+        "OwnerKey" = "8:_A2EFD7FDE9FD42FD9549FE3001DA0184"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -795,7 +795,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Parola Yöneticisi"
         "ProductCode" = "8:{F87273D1-C2A0-4E86-B0B6-C1764F7E58E5}"
-        "PackageCode" = "8:{E1F59ECB-BBE0-461F-8ADB-8C6DA98683BB}"
+        "PackageCode" = "8:{6222E53B-1E3E-4B04-B3AF-56A9E8D3D4C4}"
         "UpgradeCode" = "8:{552B9919-F9BF-425C-8197-DD61F78913B0}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -926,7 +926,7 @@
             "Target" = "8:_79DEF943CDA44B2981596251D6AB182C"
             "Folder" = "8:_DE91AA63277A4833846A16D2628980A8"
             "WorkingFolder" = "8:_380EB21A272645AFB539DEC074DEDD3A"
-            "Icon" = "8:"
+            "Icon" = "8:_AF72127F5FD04C3DABCACBEBA7F3C72E"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_FF7864D978014E378D21418B42F403B9"
@@ -940,7 +940,7 @@
             "Target" = "8:_79DEF943CDA44B2981596251D6AB182C"
             "Folder" = "8:_D7020AF7B5664D77BBE05FF18529DFDC"
             "WorkingFolder" = "8:_380EB21A272645AFB539DEC074DEDD3A"
-            "Icon" = "8:"
+            "Icon" = "8:_AF72127F5FD04C3DABCACBEBA7F3C72E"
             "Feature" = "8:"
             }
         }

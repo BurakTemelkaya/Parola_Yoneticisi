@@ -111,5 +111,12 @@ namespace Parola_Yoneticisi
                 BtnShowPasswordForNewPasswordApprove.Image = Image.FromFile(Application.StartupPath + @"\Icons\Show_Password.png");
             }
         }
+
+        private void BtnCancel_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            Hide();
+        }
     }
 }

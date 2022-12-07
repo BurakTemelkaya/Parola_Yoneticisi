@@ -39,6 +39,7 @@
             this.BtnShowPasswordForNewPasswordApprove = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.BtnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnShowPasswordForOldPassword
@@ -60,7 +61,7 @@
             this.BtnRefresh.Location = new System.Drawing.Point(42, 242);
             this.BtnRefresh.Margin = new System.Windows.Forms.Padding(4);
             this.BtnRefresh.Name = "BtnRefresh";
-            this.BtnRefresh.Size = new System.Drawing.Size(304, 47);
+            this.BtnRefresh.Size = new System.Drawing.Size(263, 47);
             this.BtnRefresh.TabIndex = 8;
             this.BtnRefresh.Text = "Parolayı Yenile";
             this.BtnRefresh.UseVisualStyleBackColor = false;
@@ -156,12 +157,26 @@
             this.label3.TabIndex = 15;
             this.label3.Text = "Yeni Parolanızı Onaylayın";
             // 
-            // ResetPassword
+            // BtnCancel
+            // 
+            this.BtnCancel.BackColor = System.Drawing.Color.Silver;
+            this.BtnCancel.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.BtnCancel.Location = new System.Drawing.Point(314, 242);
+            this.BtnCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnCancel.Name = "BtnCancel";
+            this.BtnCancel.Size = new System.Drawing.Size(87, 47);
+            this.BtnCancel.TabIndex = 16;
+            this.BtnCancel.Text = "İptal";
+            this.BtnCancel.UseVisualStyleBackColor = false;
+            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
+            // 
+            // ResetPasswordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(454, 311);
+            this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnShowPasswordForNewPasswordApprove);
@@ -175,9 +190,9 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "ResetPassword";
+            this.Name = "ResetPasswordForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ResetPassword";
+            this.Text = "Parolayı Sıfırla";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,5 +210,6 @@
         private System.Windows.Forms.Button BtnShowPasswordForNewPasswordApprove;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button BtnCancel;
     }
 }

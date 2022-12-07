@@ -16,38 +16,43 @@ namespace Parola_Yoneticisi
 {
     public partial class LoginForm : Form
     {
+        
         public LoginForm()
         {
             InitializeComponent();
             BtnShowPassword.Image = Image.FromFile(Application.StartupPath + @"\Icons\Show_Password.png");
         }
 
-        private async void BtnLogin_Click(object sender, EventArgs e)
+        private string Password;
+        private async void LoginForm_Load(object sender, EventArgs e)
         {
-            await CheckPasswordAsync(TxtPassword.Text);
+            using (SifreEntities sifre = new SifreEntities())
+            {
+                var value = await sifre.Keys.FirstOrDefaultAsync();
+                Password = value.Key;
+            }
         }
 
-        private async Task CheckPasswordAsync(string password)
+        private void BtnLogin_Click(object sender, EventArgs e)
         {
             if (TxtPassword.Text == string.Empty)
             {
                 MessageBox.Show("Parola alanını boş bırakmayınız.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            using (SifreEntities sifre = new SifreEntities())
+
+            string password = TxtPassword.Text;
+            string crytoPassword = PasswordCrypto.ComputeSha256Hash(password);
+
+            if (crytoPassword == Password)
             {
-                string crytoPassword = PasswordCrypto.ComputeSha256Hash(password);
-                var isTrueKey = await sifre.Keys.AsNoTracking().AnyAsync(x => x.Key == crytoPassword);
-                if (isTrueKey)
-                {
-                    Hide();
-                    MainForm form1 = new MainForm();
-                    form1.Show();
-                    MainForm.Key = password;
-                }
-                else
-                {
-                    MessageBox.Show("Parolanız hatalı lütfen tekrar deneyiniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                Hide();
+                MainForm form1 = new MainForm();
+                form1.Show();
+                MainForm.Key = password;
+            }
+            else
+            {
+                MessageBox.Show("Parolanız hatalı lütfen tekrar deneyiniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -75,5 +80,6 @@ namespace Parola_Yoneticisi
             resetPassword.Show();
             Hide();
         }
+        
     }
 }

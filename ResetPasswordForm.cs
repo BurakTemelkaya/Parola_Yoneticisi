@@ -29,6 +29,7 @@ namespace Parola_Yoneticisi
             string oldPassword = TxtOldPassword.Text;
             string newPassword = TxtNewPassword.Text;
             string newPasswordApprove = TxtNewPasswordApprove.Text;
+
             if (oldPassword == null || newPassword == null || newPasswordApprove == null)
             {
                 MessageBox.Show("Lütfen boş değer bırakmayınız.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -39,6 +40,7 @@ namespace Parola_Yoneticisi
                 MessageBox.Show("Yeni parolanızı onaylanmadı lütfen tekrar deneyiniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
             using (SifreEntities sifreEntities = new SifreEntities())
             {
                 var oldPasswordHash = await sifreEntities.Keys.FirstOrDefaultAsync();
@@ -61,7 +63,7 @@ namespace Parola_Yoneticisi
                     MainForm.Key = newPassword;
                     MainForm form1 = new MainForm();
                     form1.ShowDialog();
-                    Hide();
+                    Dispose();
                 }
                 else
                 {
@@ -114,9 +116,9 @@ namespace Parola_Yoneticisi
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
+            Dispose();
             LoginForm loginForm = new LoginForm();
-            loginForm.Show();
-            Hide();
+            loginForm.Show();          
         }
     }
 }

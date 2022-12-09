@@ -9,10 +9,9 @@ namespace Parola_Yoneticisi
 {
     public static class PasswordGenerator
     {
-        public static string GetRandomPassword()
+        public static string GenerateRandomPassword(int length)
         {
-            string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-            int length = 16;
+            string valid = "abcçdefgğhıijklmnoöpqrsştuüvwxyzABCÇDEFGHIİJKLMNOPQRSTUVWXYZ1234567890,;#!éã~:@æß<>£^'+$½%&{/[(])}=?*_-";
             string s = "";
             using (RNGCryptoServiceProvider provider = new RNGCryptoServiceProvider())
             {

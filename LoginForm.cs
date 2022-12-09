@@ -1,26 +1,17 @@
 ﻿using Parola_Yoneticisi.Models;
-using Parola_Yoneticisi;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.Entity;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Keys = Parola_Yoneticisi.Models.Keys;
 
 namespace Parola_Yoneticisi
 {
     public partial class LoginForm : Form
     {
-        
         public LoginForm()
         {
             InitializeComponent();
-            BtnShowPassword.Image = Image.FromFile(Application.StartupPath + @"\Icons\Show_Password.png");
+            HideShowPassword();
         }
 
         private string Password;
@@ -44,11 +35,11 @@ namespace Parola_Yoneticisi
             string crytoPassword = PasswordCrypto.ComputeSha256Hash(password);
 
             if (crytoPassword == Password)
-            {
-                Hide();
+            {               
                 MainForm form1 = new MainForm();
                 form1.Show();
                 MainForm.Key = password;
+                Hide();             
             }
             else
             {
@@ -62,6 +53,18 @@ namespace Parola_Yoneticisi
         }
         public void BtnShowPassword_Click(object sender, EventArgs e)
         {
+            HideShowPassword();
+        }
+
+        private void BtnResetPassword_Click(object sender, EventArgs e)
+        {
+            ResetPasswordForm resetPassword = new ResetPasswordForm();
+            resetPassword.Show();
+            Hide();
+        }
+
+        private void HideShowPassword()
+        {
             if (TxtPassword.UseSystemPasswordChar)
             {
                 TxtPassword.UseSystemPasswordChar = false;
@@ -73,13 +76,5 @@ namespace Parola_Yoneticisi
                 BtnShowPassword.Image = Image.FromFile(Application.StartupPath + @"\Icons\Show_Password.png");
             }
         }
-
-        private void BtnResetPassword_Click(object sender, EventArgs e)
-        {
-            ResetPasswordForm resetPassword = new ResetPasswordForm();
-            resetPassword.Show();
-            Hide();
-        }
-        
     }
 }

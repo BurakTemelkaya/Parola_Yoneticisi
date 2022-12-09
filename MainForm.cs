@@ -23,11 +23,11 @@ namespace Parola_Yoneticisi
         private static int Id;
         private async void Form1_Load(object sender, EventArgs e)
         {
-            TxtPasswordForAdd.UseSystemPasswordChar = true;
-            TxtPasswordForUpdate.UseSystemPasswordChar = true;
-            BtnShowPasswordForAdd.Image = Image.FromFile(Application.StartupPath + @"\Icons\Show_Password.png");
-            BtnShowPasswordForUpdate.Image = Image.FromFile(Application.StartupPath + @"\Icons\Show_Password.png");
-            BtnRandomPasswordGenerator.Image = Image.FromFile(Application.StartupPath + @"\Icons\refresh.png");
+            ShowHidePasswordForAdd();
+            ShowHidePasswordForUpdate();
+            BtnPasswordGenerateForAdd.Image = Image.FromFile(Application.StartupPath + @"\Icons\refresh.png");
+            BtnPasswordGenerateForUpdate.Image = Image.FromFile(Application.StartupPath + @"\Icons\refresh.png");
+            BtnClearForTxtSearch.Image = Image.FromFile(Application.StartupPath + @"\Icons\close.png");
             await ListAsync();
         }
 
@@ -37,12 +37,17 @@ namespace Parola_Yoneticisi
             {
                 var values = await passwordEntites.Passwords.ToListAsync();
                 DgvValues.DataSource = values;
+                AutoCompleteStringCollection autoCompleteStringCollection = new AutoCompleteStringCollection();
+                autoCompleteStringCollection.AddRange(values.Select(x => x.Name).ToArray());
+                txtSearch.AutoCompleteCustomSource = autoCompleteStringCollection;
             }
             DgvValues.Columns[3].Visible = false;
             DgvValues.Columns[1].HeaderText = "İsmi";
             DgvValues.Columns[2].HeaderText = "Kullanıcı Adı";
             DgvValues.Columns[4].HeaderText = "Oluşturulma Tarihi";
             DgvValues.Columns[5].HeaderText = "Güncelleme Tarihi";
+
+
         }
 
         private async Task SearchAsync(string deger)
@@ -58,7 +63,6 @@ namespace Parola_Yoneticisi
                 {
                     await ListAsync();
                 }
-
             }
         }
         private async Task AddAsync(string name, string password, string userName)
@@ -84,6 +88,7 @@ namespace Parola_Yoneticisi
             if (TxtPasswordNameForAdd.Text != "" && TxtPasswordForAdd.Text != "" && TxtUserNameForAdd.Text != "")
             {
                 await AddAsync(TxtPasswordNameForAdd.Text, TxtPasswordForAdd.Text, TxtUserNameForAdd.Text);
+                TextBoxClearForAdd();
             }
             else if (TxtPasswordNameForAdd.Text == "")
             {
@@ -128,31 +133,9 @@ namespace Parola_Yoneticisi
             {
                 await DeleteAsync();
                 TextBoxClearForUpdate();
+                txtSearch.Clear();
             }
 
-        }
-        private async Task UpdateAsync(string name, string userName, string password, DateTime createDate)
-        {
-            using (SifreEntities passwordEntites = new SifreEntities())
-            {
-                if (Id > 0)
-                {
-                    var value = await passwordEntites.Passwords.Where(w => w.Id == Id).FirstOrDefaultAsync();
-                    value.Name = name;
-                    value.Password = await PasswordCrypto.EncryptAsync(Key, password);
-                    value.UserName = userName;
-                    value.CreateDate = createDate;
-                    value.UpdateDate = DateTime.Now;
-                    await passwordEntites.SaveChangesAsync();
-                    await ListAsync();
-                    MessageBox.Show("İşlem Başarılı " + value.Name + " Adlı şifre güncellendi", "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    TextBoxClearForUpdate();
-                }
-                else
-                {
-                    MessageBox.Show("Lütfen Şifre Seçiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
         }
 
         private async void BtnSifreGuncelle_Click(object sender, EventArgs e)
@@ -160,6 +143,7 @@ namespace Parola_Yoneticisi
             if (TxtNameForUpdate.Text != "" && txtUserNameForUpdate.Text != "" && TxtPasswordForUpdate.Text != "")
             {
                 await UpdateAsync(TxtNameForUpdate.Text, txtUserNameForUpdate.Text, TxtPasswordForUpdate.Text, DtpCreateDate.Value);
+                TextBoxClearForUpdate();
             }
             else if (TxtNameForUpdate.Text == "")
             {
@@ -175,12 +159,36 @@ namespace Parola_Yoneticisi
             }
         }
 
+        private async Task UpdateAsync(string name, string userName, string password, DateTime createDate)
+        {
+            using (SifreEntities passwordEntites = new SifreEntities())
+            {
+                if (Id > 0)
+                {
+                    var value = await passwordEntites.Passwords.Where(w => w.Id == Id).FirstOrDefaultAsync();
+                    value.Name = name;
+                    value.Password = await PasswordCrypto.EncryptAsync(Key, password);
+                    value.UserName = userName;
+                    value.CreateDate = createDate;
+                    value.UpdateDate = DateTime.Now;
+                    await passwordEntites.SaveChangesAsync();
+                    await ListAsync();
+                    MessageBox.Show("İşlem Başarılı " + value.Name + " Adlı şifre güncellendi", "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Lütfen Şifre Seçiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
         private void TextBoxClearForAdd()
         {
             TxtPasswordNameForAdd.Clear();
             TxtPasswordForAdd.Clear();
             TxtUserNameForAdd.Clear();
         }
+
         private void TextBoxClearForUpdate()
         {
             TxtNameForUpdate.Clear();
@@ -206,7 +214,6 @@ namespace Parola_Yoneticisi
             }
             string output = string.Format("{0} Adlı Şifre Panoya Kopyalandı", DgvValues.CurrentRow.Cells[1].Value.ToString());
             MessageBox.Show(output, "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
         }
 
         private void BtnCopyUserName_Click(object sender, EventArgs e)
@@ -239,36 +246,74 @@ namespace Parola_Yoneticisi
         }
         private void BtnShowPasswordForAdd_Click(object sender, EventArgs e)
         {
+            ShowHidePasswordForAdd();
+        }
+
+        private void ShowPasswordForAdd()
+        {
+            TxtPasswordForAdd.UseSystemPasswordChar = false;
+            BtnShowPasswordForAdd.Image = Image.FromFile(Application.StartupPath + @"\Icons\Dont't_Show_Password.png");
+        }
+
+        private void HidePasswordForAdd()
+        {
+            TxtPasswordForAdd.UseSystemPasswordChar = true;
+            BtnShowPasswordForAdd.Image = Image.FromFile(Application.StartupPath + @"\Icons\Show_Password.png");
+        }
+
+        private void ShowHidePasswordForAdd()
+        {
             if (TxtPasswordForAdd.UseSystemPasswordChar)
             {
-                TxtPasswordForAdd.UseSystemPasswordChar = false;
-                BtnShowPasswordForAdd.Image = Image.FromFile(Application.StartupPath + @"\Icons\Dont't_Show_Password.png");
+                ShowPasswordForAdd();
             }
             else
             {
-                TxtPasswordForAdd.UseSystemPasswordChar = true;
-                BtnShowPasswordForAdd.Image = Image.FromFile(Application.StartupPath + @"\Icons\Show_Password.png");
+                HidePasswordForAdd();
             }
         }
         private void BtnShowPasswordForUpdate_Click(object sender, EventArgs e)
         {
+            ShowHidePasswordForUpdate();
+        }
+
+        private void BtnPasswordGenerateForAdd_Click(object sender, EventArgs e)
+        {
+            ShowPasswordForAdd();
+            TxtPasswordForAdd.Text = PasswordGenerator.GenerateRandomPassword((int)NumUpDownGeneratePasswordCountForAdd.Value);
+        }
+        private void BtnPasswordGenerateForUpdate_Click(object sender, EventArgs e)
+        {
+            ShowPasswordForUpdate();
+            TxtPasswordForUpdate.Text = PasswordGenerator.GenerateRandomPassword((int)NumUpDownGeneratePasswordCountForUpdate.Value);
+        }
+
+        private void ShowHidePasswordForUpdate()
+        {
             if (TxtPasswordForUpdate.UseSystemPasswordChar)
             {
-                TxtPasswordForUpdate.UseSystemPasswordChar = false;
-                BtnShowPasswordForUpdate.Image = Image.FromFile(Application.StartupPath + @"\Icons\Dont't_Show_Password.png");
+                ShowPasswordForUpdate();
             }
             else
             {
-                TxtPasswordForUpdate.UseSystemPasswordChar = true;
-                BtnShowPasswordForUpdate.Image = Image.FromFile(Application.StartupPath + @"\Icons\Show_Password.png");
+                HidePasswordForUpdate();
             }
         }
-
-        private void BtnRandomPasswordGenerator_Click(object sender, EventArgs e)
+        private void ShowPasswordForUpdate()
         {
-            TxtPasswordForAdd.UseSystemPasswordChar = false;
-            TxtPasswordForAdd.Text = PasswordGenerator.GetRandomPassword();
-            BtnShowPasswordForAdd.Image = Image.FromFile(Application.StartupPath + @"\Icons\Dont't_Show_Password.png");
+            TxtPasswordForUpdate.UseSystemPasswordChar = false;
+            BtnShowPasswordForUpdate.Image = Image.FromFile(Application.StartupPath + @"\Icons\Dont't_Show_Password.png");
+        }
+
+        private void HidePasswordForUpdate()
+        {
+            TxtPasswordForUpdate.UseSystemPasswordChar = true;
+            BtnShowPasswordForUpdate.Image = Image.FromFile(Application.StartupPath + @"\Icons\Show_Password.png");
+        }
+
+        private void BtnClearForTxtSearch_Click(object sender, EventArgs e)
+        {
+            txtSearch.Clear();
         }
     }
 }

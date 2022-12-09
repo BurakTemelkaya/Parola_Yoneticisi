@@ -18,7 +18,7 @@ namespace Parola_Yoneticisi
 
             using (Aes aes = Aes.Create())
             {
-                key = KeyComplete32Character(key);
+                key = KeyCompleteTo32Character(key);
                 aes.Key = Encoding.UTF8.GetBytes(key);
                 aes.IV = iv;
 
@@ -26,9 +26,9 @@ namespace Parola_Yoneticisi
 
                 using (MemoryStream memoryStream = new MemoryStream())
                 {
-                    using (CryptoStream cryptoStream = new CryptoStream((Stream)memoryStream, encryptor, CryptoStreamMode.Write))
+                    using (CryptoStream cryptoStream = new CryptoStream(memoryStream, encryptor, CryptoStreamMode.Write))
                     {
-                        using (StreamWriter streamWriter = new StreamWriter((Stream)cryptoStream))
+                        using (StreamWriter streamWriter = new StreamWriter(cryptoStream))
                         {
                             await streamWriter.WriteAsync(password);
                         }
@@ -45,7 +45,7 @@ namespace Parola_Yoneticisi
         {
             byte[] iv = new byte[16];
             byte[] buffer = Convert.FromBase64String(encryptedPassword);
-            key = KeyComplete32Character(key);
+            key = KeyCompleteTo32Character(key);
 
             using (Aes aes = Aes.Create())
             {
@@ -55,9 +55,9 @@ namespace Parola_Yoneticisi
 
                 using (MemoryStream memoryStream = new MemoryStream(buffer))
                 {
-                    using (CryptoStream cryptoStream = new CryptoStream((Stream)memoryStream, decryptor, CryptoStreamMode.Read))
+                    using (CryptoStream cryptoStream = new CryptoStream(memoryStream, decryptor, CryptoStreamMode.Read))
                     {
-                        using (StreamReader streamReader = new StreamReader((Stream)cryptoStream))
+                        using (StreamReader streamReader = new StreamReader(cryptoStream))
                         {
                             return await streamReader.ReadToEndAsync();
                         }
@@ -80,7 +80,7 @@ namespace Parola_Yoneticisi
                 return builder.ToString();
             }
         }
-        private static string KeyComplete32Character(string key)
+        private static string KeyCompleteTo32Character(string key)
         {
             if (key.Length < 32)
             {

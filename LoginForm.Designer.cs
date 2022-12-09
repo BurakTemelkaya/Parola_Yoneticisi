@@ -51,7 +51,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(436, 236);
+            this.groupBox1.Size = new System.Drawing.Size(436, 261);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Şifre Ekleme";
@@ -60,7 +60,7 @@
             // 
             this.BtnResetPassword.BackColor = System.Drawing.Color.Silver;
             this.BtnResetPassword.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.BtnResetPassword.Location = new System.Drawing.Point(54, 181);
+            this.BtnResetPassword.Location = new System.Drawing.Point(54, 206);
             this.BtnResetPassword.Margin = new System.Windows.Forms.Padding(4);
             this.BtnResetPassword.Name = "BtnResetPassword";
             this.BtnResetPassword.Size = new System.Drawing.Size(304, 47);
@@ -85,7 +85,7 @@
             // 
             this.BtnLogin.BackColor = System.Drawing.Color.Silver;
             this.BtnLogin.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.BtnLogin.Location = new System.Drawing.Point(54, 126);
+            this.BtnLogin.Location = new System.Drawing.Point(54, 137);
             this.BtnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.BtnLogin.Name = "BtnLogin";
             this.BtnLogin.Size = new System.Drawing.Size(304, 47);
@@ -103,7 +103,6 @@
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.Size = new System.Drawing.Size(304, 26);
             this.TxtPassword.TabIndex = 3;
-            this.TxtPassword.UseSystemPasswordChar = true;
             // 
             // label2
             // 
@@ -121,7 +120,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(501, 277);
+            this.ClientSize = new System.Drawing.Size(501, 287);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

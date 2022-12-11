@@ -84,6 +84,7 @@
             // BtnLogin
             // 
             this.BtnLogin.BackColor = System.Drawing.Color.Silver;
+            this.BtnLogin.Enabled = false;
             this.BtnLogin.ForeColor = System.Drawing.SystemColors.WindowText;
             this.BtnLogin.Location = new System.Drawing.Point(54, 137);
             this.BtnLogin.Margin = new System.Windows.Forms.Padding(4);

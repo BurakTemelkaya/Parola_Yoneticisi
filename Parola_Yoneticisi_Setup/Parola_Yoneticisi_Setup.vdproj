@@ -63,6 +63,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_A6B56E020C54486EA47898B4A52A0C1C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_AF72127F5FD04C3DABCACBEBA7F3C72E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -156,15 +162,15 @@
             "ComponentsUrl" = "8:"
                 "Items"
                 {
-                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.8"
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
                     {
-                    "Name" = "8:Microsoft .NET Framework 4.8 (x86 and x64)"
-                    "ProductCode" = "8:.NETFramework,Version=v4.8"
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
                     }
-                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.SqlServer.SqlLocalDB.13.0"
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.SqlServer.SqlLocalDB.15.0"
                     {
-                    "Name" = "8:SQL Server 2016 Express LocalDB"
-                    "ProductCode" = "8:Microsoft.SqlServer.SqlLocalDB.13.0"
+                    "Name" = "8:SQL Server 2019 Express LocalDB"
+                    "ProductCode" = "8:Microsoft.SqlServer.SqlLocalDB.15.0"
                     }
                 }
             }
@@ -356,6 +362,26 @@
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_380EB21A272645AFB539DEC074DEDD3A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A6B56E020C54486EA47898B4A52A0C1C"
+            {
+            "SourcePath" = "8:..\\bin\\Release\\Icons\\Close.png"
+            "TargetName" = "8:Close.png"
+            "Tag" = "8:"
+            "Folder" = "8:_3B7CF91FFCA043D6B69A56545B978174"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -622,7 +648,7 @@
                         {
                         }
                     }
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_F9A51F5DF34D49269D92FC901A5F78EB"
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_64791C07CE25491B98A44FD4E88C0BCE"
                     {
                     "Name" = "8:SqlLocalDB2019"
                     "AlwaysCreate" = "11:FALSE"
@@ -795,7 +821,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Parola Yöneticisi"
         "ProductCode" = "8:{F87273D1-C2A0-4E86-B0B6-C1764F7E58E5}"
-        "PackageCode" = "8:{F00EE7FC-0095-472A-8AB0-DCCC9699762C}"
+        "PackageCode" = "8:{91800D15-054D-4980-8547-49D6AF9A5FA1}"
         "UpgradeCode" = "8:{552B9919-F9BF-425C-8197-DD61F78913B0}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

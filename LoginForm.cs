@@ -11,17 +11,18 @@ namespace Parola_Yoneticisi
         public LoginForm()
         {
             InitializeComponent();
-            HideShowPassword();
         }
 
         private string Password;
         private async void LoginForm_Load(object sender, EventArgs e)
         {
+            HideShowPassword();
             using (SifreEntities sifre = new SifreEntities())
             {
                 var value = await sifre.Keys.FirstOrDefaultAsync();
                 Password = value.Key;
             }
+            BtnLogin.Enabled = true;
         }
 
         private void BtnLogin_Click(object sender, EventArgs e)
@@ -35,11 +36,11 @@ namespace Parola_Yoneticisi
             string crytoPassword = PasswordCrypto.ComputeSha256Hash(password);
 
             if (crytoPassword == Password)
-            {               
+            {
                 MainForm form1 = new MainForm();
                 form1.Show();
                 MainForm.Key = password;
-                Hide();             
+                Hide();
             }
             else
             {

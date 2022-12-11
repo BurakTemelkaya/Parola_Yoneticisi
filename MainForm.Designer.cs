@@ -432,7 +432,7 @@ namespace Parola_Yoneticisi
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label4.Location = new System.Drawing.Point(110, 30);
+            this.label4.Location = new System.Drawing.Point(105, 30);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(102, 20);
@@ -443,7 +443,7 @@ namespace Parola_Yoneticisi
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label5.Location = new System.Drawing.Point(132, 104);
+            this.label5.Location = new System.Drawing.Point(125, 104);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 20);

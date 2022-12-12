@@ -33,9 +33,9 @@ namespace Parola_Yoneticisi
             }
 
             string password = TxtPassword.Text;
-            string Passwordcrypto = PasswordCrypto.ComputeSha256Hash(password);
+            string passwordCrypto = PasswordCrypto.ComputeSha256Hash(password);
 
-            if (Passwordcrypto == PasswordHash)
+            if (passwordCrypto == PasswordHash)
             {
                 MainForm form1 = new MainForm();
                 form1.Show();

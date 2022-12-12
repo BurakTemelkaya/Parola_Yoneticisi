@@ -19,6 +19,7 @@ namespace Parola_Yoneticisi
 
         public static string Key;
         private static int Id;
+        List<Passwords> Passwords = new List<Passwords>();
         private async void Form1_Load(object sender, EventArgs e)
         {
             BtnShowPasswordForAdd.Image = ImageFileNames.GetShowPasswordImage();
@@ -33,13 +34,17 @@ namespace Parola_Yoneticisi
         {
             using (SifreEntities passwordEntites = new SifreEntities())
             {
-                var values = await passwordEntites.Passwords.ToListAsync();
-                DgvValues.DataSource = values;
+                Passwords = await passwordEntites.Passwords.AsNoTracking().ToListAsync();
+                DgvValues.DataSource = Passwords;
                 AutoCompleteStringCollection autoCompleteStringCollection = new AutoCompleteStringCollection();
-                autoCompleteStringCollection.AddRange(values.Select(x => x.Name).ToArray());
+                autoCompleteStringCollection.AddRange(Passwords.Select(x => x.Name).ToArray());
                 txtSearch.AutoCompleteCustomSource = autoCompleteStringCollection;
             }
-
+            for (int i = 0; i < Passwords.Count; i++)
+            {
+                DgvValues.Rows[i].Cells[0].Value = i + 1;
+            }
+            DgvValues.Columns[0].HeaderText = "#";
             DgvValues.Columns[1].HeaderText = "Parolanın Adı";
             DgvValues.Columns[2].HeaderText = "Kullanıcı Adı";
             DgvValues.Columns[3].Visible = false;
@@ -49,17 +54,14 @@ namespace Parola_Yoneticisi
 
         private async Task SearchAsync(string deger)
         {
-            using (SifreEntities passwordEntites = new SifreEntities())
+            if (deger != string.Empty)
             {
-                if (deger != string.Empty)
-                {
-                    var password = await passwordEntites.Passwords.AsNoTracking().Where(t => t.Name.ToLower().Contains(deger.ToLower())).ToListAsync();
-                    DgvValues.DataSource = password;
-                }
-                else
-                {
-                    await ListAsync();
-                }
+                var password = Passwords.Where(t => t.Name.ToLower().Contains(deger.ToLower())).ToList();
+                DgvValues.DataSource = password;
+            }
+            else
+            {
+                await ListAsync();
             }
         }
         private async Task AddAsync(string name, string password, string userName)
@@ -82,20 +84,20 @@ namespace Parola_Yoneticisi
         }
         private async void BtnPasswordAdd_Click(object sender, EventArgs e)
         {
-            if (TxtPasswordNameForAdd.Text != "" && TxtPasswordForAdd.Text != "" && TxtUserNameForAdd.Text != "")
+            if (TxtPasswordNameForAdd.Text != string.Empty && TxtPasswordForAdd.Text != string.Empty && TxtUserNameForAdd.Text != string.Empty)
             {
                 await AddAsync(TxtPasswordNameForAdd.Text, TxtPasswordForAdd.Text, TxtUserNameForAdd.Text);
                 TextBoxClearForAdd();
             }
-            else if (TxtPasswordNameForAdd.Text == "")
+            else if (TxtPasswordNameForAdd.Text == string.Empty)
             {
-                MessageBox.Show("Lütfen Sitenin Adını Boş Bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lütfen parolanın adını boş bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (TxtPasswordForAdd.Text == "")
+            else if (TxtPasswordForAdd.Text == string.Empty)
             {
                 MessageBox.Show("Lütfen parolayı boş bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (TxtUserNameForAdd.Text == "")
+            else if (TxtUserNameForAdd.Text == string.Empty)
             {
                 MessageBox.Show("Lütfen kullanıcı adını boş bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -118,7 +120,6 @@ namespace Parola_Yoneticisi
             {
                 MessageBox.Show("İşlem yapılamadı, lütfen kayıt seçiniz !", "Silme Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
         private async void BtnDelete_Click(object sender, EventArgs e)
         {
@@ -129,7 +130,6 @@ namespace Parola_Yoneticisi
                 TextBoxClearForUpdate();
                 txtSearch.Clear();
             }
-
         }
 
         private async void BtnSifreGuncelle_Click(object sender, EventArgs e)
@@ -138,6 +138,7 @@ namespace Parola_Yoneticisi
             {
                 await UpdateAsync(TxtNameForUpdate.Text, txtUserNameForUpdate.Text, TxtPasswordForUpdate.Text, DtpCreateDate.Value);
                 TextBoxClearForUpdate();
+                txtSearch.Clear();
             }
             else if (TxtNameForUpdate.Text == "")
             {
@@ -228,6 +229,7 @@ namespace Parola_Yoneticisi
 
         private async void DgvValues_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            HidePasswordForUpdate();
             Id = Convert.ToInt32(DgvValues.CurrentRow.Cells[0].Value);
             TxtNameForUpdate.Text = DgvValues.CurrentRow.Cells[1].Value.ToString();
             txtUserNameForUpdate.Text = DgvValues.CurrentRow.Cells[2].Value.ToString();

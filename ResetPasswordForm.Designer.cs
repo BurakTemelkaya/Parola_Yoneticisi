@@ -46,11 +46,8 @@
             // 
             this.BtnShowPasswordForOldPassword.BackColor = System.Drawing.Color.Silver;
             this.BtnShowPasswordForOldPassword.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.BtnShowPasswordForOldPassword.Location = new System.Drawing.Point(356, 56);
-            this.BtnShowPasswordForOldPassword.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.BtnShowPasswordForOldPassword, "BtnShowPasswordForOldPassword");
             this.BtnShowPasswordForOldPassword.Name = "BtnShowPasswordForOldPassword";
-            this.BtnShowPasswordForOldPassword.Size = new System.Drawing.Size(45, 35);
-            this.BtnShowPasswordForOldPassword.TabIndex = 9;
             this.BtnShowPasswordForOldPassword.UseVisualStyleBackColor = false;
             this.BtnShowPasswordForOldPassword.Click += new System.EventHandler(this.BtnShowPasswordForOldPassword_Click);
             // 
@@ -58,12 +55,8 @@
             // 
             this.BtnRefresh.BackColor = System.Drawing.Color.Silver;
             this.BtnRefresh.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.BtnRefresh.Location = new System.Drawing.Point(42, 242);
-            this.BtnRefresh.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.BtnRefresh, "BtnRefresh");
             this.BtnRefresh.Name = "BtnRefresh";
-            this.BtnRefresh.Size = new System.Drawing.Size(263, 47);
-            this.BtnRefresh.TabIndex = 8;
-            this.BtnRefresh.Text = "Parolayı Yenile";
             this.BtnRefresh.UseVisualStyleBackColor = false;
             this.BtnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
@@ -71,55 +64,38 @@
             // 
             this.TxtOldPassword.BackColor = System.Drawing.Color.Silver;
             this.TxtOldPassword.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.TxtOldPassword.Location = new System.Drawing.Point(42, 61);
-            this.TxtOldPassword.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            resources.ApplyResources(this.TxtOldPassword, "TxtOldPassword");
             this.TxtOldPassword.Name = "TxtOldPassword";
-            this.TxtOldPassword.Size = new System.Drawing.Size(304, 26);
-            this.TxtOldPassword.TabIndex = 7;
             this.TxtOldPassword.UseSystemPasswordChar = true;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
+            resources.ApplyResources(this.label2, "label2");
             this.label2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label2.Location = new System.Drawing.Point(141, 20);
-            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 20);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Eski Parolanız";
             // 
             // TxtNewPassword
             // 
             this.TxtNewPassword.BackColor = System.Drawing.Color.Silver;
             this.TxtNewPassword.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.TxtNewPassword.Location = new System.Drawing.Point(42, 132);
-            this.TxtNewPassword.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            resources.ApplyResources(this.TxtNewPassword, "TxtNewPassword");
             this.TxtNewPassword.Name = "TxtNewPassword";
-            this.TxtNewPassword.Size = new System.Drawing.Size(304, 26);
-            this.TxtNewPassword.TabIndex = 10;
             this.TxtNewPassword.UseSystemPasswordChar = true;
             // 
             // TxtNewPasswordApprove
             // 
             this.TxtNewPasswordApprove.BackColor = System.Drawing.Color.Silver;
             this.TxtNewPasswordApprove.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.TxtNewPasswordApprove.Location = new System.Drawing.Point(42, 205);
-            this.TxtNewPasswordApprove.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            resources.ApplyResources(this.TxtNewPasswordApprove, "TxtNewPasswordApprove");
             this.TxtNewPasswordApprove.Name = "TxtNewPasswordApprove";
-            this.TxtNewPasswordApprove.Size = new System.Drawing.Size(304, 26);
-            this.TxtNewPasswordApprove.TabIndex = 11;
             this.TxtNewPasswordApprove.UseSystemPasswordChar = true;
             // 
             // BtnShowPasswordForNewPassword
             // 
             this.BtnShowPasswordForNewPassword.BackColor = System.Drawing.Color.Silver;
             this.BtnShowPasswordForNewPassword.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.BtnShowPasswordForNewPassword.Location = new System.Drawing.Point(356, 128);
-            this.BtnShowPasswordForNewPassword.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.BtnShowPasswordForNewPassword, "BtnShowPasswordForNewPassword");
             this.BtnShowPasswordForNewPassword.Name = "BtnShowPasswordForNewPassword";
-            this.BtnShowPasswordForNewPassword.Size = new System.Drawing.Size(45, 35);
-            this.BtnShowPasswordForNewPassword.TabIndex = 12;
             this.BtnShowPasswordForNewPassword.UseVisualStyleBackColor = false;
             this.BtnShowPasswordForNewPassword.Click += new System.EventHandler(this.BtnShowPasswordForNewPassword_Click);
             // 
@@ -127,55 +103,37 @@
             // 
             this.BtnShowPasswordForNewPasswordApprove.BackColor = System.Drawing.Color.Silver;
             this.BtnShowPasswordForNewPasswordApprove.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.BtnShowPasswordForNewPasswordApprove.Location = new System.Drawing.Point(356, 198);
-            this.BtnShowPasswordForNewPasswordApprove.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.BtnShowPasswordForNewPasswordApprove, "BtnShowPasswordForNewPasswordApprove");
             this.BtnShowPasswordForNewPasswordApprove.Name = "BtnShowPasswordForNewPasswordApprove";
-            this.BtnShowPasswordForNewPasswordApprove.Size = new System.Drawing.Size(45, 35);
-            this.BtnShowPasswordForNewPasswordApprove.TabIndex = 13;
             this.BtnShowPasswordForNewPasswordApprove.UseVisualStyleBackColor = false;
             this.BtnShowPasswordForNewPasswordApprove.Click += new System.EventHandler(this.BtnShowPasswordForNewPasswordApprove_Click);
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            resources.ApplyResources(this.label1, "label1");
             this.label1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label1.Location = new System.Drawing.Point(141, 105);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 20);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Yeni Parolanız";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
+            resources.ApplyResources(this.label3, "label3");
             this.label3.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label3.Location = new System.Drawing.Point(102, 174);
-            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(185, 20);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Yeni Parolanızı Onaylayın";
             // 
             // BtnCancel
             // 
             this.BtnCancel.BackColor = System.Drawing.Color.Silver;
             this.BtnCancel.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.BtnCancel.Location = new System.Drawing.Point(314, 242);
-            this.BtnCancel.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.BtnCancel, "BtnCancel");
             this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.Size = new System.Drawing.Size(87, 47);
-            this.BtnCancel.TabIndex = 16;
-            this.BtnCancel.Text = "İptal";
             this.BtnCancel.UseVisualStyleBackColor = false;
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // ResetPasswordForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(454, 311);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -187,12 +145,8 @@
             this.Controls.Add(this.BtnRefresh);
             this.Controls.Add(this.TxtOldPassword);
             this.Controls.Add(this.label2);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "ResetPasswordForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Parolayı Sıfırla";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ResetPasswordForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();

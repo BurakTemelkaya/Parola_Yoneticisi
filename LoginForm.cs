@@ -12,14 +12,16 @@ namespace Parola_Yoneticisi
 
         private string PasswordHash;
         private async void LoginForm_Load(object sender, EventArgs e)
-        {
+        {           
             HideShowPassword();
+            BtnLogin.Text = "Yükleniyor";
             using (SifreEntities sifre = new SifreEntities())
             {
                 var value = await sifre.Keys.FirstOrDefaultAsync();
                 PasswordHash = value.Key;
             }
             BtnLogin.Enabled = true;
+            BtnLogin.Text = "Giriş Yap";
         }
 
         private void BtnLogin_Click(object sender, EventArgs e)
@@ -27,6 +29,7 @@ namespace Parola_Yoneticisi
             if (TxtPassword.Text == string.Empty)
             {
                 MessageBox.Show("Parola alanını boş bırakmayınız.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             string password = TxtPassword.Text;

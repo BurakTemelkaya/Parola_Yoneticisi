@@ -82,12 +82,9 @@ namespace Parola_Yoneticisi
         }
         private static string KeyCompleteTo32Character(string key)
         {
-            if (key.Length < 32)
+            while (key.Length < 32)
             {
-                while (key.Length < 32)
-                {
-                    key += 0;
-                }
+                key += 0;
             }
             return key;
         }

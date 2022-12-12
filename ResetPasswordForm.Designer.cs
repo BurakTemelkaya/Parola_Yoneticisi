@@ -193,6 +193,7 @@
             this.Name = "ResetPasswordForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Parolayı Sıfırla";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ResetPasswordForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

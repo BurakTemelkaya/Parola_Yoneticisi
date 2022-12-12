@@ -19,9 +19,9 @@ namespace Parola_Yoneticisi
         public ResetPasswordForm()
         {
             InitializeComponent();
-            BtnShowPasswordForOldPassword.Image = Image.FromFile(Application.StartupPath + @"\Icons\Show_Password.png");
-            BtnShowPasswordForNewPassword.Image = Image.FromFile(Application.StartupPath + @"\Icons\Show_Password.png");
-            BtnShowPasswordForNewPasswordApprove.Image = Image.FromFile(Application.StartupPath + @"\Icons\Show_Password.png");
+            BtnShowPasswordForOldPassword.Image = ImageFileNames.GetShowPasswordImage();
+            BtnShowPasswordForNewPassword.Image = ImageFileNames.GetShowPasswordImage();
+            BtnShowPasswordForNewPasswordApprove.Image = ImageFileNames.GetShowPasswordImage();
         }
 
         private async void BtnRefresh_Click(object sender, EventArgs e)
@@ -77,12 +77,12 @@ namespace Parola_Yoneticisi
             if (TxtOldPassword.UseSystemPasswordChar)
             {
                 TxtOldPassword.UseSystemPasswordChar = false;
-                BtnShowPasswordForOldPassword.Image = Image.FromFile(Application.StartupPath + @"\Icons\Dont't_Show_Password.png");
+                BtnShowPasswordForOldPassword.Image = ImageFileNames.GetDontShowPasswordImage();
             }
             else
             {
                 TxtOldPassword.UseSystemPasswordChar = true;
-                BtnShowPasswordForOldPassword.Image = Image.FromFile(Application.StartupPath + @"\Icons\Show_Password.png");
+                BtnShowPasswordForOldPassword.Image = ImageFileNames.GetShowPasswordImage();
             }
         }
 
@@ -91,12 +91,12 @@ namespace Parola_Yoneticisi
             if (TxtNewPassword.UseSystemPasswordChar)
             {
                 TxtNewPassword.UseSystemPasswordChar = false;
-                BtnShowPasswordForNewPassword.Image = Image.FromFile(Application.StartupPath + @"\Icons\Dont't_Show_Password.png");
+                BtnShowPasswordForNewPassword.Image = ImageFileNames.GetDontShowPasswordImage();
             }
             else
             {
                 TxtNewPassword.UseSystemPasswordChar = true;
-                BtnShowPasswordForNewPassword.Image = Image.FromFile(Application.StartupPath + @"\Icons\Show_Password.png");
+                BtnShowPasswordForNewPassword.Image = ImageFileNames.GetShowPasswordImage();
             }
         }
 
@@ -105,12 +105,12 @@ namespace Parola_Yoneticisi
             if (TxtNewPasswordApprove.UseSystemPasswordChar)
             {
                 TxtNewPasswordApprove.UseSystemPasswordChar = false;
-                BtnShowPasswordForNewPasswordApprove.Image = Image.FromFile(Application.StartupPath + @"\Icons\Dont't_Show_Password.png");
+                BtnShowPasswordForNewPasswordApprove.Image = ImageFileNames.GetDontShowPasswordImage();
             }
             else
             {
                 TxtNewPasswordApprove.UseSystemPasswordChar = true;
-                BtnShowPasswordForNewPasswordApprove.Image = Image.FromFile(Application.StartupPath + @"\Icons\Show_Password.png");
+                BtnShowPasswordForNewPasswordApprove.Image = ImageFileNames.GetShowPasswordImage();
             }
         }
 
@@ -118,7 +118,9 @@ namespace Parola_Yoneticisi
         {
             Dispose();
             LoginForm loginForm = new LoginForm();
-            loginForm.Show();          
+            loginForm.Show();
         }
+
+        private void ResetPasswordForm_FormClosing(object sender, FormClosingEventArgs e) => Application.Exit();
     }
 }

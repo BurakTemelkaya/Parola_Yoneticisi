@@ -8,19 +8,16 @@ namespace Parola_Yoneticisi
 {
     public partial class LoginForm : Form
     {
-        public LoginForm()
-        {
-            InitializeComponent();
-        }
+        public LoginForm() => InitializeComponent();
 
-        private string Password;
+        private string PasswordHash;
         private async void LoginForm_Load(object sender, EventArgs e)
         {
             HideShowPassword();
             using (SifreEntities sifre = new SifreEntities())
             {
                 var value = await sifre.Keys.FirstOrDefaultAsync();
-                Password = value.Key;
+                PasswordHash = value.Key;
             }
             BtnLogin.Enabled = true;
         }
@@ -33,9 +30,9 @@ namespace Parola_Yoneticisi
             }
 
             string password = TxtPassword.Text;
-            string crytoPassword = PasswordCrypto.ComputeSha256Hash(password);
+            string Passwordcrypto = PasswordCrypto.ComputeSha256Hash(password);
 
-            if (crytoPassword == Password)
+            if (Passwordcrypto == PasswordHash)
             {
                 MainForm form1 = new MainForm();
                 form1.Show();
@@ -48,14 +45,10 @@ namespace Parola_Yoneticisi
             }
         }
 
-        private void Login_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-        public void BtnShowPassword_Click(object sender, EventArgs e)
-        {
-            HideShowPassword();
-        }
+        private void Login_FormClosing(object sender, FormClosingEventArgs e) => Application.Exit();
+
+        public void BtnShowPassword_Click(object sender, EventArgs e) => HideShowPassword();
+
 
         private void BtnResetPassword_Click(object sender, EventArgs e)
         {

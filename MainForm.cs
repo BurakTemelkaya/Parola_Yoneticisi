@@ -15,19 +15,17 @@ namespace Parola_Yoneticisi
 {
     public partial class MainForm : Form
     {
-        public MainForm()
-        {
-            InitializeComponent();
-        }
+        public MainForm() => InitializeComponent();
+
         public static string Key;
         private static int Id;
         private async void Form1_Load(object sender, EventArgs e)
         {
-            ShowHidePasswordForAdd();
-            ShowHidePasswordForUpdate();
-            BtnPasswordGenerateForAdd.Image = Image.FromFile(Application.StartupPath + @"\Icons\refresh.png");
-            BtnPasswordGenerateForUpdate.Image = Image.FromFile(Application.StartupPath + @"\Icons\refresh.png");
-            BtnClearForTxtSearch.Image = Image.FromFile(Application.StartupPath + @"\Icons\close.png");
+            BtnShowPasswordForAdd.Image = ImageFileNames.GetShowPasswordImage();
+            BtnShowPasswordForUpdate.Image = ImageFileNames.GetShowPasswordImage();
+            BtnPasswordGenerateForAdd.Image = ImageFileNames.GetRefreshImage();
+            BtnPasswordGenerateForUpdate.Image = ImageFileNames.GetRefreshImage();
+            BtnClearForTxtSearch.Image = ImageFileNames.GetCloseImage();
             await ListAsync();
         }
 
@@ -41,13 +39,12 @@ namespace Parola_Yoneticisi
                 autoCompleteStringCollection.AddRange(values.Select(x => x.Name).ToArray());
                 txtSearch.AutoCompleteCustomSource = autoCompleteStringCollection;
             }
-            DgvValues.Columns[3].Visible = false;
-            DgvValues.Columns[1].HeaderText = "İsmi";
+
+            DgvValues.Columns[1].HeaderText = "Parolanın Adı";
             DgvValues.Columns[2].HeaderText = "Kullanıcı Adı";
+            DgvValues.Columns[3].Visible = false;
             DgvValues.Columns[4].HeaderText = "Oluşturulma Tarihi";
             DgvValues.Columns[5].HeaderText = "Güncelleme Tarihi";
-
-
         }
 
         private async Task SearchAsync(string deger)
@@ -79,7 +76,7 @@ namespace Parola_Yoneticisi
                 passwordEntites.Passwords.Add(value);
                 await passwordEntites.SaveChangesAsync();
                 await ListAsync();
-                MessageBox.Show("Şifre Kaydedildi", "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Parola Kaydedildi", "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 TextBoxClearForAdd();
             }
         }
@@ -96,18 +93,15 @@ namespace Parola_Yoneticisi
             }
             else if (TxtPasswordForAdd.Text == "")
             {
-                MessageBox.Show("Lütfen Şifreyi Boş Bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lütfen parolayı boş bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (TxtUserNameForAdd.Text == "")
             {
-                MessageBox.Show("Lütfen Kullanıcı adı veya E-postayı boş bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lütfen kullanıcı adını boş bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private async void TxtSearch_TextChanged(object sender, EventArgs e)
-        {
-            await SearchAsync(txtSearch.Text);
-        }
+        private async void TxtSearch_TextChanged(object sender, EventArgs e) => await SearchAsync(txtSearch.Text);
         private async Task DeleteAsync()
         {
             if (Id != 0)
@@ -117,18 +111,18 @@ namespace Parola_Yoneticisi
                     passwordEntites.Passwords.Remove(await passwordEntites.Passwords.FindAsync(Id));
                     await passwordEntites.SaveChangesAsync();
                     await ListAsync();
-                    MessageBox.Show("Silme işlemi başarılı", "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Silme işlemi başarılı", "Silme İşlemi Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
             {
-                MessageBox.Show("İşlem Yapılamadı, Lütfen Kayıt Seçiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("İşlem yapılamadı, lütfen kayıt seçiniz !", "Silme Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
         private async void BtnDelete_Click(object sender, EventArgs e)
         {
-            DialogResult sonuc = MessageBox.Show("Seçilen Şifrenin Kaydını Silmek istediğinize Emin misiniz", "Şifre Kaydı Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult sonuc = MessageBox.Show("Seçilen parolanın kaydını silmek istediğinize emin misiniz ?", "Parola Kaydı Silme İşlemi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (sonuc == DialogResult.Yes)
             {
                 await DeleteAsync();
@@ -147,15 +141,15 @@ namespace Parola_Yoneticisi
             }
             else if (TxtNameForUpdate.Text == "")
             {
-                MessageBox.Show("Lütfen Güncellenen Kaydın Adını Boş Bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lütfen güncellenecek parolanın adını boş bırakmayınız", "Güncelleme Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (txtUserNameForUpdate.Text == "")
             {
-                MessageBox.Show("Lütfen Güncellenen Kaydın Kullanıcı Adını veya E-Postasını boş bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lütfen güncellenen parolanın kullanıcı adını boş bırakmayınız", "Güncelleme Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (TxtPasswordForAdd.Text == "")
             {
-                MessageBox.Show("Lütfen Güncellenen Kaydın Şifresini boş bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lütfen güncellenen parolanın şifresini boş bırakmayınız", "Güncelleme Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -173,11 +167,12 @@ namespace Parola_Yoneticisi
                     value.UpdateDate = DateTime.Now;
                     await passwordEntites.SaveChangesAsync();
                     await ListAsync();
-                    MessageBox.Show("İşlem Başarılı " + value.Name + " Adlı şifre güncellendi", "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    TextBoxClearForUpdate();
+                    MessageBox.Show("İşlem başarılı " + value.Name + " adlı parola güncellendi", "Parola Güncelleme İşlemi Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Lütfen Şifre Seçiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lütfen parola seçiniz", "Güncelleme Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -209,10 +204,10 @@ namespace Parola_Yoneticisi
             }
             catch
             {
-                MessageBox.Show("Lütfen Kopyalanacak Parolayı Seçiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lütfen kopyalanacak parolayı seçiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            string output = string.Format("{0} Adlı Şifre Panoya Kopyalandı", DgvValues.CurrentRow.Cells[1].Value.ToString());
+            string output = string.Format("{0} Adlı parola panoya kopyalandı", DgvValues.CurrentRow.Cells[1].Value.ToString());
             MessageBox.Show(output, "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -224,10 +219,10 @@ namespace Parola_Yoneticisi
             }
             catch
             {
-                MessageBox.Show("Lütfen Kopyalanacak Parolayı Seçiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lütfen kopyalanacak parolayı seçiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            string output = string.Format("{0} Adlı Kullanıcı Adı Panoya Kopyalandı", DgvValues.CurrentRow.Cells[1].Value.ToString());
+            string output = string.Format("{0} adlı kullanıcı adı panoya kopyalandı", DgvValues.CurrentRow.Cells[1].Value.ToString());
             MessageBox.Show(output, "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -240,10 +235,8 @@ namespace Parola_Yoneticisi
             DtpCreateDate.Text = DgvValues.CurrentRow.Cells[4].Value.ToString();
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e) => Application.Exit();
+
         private void BtnShowPasswordForAdd_Click(object sender, EventArgs e)
         {
             ShowHidePasswordForAdd();
@@ -272,10 +265,7 @@ namespace Parola_Yoneticisi
                 HidePasswordForAdd();
             }
         }
-        private void BtnShowPasswordForUpdate_Click(object sender, EventArgs e)
-        {
-            ShowHidePasswordForUpdate();
-        }
+        private void BtnShowPasswordForUpdate_Click(object sender, EventArgs e) => ShowHidePasswordForUpdate();
 
         private void BtnPasswordGenerateForAdd_Click(object sender, EventArgs e)
         {

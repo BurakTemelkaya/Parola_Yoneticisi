@@ -76,7 +76,7 @@ namespace Parola_Yoneticisi
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label1.Location = new System.Drawing.Point(93, 22);
+            this.label1.Location = new System.Drawing.Point(93, 26);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 20);
@@ -89,6 +89,7 @@ namespace Parola_Yoneticisi
             this.TxtPasswordNameForAdd.ForeColor = System.Drawing.SystemColors.WindowText;
             this.TxtPasswordNameForAdd.Location = new System.Drawing.Point(45, 61);
             this.TxtPasswordNameForAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtPasswordNameForAdd.MaxLength = 100;
             this.TxtPasswordNameForAdd.Name = "TxtPasswordNameForAdd";
             this.TxtPasswordNameForAdd.Size = new System.Drawing.Size(203, 26);
             this.TxtPasswordNameForAdd.TabIndex = 1;
@@ -97,17 +98,19 @@ namespace Parola_Yoneticisi
             // 
             this.TxtPasswordForAdd.BackColor = System.Drawing.Color.Silver;
             this.TxtPasswordForAdd.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.TxtPasswordForAdd.Location = new System.Drawing.Point(45, 221);
+            this.TxtPasswordForAdd.Location = new System.Drawing.Point(45, 214);
             this.TxtPasswordForAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtPasswordForAdd.MaxLength = 50;
             this.TxtPasswordForAdd.Name = "TxtPasswordForAdd";
             this.TxtPasswordForAdd.Size = new System.Drawing.Size(203, 26);
             this.TxtPasswordForAdd.TabIndex = 3;
+            this.TxtPasswordForAdd.UseSystemPasswordChar = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label2.Location = new System.Drawing.Point(115, 187);
+            this.label2.Location = new System.Drawing.Point(115, 178);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 20);
@@ -138,14 +141,14 @@ namespace Parola_Yoneticisi
             // 
             // NumUpDownGeneratePasswordCountForAdd
             // 
-            this.NumUpDownGeneratePasswordCountForAdd.Location = new System.Drawing.Point(309, 185);
+            this.NumUpDownGeneratePasswordCountForAdd.Location = new System.Drawing.Point(309, 172);
             this.NumUpDownGeneratePasswordCountForAdd.Maximum = new decimal(new int[] {
             50,
             0,
             0,
             0});
             this.NumUpDownGeneratePasswordCountForAdd.Minimum = new decimal(new int[] {
-            3,
+            6,
             0,
             0,
             0});
@@ -163,7 +166,7 @@ namespace Parola_Yoneticisi
             // 
             this.BtnPasswordGenerateForAdd.BackColor = System.Drawing.Color.Silver;
             this.BtnPasswordGenerateForAdd.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.BtnPasswordGenerateForAdd.Location = new System.Drawing.Point(309, 217);
+            this.BtnPasswordGenerateForAdd.Location = new System.Drawing.Point(309, 210);
             this.BtnPasswordGenerateForAdd.Margin = new System.Windows.Forms.Padding(4);
             this.BtnPasswordGenerateForAdd.Name = "BtnPasswordGenerateForAdd";
             this.BtnPasswordGenerateForAdd.Size = new System.Drawing.Size(45, 35);
@@ -175,7 +178,7 @@ namespace Parola_Yoneticisi
             // 
             this.BtnShowPasswordForAdd.BackColor = System.Drawing.Color.Silver;
             this.BtnShowPasswordForAdd.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.BtnShowPasswordForAdd.Location = new System.Drawing.Point(256, 217);
+            this.BtnShowPasswordForAdd.Location = new System.Drawing.Point(257, 210);
             this.BtnShowPasswordForAdd.Margin = new System.Windows.Forms.Padding(4);
             this.BtnShowPasswordForAdd.Name = "BtnShowPasswordForAdd";
             this.BtnShowPasswordForAdd.Size = new System.Drawing.Size(45, 35);
@@ -187,8 +190,9 @@ namespace Parola_Yoneticisi
             // 
             this.TxtUserNameForAdd.BackColor = System.Drawing.Color.Silver;
             this.TxtUserNameForAdd.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.TxtUserNameForAdd.Location = new System.Drawing.Point(45, 147);
+            this.TxtUserNameForAdd.Location = new System.Drawing.Point(45, 139);
             this.TxtUserNameForAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtUserNameForAdd.MaxLength = 100;
             this.TxtUserNameForAdd.Name = "TxtUserNameForAdd";
             this.TxtUserNameForAdd.Size = new System.Drawing.Size(203, 26);
             this.TxtUserNameForAdd.TabIndex = 2;
@@ -197,20 +201,20 @@ namespace Parola_Yoneticisi
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label7.Location = new System.Drawing.Point(69, 107);
+            this.label7.Location = new System.Drawing.Point(95, 102);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(162, 20);
+            this.label7.Size = new System.Drawing.Size(93, 20);
             this.label7.TabIndex = 7;
-            this.label7.Text = "Kullanıcı Adı / E-Posta";
+            this.label7.Text = "Kullanıcı Adı";
             // 
             // BtnClearForAdd
             // 
             this.BtnClearForAdd.BackColor = System.Drawing.Color.Silver;
             this.BtnClearForAdd.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.BtnClearForAdd.Location = new System.Drawing.Point(205, 275);
+            this.BtnClearForAdd.Location = new System.Drawing.Point(239, 263);
             this.BtnClearForAdd.Name = "BtnClearForAdd";
-            this.BtnClearForAdd.Size = new System.Drawing.Size(115, 31);
+            this.BtnClearForAdd.Size = new System.Drawing.Size(115, 43);
             this.BtnClearForAdd.TabIndex = 5;
             this.BtnClearForAdd.Text = "Temizle";
             this.BtnClearForAdd.UseVisualStyleBackColor = false;
@@ -220,9 +224,9 @@ namespace Parola_Yoneticisi
             // 
             this.BtnPasswordAdd.BackColor = System.Drawing.Color.Silver;
             this.BtnPasswordAdd.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.BtnPasswordAdd.Location = new System.Drawing.Point(45, 275);
+            this.BtnPasswordAdd.Location = new System.Drawing.Point(45, 263);
             this.BtnPasswordAdd.Name = "BtnPasswordAdd";
-            this.BtnPasswordAdd.Size = new System.Drawing.Size(115, 31);
+            this.BtnPasswordAdd.Size = new System.Drawing.Size(186, 43);
             this.BtnPasswordAdd.TabIndex = 4;
             this.BtnPasswordAdd.Text = "Parola Ekle";
             this.BtnPasswordAdd.UseVisualStyleBackColor = false;
@@ -310,6 +314,16 @@ namespace Parola_Yoneticisi
             // NumUpDownGeneratePasswordCountForUpdate
             // 
             this.NumUpDownGeneratePasswordCountForUpdate.Location = new System.Drawing.Point(205, 192);
+            this.NumUpDownGeneratePasswordCountForUpdate.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.NumUpDownGeneratePasswordCountForUpdate.Minimum = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
             this.NumUpDownGeneratePasswordCountForUpdate.Name = "NumUpDownGeneratePasswordCountForUpdate";
             this.NumUpDownGeneratePasswordCountForUpdate.Size = new System.Drawing.Size(45, 26);
             this.NumUpDownGeneratePasswordCountForUpdate.TabIndex = 11;
@@ -334,10 +348,11 @@ namespace Parola_Yoneticisi
             // 
             // DtpCreateDate
             // 
-            this.DtpCreateDate.Location = new System.Drawing.Point(288, 138);
-            this.DtpCreateDate.MinDate = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
+            this.DtpCreateDate.Location = new System.Drawing.Point(302, 138);
+            this.DtpCreateDate.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
+            this.DtpCreateDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.DtpCreateDate.Name = "DtpCreateDate";
-            this.DtpCreateDate.Size = new System.Drawing.Size(261, 26);
+            this.DtpCreateDate.Size = new System.Drawing.Size(230, 26);
             this.DtpCreateDate.TabIndex = 10;
             // 
             // BtnShowPasswordForUpdate
@@ -358,6 +373,7 @@ namespace Parola_Yoneticisi
             this.txtUserNameForUpdate.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtUserNameForUpdate.Location = new System.Drawing.Point(302, 66);
             this.txtUserNameForUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtUserNameForUpdate.MaxLength = 100;
             this.txtUserNameForUpdate.Name = "txtUserNameForUpdate";
             this.txtUserNameForUpdate.Size = new System.Drawing.Size(230, 26);
             this.txtUserNameForUpdate.TabIndex = 2;
@@ -366,18 +382,18 @@ namespace Parola_Yoneticisi
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label8.Location = new System.Drawing.Point(339, 30);
+            this.label8.Location = new System.Drawing.Point(371, 30);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(162, 20);
+            this.label8.Size = new System.Drawing.Size(93, 20);
             this.label8.TabIndex = 9;
-            this.label8.Text = "Kullanıcı Adı / E-Posta";
+            this.label8.Text = "Kullanıcı Adı";
             // 
             // BtnClearForUpdate
             // 
             this.BtnClearForUpdate.BackColor = System.Drawing.Color.Silver;
             this.BtnClearForUpdate.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.BtnClearForUpdate.Location = new System.Drawing.Point(51, 243);
+            this.BtnClearForUpdate.Location = new System.Drawing.Point(316, 243);
             this.BtnClearForUpdate.Name = "BtnClearForUpdate";
             this.BtnClearForUpdate.Size = new System.Drawing.Size(199, 63);
             this.BtnClearForUpdate.TabIndex = 6;
@@ -400,7 +416,7 @@ namespace Parola_Yoneticisi
             // 
             this.BtnUpdate.BackColor = System.Drawing.Color.Silver;
             this.BtnUpdate.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.BtnUpdate.Location = new System.Drawing.Point(312, 243);
+            this.BtnUpdate.Location = new System.Drawing.Point(62, 243);
             this.BtnUpdate.Name = "BtnUpdate";
             this.BtnUpdate.Size = new System.Drawing.Size(199, 63);
             this.BtnUpdate.TabIndex = 5;
@@ -414,6 +430,7 @@ namespace Parola_Yoneticisi
             this.TxtNameForUpdate.ForeColor = System.Drawing.SystemColors.WindowText;
             this.TxtNameForUpdate.Location = new System.Drawing.Point(40, 66);
             this.TxtNameForUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtNameForUpdate.MaxLength = 100;
             this.TxtNameForUpdate.Name = "TxtNameForUpdate";
             this.TxtNameForUpdate.Size = new System.Drawing.Size(230, 26);
             this.TxtNameForUpdate.TabIndex = 1;
@@ -424,9 +441,11 @@ namespace Parola_Yoneticisi
             this.TxtPasswordForUpdate.ForeColor = System.Drawing.SystemColors.WindowText;
             this.TxtPasswordForUpdate.Location = new System.Drawing.Point(42, 138);
             this.TxtPasswordForUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtPasswordForUpdate.MaxLength = 50;
             this.TxtPasswordForUpdate.Name = "TxtPasswordForUpdate";
             this.TxtPasswordForUpdate.Size = new System.Drawing.Size(230, 26);
             this.TxtPasswordForUpdate.TabIndex = 3;
+            this.TxtPasswordForUpdate.UseSystemPasswordChar = true;
             // 
             // label4
             // 
@@ -470,6 +489,7 @@ namespace Parola_Yoneticisi
             this.txtSearch.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtSearch.Location = new System.Drawing.Point(55, 284);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSearch.MaxLength = 100;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(220, 26);
             this.txtSearch.TabIndex = 3;

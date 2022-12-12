@@ -314,6 +314,7 @@ namespace Parola_Yoneticisi
         private void BtnClearForTxtSearch_Click(object sender, EventArgs e)
         {
             txtSearch.Clear();
+            TextBoxClearForUpdate();
         }
     }
 }

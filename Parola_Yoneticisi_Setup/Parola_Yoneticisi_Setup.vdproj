@@ -27,7 +27,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_28FD56F44B2747058A3E0875116FFADF"
+        "MsmKey" = "8:_1F4581B64E21485283624EC89CF22F77"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -51,12 +51,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_9429CF083D824A9BB86CEB3E20C63DC5"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_97612833E3B749988892EF868906AC2F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -69,7 +63,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_A6B56E020C54486EA47898B4A52A0C1C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_AF72127F5FD04C3DABCACBEBA7F3C72E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B2E63038917444FBAD5065CB9A7B5768"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -156,15 +162,15 @@
             "ComponentsUrl" = "8:"
                 "Items"
                 {
-                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.8"
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
                     {
-                    "Name" = "8:Microsoft .NET Framework 4.8 (x86 and x64)"
-                    "ProductCode" = "8:.NETFramework,Version=v4.8"
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
                     }
-                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.SqlServer.SqlLocalDB.13.0"
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.SqlServer.SqlLocalDB.15.0"
                     {
-                    "Name" = "8:SQL Server 2016 Express LocalDB"
-                    "ProductCode" = "8:Microsoft.SqlServer.SqlLocalDB.13.0"
+                    "Name" = "8:SQL Server 2019 Express LocalDB"
+                    "ProductCode" = "8:Microsoft.SqlServer.SqlLocalDB.15.0"
                     }
                 }
             }
@@ -237,9 +243,9 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_28FD56F44B2747058A3E0875116FFADF"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1F4581B64E21485283624EC89CF22F77"
             {
-            "SourcePath" = "8:..\\Sifre_log.ldf"
+            "SourcePath" = "8:..\\bin\\Release\\Sifre_log.ldf"
             "TargetName" = "8:Sifre_log.ldf"
             "Tag" = "8:"
             "Folder" = "8:_380EB21A272645AFB539DEC074DEDD3A"
@@ -319,26 +325,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9429CF083D824A9BB86CEB3E20C63DC5"
-            {
-            "SourcePath" = "8:..\\Sifre.mdf"
-            "TargetName" = "8:Sifre.mdf"
-            "Tag" = "8:"
-            "Folder" = "8:_380EB21A272645AFB539DEC074DEDD3A"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_97612833E3B749988892EF868906AC2F"
             {
             "SourcePath" = "8:..\\bin\\Release\\Parola_Yoneticisi.exe.config"
@@ -390,10 +376,50 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A6B56E020C54486EA47898B4A52A0C1C"
+            {
+            "SourcePath" = "8:..\\bin\\Release\\Icons\\Close.png"
+            "TargetName" = "8:Close.png"
+            "Tag" = "8:"
+            "Folder" = "8:_3B7CF91FFCA043D6B69A56545B978174"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AF72127F5FD04C3DABCACBEBA7F3C72E"
             {
             "SourcePath" = "8:..\\Icons8-Windows-8-Security-Password-2.ico"
             "TargetName" = "8:Icons8-Windows-8-Security-Password-2.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_380EB21A272645AFB539DEC074DEDD3A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B2E63038917444FBAD5065CB9A7B5768"
+            {
+            "SourcePath" = "8:..\\bin\\Release\\Sifre.mdf"
+            "TargetName" = "8:Sifre.mdf"
             "Tag" = "8:"
             "Folder" = "8:_380EB21A272645AFB539DEC074DEDD3A"
             "Condition" = "8:"
@@ -622,7 +648,7 @@
                         {
                         }
                     }
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_F9A51F5DF34D49269D92FC901A5F78EB"
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_64791C07CE25491B98A44FD4E88C0BCE"
                     {
                     "Name" = "8:SqlLocalDB2019"
                     "AlwaysCreate" = "11:FALSE"
@@ -795,7 +821,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Parola Yöneticisi"
         "ProductCode" = "8:{F87273D1-C2A0-4E86-B0B6-C1764F7E58E5}"
-        "PackageCode" = "8:{6222E53B-1E3E-4B04-B3AF-56A9E8D3D4C4}"
+        "PackageCode" = "8:{91800D15-054D-4980-8547-49D6AF9A5FA1}"
         "UpgradeCode" = "8:{552B9919-F9BF-425C-8197-DD61F78913B0}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -812,7 +838,7 @@
         "Keywords" = "8:Parola Yöneticisi"
         "ARPCOMMENTS" = "8:Parola Yönetim Programı"
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:"
+        "ARPPRODUCTICON" = "8:_AF72127F5FD04C3DABCACBEBA7F3C72E"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"

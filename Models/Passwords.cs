@@ -11,14 +11,26 @@ namespace Parola_Yoneticisi.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class Passwords
     {
+        [DisplayName("Id")]
         public int Id { get; set; }
+
+        [DisplayName("Parolanýn Adý")]
         public string Name { get; set; }
+
+        [DisplayName("Kullanýcý Adý")]
         public string UserName { get; set; }
+
+        [DisplayName("Parola")]
         public string Password { get; set; }
+
+        [DisplayName("Oluþturulma Tarihi")]
         public Nullable<System.DateTime> CreateDate { get; set; }
+
+        [DisplayName("Güncelleme Tarihi")]
         public Nullable<System.DateTime> UpdateDate { get; set; }
     }
 }

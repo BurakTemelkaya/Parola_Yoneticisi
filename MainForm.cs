@@ -18,45 +18,53 @@ namespace Parola_Yoneticisi
         public MainForm() => InitializeComponent();
 
         public static string Key;
+
         private static int Id;
-        List<Passwords> Passwords = new List<Passwords>();
+
+        List<Passwords> PasswordList = new List<Passwords>();
         private async void Form1_Load(object sender, EventArgs e)
+        {
+            SetButtonsImage();
+            DgvValues.Columns.Add("Count", "#");            
+            await ListAsync();
+        }
+
+        private void SetButtonsImage()
         {
             BtnShowPasswordForAdd.Image = ImageFileNames.GetShowPasswordImage();
             BtnShowPasswordForUpdate.Image = ImageFileNames.GetShowPasswordImage();
             BtnPasswordGenerateForAdd.Image = ImageFileNames.GetRefreshImage();
             BtnPasswordGenerateForUpdate.Image = ImageFileNames.GetRefreshImage();
             BtnClearForTxtSearch.Image = ImageFileNames.GetCloseImage();
-            await ListAsync();
         }
 
         private async Task ListAsync()
         {
             using (SifreEntities passwordEntites = new SifreEntities())
             {
-                Passwords = await passwordEntites.Passwords.AsNoTracking().ToListAsync();
-                DgvValues.DataSource = Passwords;
-                AutoCompleteStringCollection autoCompleteStringCollection = new AutoCompleteStringCollection();
-                autoCompleteStringCollection.AddRange(Passwords.Select(x => x.Name).ToArray());
-                txtSearch.AutoCompleteCustomSource = autoCompleteStringCollection;
+                PasswordList = await passwordEntites.Passwords.AsNoTracking().ToListAsync();
             }
-            for (int i = 0; i < Passwords.Count; i++)
+            DgvValues.DataSource = PasswordList;
+
+            DgvValues.Columns[1].Visible = false;
+            DgvValues.Columns[4].Visible = false;
+
+            AutoCompleteStringCollection autoCompleteStringCollection = new AutoCompleteStringCollection();
+            autoCompleteStringCollection.AddRange(PasswordList.Select(x => x.Name).ToArray());
+            txtSearch.AutoCompleteCustomSource = autoCompleteStringCollection;
+
+            for (int i = 0; i < PasswordList.Count; i++)
             {
                 DgvValues.Rows[i].Cells[0].Value = i + 1;
             }
-            DgvValues.Columns[0].HeaderText = "#";
-            DgvValues.Columns[1].HeaderText = "Parolanın Adı";
-            DgvValues.Columns[2].HeaderText = "Kullanıcı Adı";
-            DgvValues.Columns[3].Visible = false;
-            DgvValues.Columns[4].HeaderText = "Oluşturulma Tarihi";
-            DgvValues.Columns[5].HeaderText = "Güncelleme Tarihi";
+
         }
 
         private async Task SearchAsync(string deger)
         {
             if (deger != string.Empty)
             {
-                var password = Passwords.Where(t => t.Name.ToLower().Contains(deger.ToLower())).ToList();
+                var password = PasswordList.Where(t => t.Name.ToLower().Contains(deger.ToLower())).ToList();
                 DgvValues.DataSource = password;
             }
             else
@@ -230,11 +238,11 @@ namespace Parola_Yoneticisi
         private async void DgvValues_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             HidePasswordForUpdate();
-            Id = Convert.ToInt32(DgvValues.CurrentRow.Cells[0].Value);
-            TxtNameForUpdate.Text = DgvValues.CurrentRow.Cells[1].Value.ToString();
-            txtUserNameForUpdate.Text = DgvValues.CurrentRow.Cells[2].Value.ToString();
-            TxtPasswordForUpdate.Text = await PasswordCrypto.DecryptAsync(Key, DgvValues.CurrentRow.Cells[3].Value.ToString());
-            DtpCreateDate.Text = DgvValues.CurrentRow.Cells[4].Value.ToString();
+            Id = Convert.ToInt32(DgvValues.CurrentRow.Cells[1].Value);
+            TxtNameForUpdate.Text = DgvValues.CurrentRow.Cells[2].Value.ToString();
+            txtUserNameForUpdate.Text = DgvValues.CurrentRow.Cells[3].Value.ToString();
+            TxtPasswordForUpdate.Text = await PasswordCrypto.DecryptAsync(Key, DgvValues.CurrentRow.Cells[4].Value.ToString());
+            DtpCreateDate.Text = DgvValues.CurrentRow.Cells[5].Value.ToString();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e) => Application.Exit();

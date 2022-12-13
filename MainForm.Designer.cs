@@ -390,14 +390,13 @@ namespace Parola_Yoneticisi
             resources.ApplyResources(this.DgvValues, "DgvValues");
             this.DgvValues.AllowUserToAddRows = false;
             this.DgvValues.AllowUserToDeleteRows = false;
-            this.DgvValues.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.DgvValues.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DgvValues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvValues.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.DgvValues.MultiSelect = false;
             this.DgvValues.Name = "DgvValues";
             this.DgvValues.ReadOnly = true;
-            this.DgvValues.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.DgvValues.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.DgvValues.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvValues_CellClick);
             // 
             // MainForm

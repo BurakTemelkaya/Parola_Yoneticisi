@@ -25,7 +25,7 @@ namespace Parola_Yoneticisi
         private async void Form1_Load(object sender, EventArgs e)
         {
             SetButtonsImage();
-            DgvValues.Columns.Add("Count", "#");            
+            DgvValues.Columns.Add("Count", "#");
             await ListAsync();
         }
 
@@ -49,6 +49,12 @@ namespace Parola_Yoneticisi
             DgvValues.Columns[1].Visible = false;
             DgvValues.Columns[4].Visible = false;
 
+            DgvValues.Columns[0].Width = 60;
+            DgvValues.Columns[2].Width = 250;
+            DgvValues.Columns[3].Width = 250;
+            DgvValues.Columns[5].Width = 175;
+            DgvValues.Columns[6].Width = 175;
+
             AutoCompleteStringCollection autoCompleteStringCollection = new AutoCompleteStringCollection();
             autoCompleteStringCollection.AddRange(PasswordList.Select(x => x.Name).ToArray());
             txtSearch.AutoCompleteCustomSource = autoCompleteStringCollection;
@@ -66,6 +72,10 @@ namespace Parola_Yoneticisi
             {
                 var password = PasswordList.Where(t => t.Name.ToLower().Contains(deger.ToLower())).ToList();
                 DgvValues.DataSource = password;
+                for (int i = 0; i < password.Count; i++)
+                {
+                    DgvValues.Rows[i].Cells[0].Value = i + 1;
+                }
             }
             else
             {

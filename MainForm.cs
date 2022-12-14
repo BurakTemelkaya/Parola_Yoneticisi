@@ -46,14 +46,7 @@ namespace Parola_Yoneticisi
             }
             DgvValues.DataSource = PasswordList;
 
-            DgvValues.Columns[1].Visible = false;
-            DgvValues.Columns[4].Visible = false;
-
-            DgvValues.Columns[0].Width = 60;
-            DgvValues.Columns[2].Width = 250;
-            DgvValues.Columns[3].Width = 250;
-            DgvValues.Columns[5].Width = 175;
-            DgvValues.Columns[6].Width = 175;
+            SetDgvValuesDesign();
 
             AutoCompleteStringCollection autoCompleteStringCollection = new AutoCompleteStringCollection();
             autoCompleteStringCollection.AddRange(PasswordList.Select(x => x.Name).ToArray());
@@ -63,6 +56,18 @@ namespace Parola_Yoneticisi
             {
                 DgvValues.Rows[i].Cells[0].Value = i + 1;
             }
+        }
+
+        private void SetDgvValuesDesign()
+        {
+            DgvValues.Columns[1].Visible = false;
+            DgvValues.Columns[4].Visible = false;
+
+            DgvValues.Columns[0].Width = 60;
+            DgvValues.Columns[2].Width = 250;
+            DgvValues.Columns[3].Width = 250;
+            DgvValues.Columns[5].Width = 175;
+            DgvValues.Columns[6].Width = 175;
         }
 
         private async Task SearchAsync(string deger)
@@ -264,13 +269,13 @@ namespace Parola_Yoneticisi
         private void ShowPasswordForAdd()
         {
             TxtPasswordForAdd.UseSystemPasswordChar = false;
-            BtnShowPasswordForAdd.Image = Image.FromFile(Application.StartupPath + @"\Icons\Dont't_Show_Password.png");
+            BtnShowPasswordForAdd.Image = ImageFileNames.GetShowPasswordImage();
         }
 
         private void HidePasswordForAdd()
         {
             TxtPasswordForAdd.UseSystemPasswordChar = true;
-            BtnShowPasswordForAdd.Image = Image.FromFile(Application.StartupPath + @"\Icons\Show_Password.png");
+            BtnShowPasswordForAdd.Image = ImageFileNames.GetShowPasswordImage();
         }
 
         private void ShowHidePasswordForAdd()
@@ -284,6 +289,7 @@ namespace Parola_Yoneticisi
                 HidePasswordForAdd();
             }
         }
+
         private void BtnShowPasswordForUpdate_Click(object sender, EventArgs e) => ShowHidePasswordForUpdate();
 
         private void BtnPasswordGenerateForAdd_Click(object sender, EventArgs e)
@@ -311,13 +317,13 @@ namespace Parola_Yoneticisi
         private void ShowPasswordForUpdate()
         {
             TxtPasswordForUpdate.UseSystemPasswordChar = false;
-            BtnShowPasswordForUpdate.Image = Image.FromFile(Application.StartupPath + @"\Icons\Dont't_Show_Password.png");
+            BtnShowPasswordForUpdate.Image = ImageFileNames.GetDontShowPasswordImage();
         }
 
         private void HidePasswordForUpdate()
         {
             TxtPasswordForUpdate.UseSystemPasswordChar = true;
-            BtnShowPasswordForUpdate.Image = Image.FromFile(Application.StartupPath + @"\Icons\Show_Password.png");
+            BtnShowPasswordForUpdate.Image = ImageFileNames.GetDontShowPasswordImage();
         }
 
         private void BtnClearForTxtSearch_Click(object sender, EventArgs e)

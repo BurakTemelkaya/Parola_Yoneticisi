@@ -57,7 +57,6 @@ namespace Parola_Yoneticisi
             {
                 DgvValues.Rows[i].Cells[0].Value = i + 1;
             }
-
         }
 
         private async Task SearchAsync(string deger)
@@ -209,14 +208,14 @@ namespace Parola_Yoneticisi
         {
             try
             {
-                Clipboard.SetText(await PasswordCrypto.DecryptAsync(Key, DgvValues.CurrentRow.Cells[3].Value.ToString()));
+                Clipboard.SetText(await PasswordCrypto.DecryptAsync(Key, DgvValues.CurrentRow.Cells[4].Value.ToString()));
             }
             catch
             {
                 MessageBox.Show("Lütfen kopyalanacak parolayı seçiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            string output = string.Format("{0} Adlı parola panoya kopyalandı", DgvValues.CurrentRow.Cells[1].Value.ToString());
+            string output = string.Format("{0} Adlı parola panoya kopyalandı", DgvValues.CurrentRow.Cells[2].Value.ToString());
             MessageBox.Show(output, "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -224,14 +223,14 @@ namespace Parola_Yoneticisi
         {
             try
             {
-                Clipboard.SetText(DgvValues.CurrentRow.Cells[2].Value.ToString());
+                Clipboard.SetText(DgvValues.CurrentRow.Cells[3].Value.ToString());
             }
             catch
             {
                 MessageBox.Show("Lütfen kopyalanacak parolayı seçiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            string output = string.Format("{0} adlı kullanıcı adı panoya kopyalandı", DgvValues.CurrentRow.Cells[1].Value.ToString());
+            string output = string.Format("{0} adlı kullanıcı adı panoya kopyalandı", DgvValues.CurrentRow.Cells[2].Value.ToString());
             MessageBox.Show(output, "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 

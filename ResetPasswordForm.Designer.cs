@@ -44,27 +44,27 @@
             // 
             // BtnShowPasswordForOldPassword
             // 
+            resources.ApplyResources(this.BtnShowPasswordForOldPassword, "BtnShowPasswordForOldPassword");
             this.BtnShowPasswordForOldPassword.BackColor = System.Drawing.Color.Silver;
             this.BtnShowPasswordForOldPassword.ForeColor = System.Drawing.SystemColors.WindowText;
-            resources.ApplyResources(this.BtnShowPasswordForOldPassword, "BtnShowPasswordForOldPassword");
             this.BtnShowPasswordForOldPassword.Name = "BtnShowPasswordForOldPassword";
             this.BtnShowPasswordForOldPassword.UseVisualStyleBackColor = false;
             this.BtnShowPasswordForOldPassword.Click += new System.EventHandler(this.BtnShowPasswordForOldPassword_Click);
             // 
             // BtnRefresh
             // 
+            resources.ApplyResources(this.BtnRefresh, "BtnRefresh");
             this.BtnRefresh.BackColor = System.Drawing.Color.Silver;
             this.BtnRefresh.ForeColor = System.Drawing.SystemColors.WindowText;
-            resources.ApplyResources(this.BtnRefresh, "BtnRefresh");
             this.BtnRefresh.Name = "BtnRefresh";
             this.BtnRefresh.UseVisualStyleBackColor = false;
             this.BtnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
             // TxtOldPassword
             // 
+            resources.ApplyResources(this.TxtOldPassword, "TxtOldPassword");
             this.TxtOldPassword.BackColor = System.Drawing.Color.Silver;
             this.TxtOldPassword.ForeColor = System.Drawing.SystemColors.WindowText;
-            resources.ApplyResources(this.TxtOldPassword, "TxtOldPassword");
             this.TxtOldPassword.Name = "TxtOldPassword";
             this.TxtOldPassword.UseSystemPasswordChar = true;
             // 
@@ -76,34 +76,34 @@
             // 
             // TxtNewPassword
             // 
+            resources.ApplyResources(this.TxtNewPassword, "TxtNewPassword");
             this.TxtNewPassword.BackColor = System.Drawing.Color.Silver;
             this.TxtNewPassword.ForeColor = System.Drawing.SystemColors.WindowText;
-            resources.ApplyResources(this.TxtNewPassword, "TxtNewPassword");
             this.TxtNewPassword.Name = "TxtNewPassword";
             this.TxtNewPassword.UseSystemPasswordChar = true;
             // 
             // TxtNewPasswordApprove
             // 
+            resources.ApplyResources(this.TxtNewPasswordApprove, "TxtNewPasswordApprove");
             this.TxtNewPasswordApprove.BackColor = System.Drawing.Color.Silver;
             this.TxtNewPasswordApprove.ForeColor = System.Drawing.SystemColors.WindowText;
-            resources.ApplyResources(this.TxtNewPasswordApprove, "TxtNewPasswordApprove");
             this.TxtNewPasswordApprove.Name = "TxtNewPasswordApprove";
             this.TxtNewPasswordApprove.UseSystemPasswordChar = true;
             // 
             // BtnShowPasswordForNewPassword
             // 
+            resources.ApplyResources(this.BtnShowPasswordForNewPassword, "BtnShowPasswordForNewPassword");
             this.BtnShowPasswordForNewPassword.BackColor = System.Drawing.Color.Silver;
             this.BtnShowPasswordForNewPassword.ForeColor = System.Drawing.SystemColors.WindowText;
-            resources.ApplyResources(this.BtnShowPasswordForNewPassword, "BtnShowPasswordForNewPassword");
             this.BtnShowPasswordForNewPassword.Name = "BtnShowPasswordForNewPassword";
             this.BtnShowPasswordForNewPassword.UseVisualStyleBackColor = false;
             this.BtnShowPasswordForNewPassword.Click += new System.EventHandler(this.BtnShowPasswordForNewPassword_Click);
             // 
             // BtnShowPasswordForNewPasswordApprove
             // 
+            resources.ApplyResources(this.BtnShowPasswordForNewPasswordApprove, "BtnShowPasswordForNewPasswordApprove");
             this.BtnShowPasswordForNewPasswordApprove.BackColor = System.Drawing.Color.Silver;
             this.BtnShowPasswordForNewPasswordApprove.ForeColor = System.Drawing.SystemColors.WindowText;
-            resources.ApplyResources(this.BtnShowPasswordForNewPasswordApprove, "BtnShowPasswordForNewPasswordApprove");
             this.BtnShowPasswordForNewPasswordApprove.Name = "BtnShowPasswordForNewPasswordApprove";
             this.BtnShowPasswordForNewPasswordApprove.UseVisualStyleBackColor = false;
             this.BtnShowPasswordForNewPasswordApprove.Click += new System.EventHandler(this.BtnShowPasswordForNewPasswordApprove_Click);
@@ -122,9 +122,9 @@
             // 
             // BtnCancel
             // 
+            resources.ApplyResources(this.BtnCancel, "BtnCancel");
             this.BtnCancel.BackColor = System.Drawing.Color.Silver;
             this.BtnCancel.ForeColor = System.Drawing.SystemColors.WindowText;
-            resources.ApplyResources(this.BtnCancel, "BtnCancel");
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.UseVisualStyleBackColor = false;
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);

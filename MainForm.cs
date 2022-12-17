@@ -269,7 +269,7 @@ namespace Parola_Yoneticisi
         private void ShowPasswordForAdd()
         {
             TxtPasswordForAdd.UseSystemPasswordChar = false;
-            BtnShowPasswordForAdd.Image = ImageFileNames.GetShowPasswordImage();
+            BtnShowPasswordForAdd.Image = ImageFileNames.GetDontShowPasswordImage();
         }
 
         private void HidePasswordForAdd()
@@ -323,7 +323,7 @@ namespace Parola_Yoneticisi
         private void HidePasswordForUpdate()
         {
             TxtPasswordForUpdate.UseSystemPasswordChar = true;
-            BtnShowPasswordForUpdate.Image = ImageFileNames.GetDontShowPasswordImage();
+            BtnShowPasswordForUpdate.Image = ImageFileNames.GetShowPasswordImage();
         }
 
         private void BtnClearForTxtSearch_Click(object sender, EventArgs e)

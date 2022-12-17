@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Parola_Yoneticisi
 {
@@ -30,14 +31,15 @@ namespace Parola_Yoneticisi
             string newPassword = TxtNewPassword.Text;
             string newPasswordApprove = TxtNewPasswordApprove.Text;
 
-            if (oldPassword == null || newPassword == null || newPasswordApprove == null)
+            Regex validateGuidRegex = new Regex("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,}$");
+            if (!validateGuidRegex.IsMatch(newPassword))
             {
-                MessageBox.Show("Lütfen boş değer bırakmayınız.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lütfen parolanızı en az 8 karekter, bir büyük, bir küçük ve bir rakam içerecek şekilde giriniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (newPassword != newPasswordApprove)
             {
-                MessageBox.Show("Yeni parolanızı onaylanmadı lütfen tekrar deneyiniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Yeni parolanız onaylanmadı lütfen tekrar deneyiniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

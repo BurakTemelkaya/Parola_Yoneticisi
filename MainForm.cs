@@ -209,6 +209,7 @@ namespace Parola_Yoneticisi
 
         private void TextBoxClearForUpdate()
         {
+            Id = 0;
             TxtNameForUpdate.Clear();
             TxtPasswordForUpdate.Clear();
             txtUserNameForUpdate.Clear();
@@ -230,7 +231,7 @@ namespace Parola_Yoneticisi
                 MessageBox.Show("Lütfen kopyalanacak parolayı seçiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            string output = string.Format("{0} Adlı parola panoya kopyalandı", DgvValues.CurrentRow.Cells[2].Value.ToString());
+            string output = string.Format("{0} adına sahip parola kopyalandı.", DgvValues.CurrentRow.Cells[2].Value.ToString());
             MessageBox.Show(output, "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -245,7 +246,7 @@ namespace Parola_Yoneticisi
                 MessageBox.Show("Lütfen kopyalanacak parolayı seçiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            string output = string.Format("{0} adlı kullanıcı adı panoya kopyalandı", DgvValues.CurrentRow.Cells[2].Value.ToString());
+            string output = string.Format("{0} adına sahip parolanın kullanıcı adı kopyalandı.", DgvValues.CurrentRow.Cells[2].Value.ToString());
             MessageBox.Show(output, "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -328,6 +329,7 @@ namespace Parola_Yoneticisi
 
         private void BtnClearForTxtSearch_Click(object sender, EventArgs e)
         {
+            Id = 0;
             txtSearch.Clear();
             TextBoxClearForUpdate();
         }

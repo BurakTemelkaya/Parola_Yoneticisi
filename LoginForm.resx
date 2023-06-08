@@ -2942,9 +2942,6 @@
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
-  <data name="&gt;&gt;BtnResetPassword.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="TxtPassword.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 7, 6, 7</value>
   </data>
@@ -2960,11 +2957,11 @@
   <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
     <value>groupBox1</value>
   </data>
+  <data name="&gt;&gt;BtnResetPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;BtnShowPassword.Name" xml:space="preserve">
     <value>BtnShowPassword</value>
-  </data>
-  <data name="&gt;&gt;BtnResetPassword.Name" xml:space="preserve">
-    <value>BtnResetPassword</value>
   </data>
   <data name="&gt;&gt;BtnShowPassword.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -3019,6 +3016,9 @@
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
+  </data>
+  <data name="&gt;&gt;BtnResetPassword.Name" xml:space="preserve">
+    <value>BtnResetPassword</value>
   </data>
   <data name="&gt;&gt;label2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
